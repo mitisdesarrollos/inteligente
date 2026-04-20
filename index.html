@@ -1,275 +1,156 @@
 <!DOCTYPE html>
-<html class="light" lang="es"><head>
+<html class="light" lang="es">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mitis Desarrollos</title>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "outline-variant": "#bec8d2",
-                    "tertiary": "#006399",
-                    "surface-container": "#eceef0",
-                    "on-secondary-fixed-variant": "#38485d",
-                    "on-primary-fixed": "#001e2f",
-                    "primary-fixed": "#c9e6ff",
-                    "surface-container-high": "#e6e8ea",
-                    "inverse-on-surface": "#eff1f3",
-                    "on-secondary-fixed": "#0b1c30",
-                    "on-background": "#191c1e",
-                    "tertiary-fixed": "#cde5ff",
-                    "on-tertiary-fixed-variant": "#004b74",
-                    "primary-container": "#0ea5e9",
-                    "surface": "#f7f9fb",
-                    "inverse-primary": "#89ceff",
-                    "surface-container-low": "#f2f4f6",
-                    "background": "#f7f9fb",
-                    "secondary-fixed": "#d3e4fe",
-                    "on-primary": "#ffffff",
-                    "on-primary-container": "#003751",
-                    "surface-bright": "#f7f9fb",
-                    "surface-container-highest": "#e0e3e5",
-                    "primary-fixed-dim": "#89ceff",
-                    "tertiary-container": "#58a1dc",
-                    "on-tertiary-container": "#003656",
-                    "error-container": "#ffdad6",
-                    "inverse-surface": "#2d3133",
-                    "on-surface": "#191c1e",
-                    "on-tertiary": "#ffffff",
-                    "secondary": "#505f76",
-                    "surface-dim": "#d8dadc",
-                    "error": "#ba1a1a",
-                    "surface-variant": "#e0e3e5",
-                    "on-primary-fixed-variant": "#004c6e",
-                    "secondary-container": "#d0e1fb",
-                    "primary": "#006591",
-                    "outline": "#6e7881",
-                    "on-secondary": "#ffffff",
-                    "surface-tint": "#006591",
-                    "secondary-fixed-dim": "#b7c8e1",
-                    "on-surface-variant": "#3e4850",
-                    "on-error": "#ffffff",
-                    "on-error-container": "#93000a",
-                    "on-secondary-container": "#54647a",
-                    "on-tertiary-fixed": "#001d32",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-fixed-dim": "#94ccff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"primary": "#006591",
+"primary-container": "#0ea5e9",
+"surface": "#f7f9fb",
+"on-surface": "#191c1e"
+}
+}
+}
+}
+</script>
+
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
-    </style>
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 120px; /* evita que el nav tape el contenido */
+}
+
+body { font-family: 'Inter', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+</style>
 </head>
-<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Mitis Desarrollos</div>
-<div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-tight font-medium">
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#inicio">Inicio</a>
-<a class="text-sky-600 dark:text-sky-400 font-semibold border-b-2 border-sky-600 dark:border-sky-400 pb-1" href="#productos">Agentes / Programas</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Descargas</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#nosotros">Nosotros</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#contacto">Contactanos</a>
+
+<div class="text-2xl font-bold">Mitis Desarrollos</div>
+
+<div class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a href="#inicio">Inicio</a>
+<a href="#productos">Agentes / Programas</a>
+<a href="#productos">Descargas</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#contacto">Contactanos</a>
 </div>
-<a href="#contacto" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">Comenzar</a>
+
+<a href="#contacto" class="bg-primary text-white px-6 py-2.5 rounded-lg">
+Comenzar
+</a>
+
 </div>
-<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
 </nav>
+
 <main class="pt-32">
-<section id="inicio" class="max-w-7xl mx-auto px-6 mb-24 lg:mb-32">
-<div class="flex flex-col lg:flex-row gap-16 items-center">
-<div class="w-full lg:w-3/5">
-<span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Mitis Agente Inteligente Inmobiliario</span>
-<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
-                    Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para la atención inmobliaria.
-                </h1>
-<p class="text-on-surface-variant text-lg lg:text-xl max-w-2xl font-light leading-relaxed mb-10">
- Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95">Implementar ahora</button>
-<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95">Ver funciones</button>
-</div>
-</div>
-<div class="w-full lg:w-2/5 relative">
-<div class="absolute -inset-4 bg-primary-container/10 blur-3xl rounded-full"></div>
-<img alt="Futuristic architectural workspace" class="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOWM2rIIZNqnPIuIVTZpdw5bYESkvB__goxveaFuQJSCLn5ytQu5vQBOVHfxt14fsJ-yR-WJT5KpQFtFhkq7d-utq6EqWqzV7MaZXqQsBLIe01eB1gbYFDKd66cWc9gj38ntSRQF4IHS_4bqIzTD1CsAlMcn4SQI-v6qbyQRCoWNDB6gyVqrgcYBgs5TY3qj_UJCkojgNop1NArZSVFUspDaXOCKA29XYiab80L7bPkYtuWFRuAf0wKY2m8KiX6OLqSrVocuKd3skv"/>
-</div>
-</div>
-</section>
-<section id="productos" class="bg-surface-container-low py-24 lg:py-32">
-<div class="max-w-7xl mx-auto px-6">
-<div class="mb-16">
-<h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Módulos de Inteligencia</h2>
-<div class="h-1 w-20 bg-primary"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between overflow-hidden relative group">
-<div class="relative z-10">
-<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary text-3xl">chat_bubble</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">WhatsApp Agente Inteligente</h3>
-<p class="text-on-surface-variant max-w-md">Respuestas inmediatas y atención 24/7. Tu agente inteliente nunca duerme, conoce tu base de datos de memoria y te asegura que ningún cliente (lead) se pierda.</p>
-</div>
-<img alt="WhatsApp communication" class="absolute right-0 bottom-0 w-1/2 translate-y-12 translate-x-12 group-hover:translate-y-6 group-hover:translate-x-6 transition-transform duration-500 rounded-tl-2xl shadow-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0ui8m6rjTL2xBZVUvmHDqv8pDXrzNp8KmbpnKYlGB2vkCzVB0rUKyoCwLBYtTSlRvV-T3iahZZtNxlD3SlE3CKj8ZxtILc9C5Q1S7teOE1I8c78WGJ_xXyDg-5v3e9VZDnk8BPGL8mMyibPuY9RJvM42S943KUZEpBA5jkXByEm_GT27pHsFwuKlcCh6qTIyfPIoVTSyxcaa4K0NO9OYNtTZ4oqw1L59MxWT2DQYimH1Zu2F86tST6g_jOHgfdbWJP2jG-OytxvBNCc"/>
-</div>
-<div class="md:col-span-4 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
-<div>
-<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">mic</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Síntesis de audios</h3>
-<p class="opacity-80">Escucha y responde con mensajes de audio naturales, brindando un toque humano a las interacciones de IA.</p>
-</div>
-<div class="mt-8 flex items-center gap-4">
-<div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
-<div class="h-full w-1/2 bg-white"></div>
-</div>
-<span class="text-xs font-mono">00:42</span>
-</div>
-</div>
-<div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary text-3xl">database</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Advanced Scraping</h3>
-<p class="text-on-surface-variant">Automated data extraction from premium real estate platforms, injecting real-time market insights into your CRM.</p>
-<div class="mt-8 flex gap-2">
-<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Zillow</div>
-<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Realtor</div>
-<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Idealista</div>
-</div>
-</div>
-<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden">
-<div class="flex flex-col md:flex-row gap-10 h-full relative z-10">
-<div class="md:w-1/2">
-<div class="w-12 h-12 bg-tertiary-container/20 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-tertiary text-3xl">account_tree</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Intelligent Routing</h3>
-<p class="text-on-surface-variant">Our Agente Inteligente qualifies leads through semantic analysis and routes them to specialist departments instantly.</p>
-<div class="mt-6 space-y-3">
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">sell</span>
-<span class="text-sm font-semibold">Sales Department</span>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-tertiary">key</span>
-<span class="text-sm font-semibold">Rental Management</span>
-</div>
-</div>
-</div>
-<div class="md:w-1/2 flex items-center justify-center">
-<img alt="Diagram showing the lead management funnel" class="max-h-64 md:max-h-full w-auto object-contain rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uhS0zonhHNc92ao8VWRUHnih2YbpJ9cBCWzmZoiJL5lNe9a8dqmjGRjZtugLKCgkfRLxoFZN183FAwDHUUTlKuWGAgEwMJkg-eqcU_VwrdbNJE1e9lpjtOLJEeHJzqhCxnd3-hNxR4rJWypD4WeTAdUETuCE25gslior17l0nA-naz5tGbOMbJ1DKu6eCQGWvp4674O19qFo8U5K60RV4F5WiKOq8OFdzIJtxKpFQEuRqAOV862c0JzTHSZcwdkrx-psSmDg1ONKvQ"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="nosotros" class="py-24 lg:py-32">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col lg:flex-row-reverse gap-20 items-center">
-<div class="w-full lg:w-1/2">
-<span class="text-tertiary font-bold tracking-widest uppercase text-xs mb-4 block">Market Integration</span>
-<h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-on-surface mb-8 leading-tight">Syncing the World's Property Data.</h2>
-<div class="space-y-8">
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">1</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Automated Discovery</h4>
-<p class="text-on-surface-variant leading-relaxed">Our Agente Inteligente monitors top-tier listing platforms every 5 minutes.</p>
-</div>
-</div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">2</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Semantic Enrichment</h4>
-<p class="text-on-surface-variant leading-relaxed">It understands property features automatically.</p>
-</div>
-</div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">3</div>
-<div>
-<h4 class="text-xl font-bold mb-2">CRM Direct Injection</h4>
-<p class="text-on-surface-variant leading-relaxed">Clean data is injected directly into your existing infrastructure.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="w-full lg:w-1/2">
-<div class="relative rounded-2xl overflow-hidden shadow-2xl">
-<img alt="Data visualization" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw9f9Was1M6vNKem2CWj_AWI-TuzVKoR2G2XKes69_kzDNpoVnQuIEL_hXoEg_dMqu8d7w014MxzU9p1NyeV8LLhtcsOjoepW1Py7HweizvIDiQvlPMk3KOKQvYvsZFwbYcn23bPQqnpExftYyDucm7FJapxuLLI8Ujgv-g7Cm1bRYWQOv4jZSLJR6uvu4e0EF4AIBODOT9tk-DVA_hcbFejODbhqD9cO1sCPWRtF2PlC_czdXy1guOGPr4V9yW-olfcsFOoYWVc2R"/>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="contacto" class="max-w-7xl mx-auto px-6 mb-24 lg:mb-32">
-<div class="bg-primary-container rounded-[2rem] p-12 lg:p-24 relative overflow-hidden text-on-primary-container">
-<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-<div class="relative z-10 max-w-3xl">
-<h2 class="text-4xl lg:text-6xl font-extrabold tracking-tighter mb-8">Ready to architect your agency's future?</h2>
-<p class="text-xl opacity-90 mb-12 font-medium">Join 200+ top-tier developments already using Mitis Agente Inteligente.</p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-white text-primary px-10 py-5 rounded-lg font-bold text-lg shadow-xl shadow-black/5 hover:scale-105 transition-all">Schedule a Demo</button>
-<button class="border-2 border-white/30 text-white px-10 py-5 rounded-lg font-bold text-lg hover:bg-white/10 transition-all">Download Brochure</button>
-</div>
-</div>
-<div class="absolute bottom-0 right-0 hidden lg:block">
-<img alt="Abstract render" class="w-[500px] opacity-40 mix-blend-soft-light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNTfTTBtX7AqZScI7yim9dgN4UC6JSkmsAnzUXKSjsyKmlyhLKvFmsMB1uqVvKH1tZyUzN9HatqCV9bYaeXFA8JZRE3f_HzjpVTMUh-OixxxUTQ6q2T75iZqxsuGxL3_MB7XmpJag1P0Uu-m_Ydmk_rgyY-gTQWGfs6hmI-i3p6e1EeM5uApdnUicsUO8SgGZGxS1lUAtHg52HinjYTP5TLZW9df-r_673GFeDfrDHqywB9bzuNl5Z5eqsH4lLPXwpRJeunpozgHw"/>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="flex flex-col gap-4">
-<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
-<p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2024 Mitis Desarrollos. Architecting Intelligence.</p>
-</div>
-<div class="flex gap-8">
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Privacy Policy</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Terms of Service</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Cookie Policy</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Support</a>
-</div>
+
+<!-- HERO -->
+<section id="inicio" class="max-w-7xl mx-auto px-6 mb-16 lg:mb-20">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+
+<div class="lg:w-3/5">
+<h1 class="text-5xl lg:text-7xl font-extrabold mb-6">
+Arquitectura Inteligente
+</h1>
+
+<p class="text-lg mb-8">
+Potenciá tu inmobiliaria con IA.
+</p>
+
 <div class="flex gap-4">
-<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">share</span>
+<button class="bg-primary text-white px-6 py-3 rounded-lg">
+Implementar
+</button>
+<button class="bg-gray-200 px-6 py-3 rounded-lg">
+Ver funciones
+</button>
 </div>
-<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">language</span>
 </div>
+
+<div class="lg:w-2/5">
+<img class="rounded-xl" src="https://picsum.photos/500/600"/>
 </div>
+
 </div>
-</footer>
-</body></html>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="bg-gray-100 py-16 lg:py-20">
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold mb-10">Módulos</h2>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="bg-white p-8 rounded-xl shadow">
+<h3 class="text-xl font-bold mb-2">WhatsApp IA</h3>
+<p>Responde 24/7 automáticamente.</p>
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow">
+<h3 class="text-xl font-bold mb-2">Audios</h3>
+<p>Procesa mensajes de voz.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="py-16 lg:py-20">
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="text-3xl font-bold mb-10">Nosotros</h2>
+
+<p>
+Integramos datos inmobiliarios automáticamente.
+</p>
+
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="max-w-7xl mx-auto px-6 mb-16 lg:mb-20">
+<div class="bg-primary text-white p-12 rounded-2xl">
+
+<h2 class="text-4xl mb-6">
+Ready to start?
+</h2>
+
+<button class="bg-white text-primary px-6 py-3 rounded-lg">
+Demo
+</button>
+
+</div>
+</section>
+
+</main>
+
+</body>
+</html>
