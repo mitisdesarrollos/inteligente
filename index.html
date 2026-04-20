@@ -92,11 +92,11 @@
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 <div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Mitis Desarrollos</div>
 <div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-tight font-medium">
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#inicio">Inicio</a>
-<a class="text-sky-600 dark:text-sky-400 font-semibold border-b-2 border-sky-600 dark:border-sky-400 pb-1" href="#productos">Agentes / Programas</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Descargas</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#nosotros">Nosotros</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#contacto">Contactanos</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#inicio">Inicio</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Agentes / Programas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Descargas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#nosotros">Nosotros</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#contacto">Contactanos</a>
 </div>
 <a href="#contacto" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">Comenzar</a>
 </div>
@@ -108,7 +108,7 @@
 <div class="w-full lg:w-3/5">
 <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Mitis Agente Inmobiliario</span>
 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
-                    Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para atención inmobliaria
+                    Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para la atención inmobliaria
                 </h1>
 <p class="text-on-surface-variant text-lg lg:text-xl max-w-2xl font-light leading-relaxed mb-10">
  Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
@@ -276,4 +276,128 @@
 </div>
 </div>
 </footer>
+
+<!-- Script para resaltar la pestaña activa según la sección visible (scroll spy) y al hacer clic -->
+<script>
+  (function() {
+    "use strict";
+
+    // Seleccionamos todos los enlaces del menú con la clase 'nav-link'
+    const navLinks = document.querySelectorAll('.nav-link');
+    // Seleccionamos todas las secciones objetivo (las que tienen ID)
+    const sections = document.querySelectorAll('section[id]');
+
+    // Función para remover la clase 'active' de todos los enlaces
+    function removeActiveClasses() {
+      navLinks.forEach(link => {
+        link.classList.remove(
+          'text-sky-600', 
+          'dark:text-sky-400', 
+          'font-semibold', 
+          'border-b-2', 
+          'border-sky-600', 
+          'dark:border-sky-400', 
+          'pb-1'
+        );
+        // Restauramos las clases base por si acaso
+        link.classList.add('text-slate-600', 'dark:text-slate-400');
+      });
+    }
+
+    // Función para añadir la clase 'active' al enlace correspondiente
+    function setActiveLink(link) {
+      removeActiveClasses();
+      link.classList.remove('text-slate-600', 'dark:text-slate-400');
+      link.classList.add(
+        'text-sky-600', 
+        'dark:text-sky-400', 
+        'font-semibold', 
+        'border-b-2', 
+        'border-sky-600', 
+        'dark:border-sky-400', 
+        'pb-1'
+      );
+    }
+
+    // Función para actualizar el enlace activo basado en el hash de la URL o la sección visible
+    function updateActiveLinkOnScroll() {
+      const scrollPosition = window.scrollY + 100; // Ajuste para compensar el navbar fijo
+
+      // Buscamos la sección actualmente visible
+      let currentSection = null;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = section;
+        }
+      });
+
+      // Si no se encontró ninguna (por ejemplo, al inicio antes de llegar a #inicio), usamos #inicio
+      if (!currentSection && sections.length > 0) {
+        currentSection = sections[0];
+      }
+
+      if (currentSection) {
+        const id = currentSection.getAttribute('id');
+        // Buscamos el enlace cuyo href coincida con ese id
+        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+        if (activeLink) {
+          setActiveLink(activeLink);
+        }
+      }
+    }
+
+    // Evento de clic en cada enlace: actualiza el resaltado inmediatamente
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Permitimos el comportamiento normal del enlace (navegación)
+        // pero actualizamos la clase activa de inmediato para mejor feedback
+        setActiveLink(this);
+      });
+    });
+
+    // Evento de scroll para actualizar según la sección visible
+    window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
+
+    // Al cargar la página, establecemos el estado inicial según el hash de la URL o la posición de scroll
+    window.addEventListener('DOMContentLoaded', function() {
+      // Pequeño retraso para asegurar que todo está renderizado
+      setTimeout(() => {
+        // Si hay un hash en la URL, resaltamos ese enlace; si no, usamos el scroll
+        if (window.location.hash) {
+          const hash = window.location.hash;
+          const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
+          if (targetLink) {
+            setActiveLink(targetLink);
+            // Hacemos scroll suave hacia la sección (opcional, pero respetamos la UX)
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            return;
+          }
+        }
+        // Si no hay hash, actualizamos según la posición del scroll
+        updateActiveLinkOnScroll();
+      }, 50);
+    });
+
+    // También escuchamos cambios en el hash (por si el usuario usa los botones del navegador)
+    window.addEventListener('hashchange', function() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
+        if (targetLink) {
+          setActiveLink(targetLink);
+        }
+      } else {
+        // Si se quita el hash, resaltamos según la posición
+        updateActiveLinkOnScroll();
+      }
+    });
+
+  })();
+</script>
+
 </body></html>
