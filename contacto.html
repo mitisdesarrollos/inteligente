@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto · Mitis Desarrollos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bec8d2",
+                    "tertiary": "#006399",
+                    "surface-container": "#eceef0",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed": "#001e2f",
+                    "primary-fixed": "#c9e6ff",
+                    "surface-container-high": "#e6e8ea",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "primary-container": "#0ea5e9",
+                    "surface": "#f7f9fb",
+                    "inverse-primary": "#89ceff",
+                    "surface-container-low": "#f2f4f6",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#003751",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#89ceff",
+                    "tertiary-container": "#58a1dc",
+                    "on-tertiary-container": "#003656",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2d3133",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#505f76",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "secondary-container": "#d0e1fb",
+                    "primary": "#006591",
+                    "outline": "#6e7881",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#006591",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-surface-variant": "#3e4850",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#54647a",
+                    "on-tertiary-fixed": "#001d32",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#94ccff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- Header simple con logo que vuelve al index -->
+<header class="py-8 px-6 max-w-7xl mx-auto">
+    <div class="flex justify-center">
+        <a href="index.html" class="inline-block">
+            <img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png" alt="Mitis Logo" class="h-14 md:h-16 w-auto object-contain"/>
+        </a>
+    </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-6 pb-16">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-on-surface mb-4">Contactanos</h1>
+        <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">Completá el formulario y te responderemos a la brevedad.</p>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12">
+        <form action="mailto:mitisdesarrollos@gmail.com" method="get" enctype="text/plain">
+            <input type="hidden" name="subject" value="Quiero que me contacten sobre Mitis">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Nombre completo *</label>
+                    <input type="text" name="Nombre" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Correo electrónico *</label>
+                    <input type="email" name="Email" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Teléfono</label>
+                    <input type="tel" name="Telefono" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Inmobiliaria / Empresa</label>
+                    <input type="text" name="Empresa" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium mb-2">Mensaje *</label>
+                    <textarea name="Mensaje" rows="5" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Contanos cómo podemos ayudarte..."></textarea>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <button type="submit" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar mensaje</button>
+                <a href="index.html" class="border border-primary text-primary font-medium px-8 py-3 rounded-lg hover:bg-primary/5 transition-all text-center">Volver al inicio</a>
+            </div>
+            <p class="text-xs text-on-surface-variant mt-6 text-center">Al enviar, se abrirá tu cliente de correo con los datos cargados.</p>
+        </form>
+    </div>
+
+    <!-- Separador sutil -->
+    <div class="flex items-center justify-center my-16">
+        <div class="h-px w-24 bg-primary/30"></div>
+        <span class="mx-4 text-primary/60 material-symbols-outlined">database</span>
+        <div class="h-px w-24 bg-primary/30"></div>
+    </div>
+
+    <!-- Logo grande que linkea al index -->
+    <div class="flex justify-center">
+        <a href="index.html" class="block max-w-xs md:max-w-md transition-transform hover:scale-105">
+            <img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png" alt="Mitis Logo" class="w-full h-auto object-contain"/>
+        </a>
+    </div>
+    <p class="text-center text-sm text-on-surface-variant mt-4">Hacé clic en el logo para volver al sitio principal.</p>
+</main>
+
+<footer class="w-full py-8 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
+    </div>
+</footer>
+
+</body></html>
