@@ -142,6 +142,11 @@
         .dark .modal-close:hover {
             color: #e2e8f0;
         }
+        .form-status {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
@@ -152,34 +157,35 @@
         <button class="modal-close" id="closeModalBtn">&times;</button>
         <h3 class="text-2xl font-bold mb-2 text-primary">Solicitá tu prueba gratuita</h3>
         <p class="text-on-surface-variant mb-6 text-sm">Completá los datos y te contactaremos para coordinar el acceso.</p>
-        <form action="https://formspree.io/f/mqewdwpb" method="POST" target="_blank">
+        <form id="pruebaForm">
             <div class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium mb-1">Nombre completo *</label>
-                    <input type="text" name="Nombre" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="text" name="Nombre" id="modal-nombre" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Correo electrónico *</label>
-                    <input type="email" name="Email" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="email" name="Email" id="modal-email" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Teléfono (opcional)</label>
-                    <input type="tel" name="Teléfono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="tel" name="Teléfono" id="modal-telefono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Inmobiliaria / Empresa</label>
-                    <input type="text" name="Empresa" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="text" name="Empresa" id="modal-empresa" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Mensaje</label>
-                    <textarea name="Mensaje" rows="3" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">Hola, quiero solicitar la prueba gratuita de Mitis.</textarea>
+                    <textarea name="Mensaje" id="modal-mensaje" rows="3" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">Hola, quiero solicitar la prueba gratuita de Mitis.</textarea>
                 </div>
                 <button type="submit" class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar solicitud</button>
+                <div id="modalFormStatus" class="form-status"></div>
             </div>
         </form>
     </div>
 </div>
-      
+
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 <div class="flex items-center gap-3">
@@ -271,7 +277,6 @@
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Realtor</div>
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Idealista</div>
 </div>
-<!-- Imagen agregada: todas las plataformas en formato horizontal (apaisado) -->
 <div class="mt-6">
 <img alt="Todas las plataformas inmobiliarias" class="w-full h-auto object-contain rounded-lg" src="todas_plataformas.jpg"/>
 </div>
@@ -469,11 +474,13 @@
       }
     });
 
-    // --- Lógica del modal popup (prueba gratuita) ---
+    // --- Lógica del modal popup ---
     const modal = document.getElementById('pruebaModal');
     const closeBtn = document.getElementById('closeModalBtn');
     const probarMitisBtn = document.getElementById('probarMitisBtn');
     const pruebaGratisBtn = document.getElementById('pruebaGratisBtn');
+    const form = document.getElementById('pruebaForm');
+    const statusDiv = document.getElementById('modalFormStatus');
 
     function openModal() { if (modal) modal.classList.add('active'); }
     function closeModal() { if (modal) modal.classList.remove('active'); }
@@ -490,6 +497,51 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
     });
+
+    // Envío AJAX del formulario del popup
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        statusDiv.textContent = 'Enviando...';
+        statusDiv.style.color = '#006591';
+
+        const formData = {
+          Nombre: document.getElementById('modal-nombre').value,
+          Email: document.getElementById('modal-email').value,
+          Teléfono: document.getElementById('modal-telefono').value,
+          Empresa: document.getElementById('modal-empresa').value,
+          Mensaje: document.getElementById('modal-mensaje').value
+        };
+
+        try {
+          const response = await fetch('https://formspree.io/f/mqewdwpb', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          if (response.ok) {
+            statusDiv.textContent = '¡Solicitud enviada con éxito! Te contactaremos pronto.';
+            statusDiv.style.color = '#16a34a';
+            form.reset();
+            document.getElementById('modal-mensaje').value = 'Hola, quiero solicitar la prueba gratuita de Mitis.';
+            setTimeout(() => {
+              closeModal();
+              statusDiv.textContent = '';
+            }, 2000);
+          } else {
+            statusDiv.textContent = 'Hubo un error. Por favor, intentá de nuevo.';
+            statusDiv.style.color = '#ba1a1a';
+          }
+        } catch (error) {
+          statusDiv.textContent = 'Error de conexión. Revisá tu internet.';
+          statusDiv.style.color = '#ba1a1a';
+        }
+      });
+    }
 
   })();
 </script>
