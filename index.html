@@ -1,156 +1,411 @@
 <!DOCTYPE html>
-<html class="light" lang="es">
-<head>
+<html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mitis Desarrollos</title>
-
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bec8d2",
+                    "tertiary": "#006399",
+                    "surface-container": "#eceef0",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed": "#001e2f",
+                    "primary-fixed": "#c9e6ff",
+                    "surface-container-high": "#e6e8ea",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "primary-container": "#0ea5e9",
+                    "surface": "#f7f9fb",
+                    "inverse-primary": "#89ceff",
+                    "surface-container-low": "#f2f4f6",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#003751",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#89ceff",
+                    "tertiary-container": "#58a1dc",
+                    "on-tertiary-container": "#003656",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2d3133",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#505f76",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "secondary-container": "#d0e1fb",
+                    "primary": "#006591",
+                    "outline": "#6e7881",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#006591",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-surface-variant": "#3e4850",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#54647a",
+                    "on-tertiary-fixed": "#001d32",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#94ccff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
 <style>
-body { font-family: 'Inter', sans-serif; }
-h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
-</style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
 </head>
-
-<body class="bg-surface text-on-surface">
-
-<!-- NAV -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-
-<!-- LOGO + NOMBRE -->
-<a href="https://mitisdesarrollos.github.io/inteligente/#inicio" class="flex items-center gap-3">
-  <img src="logo_mitis.png" class="h-8 w-auto"/>
-  <div class="text-2xl font-bold">Mitis Desarrollos</div>
+<div class="flex items-center gap-3">
+<a href="https://mitisdesarrollos.github.io/inteligente/" class="flex items-center gap-3">
+<img src="logo_mitis.png" alt="Mitis Logo" class="h-10 w-auto object-contain"/>
+<span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Mitis Desarrollos</span>
 </a>
-
-<div class="hidden md:flex items-center gap-8 text-sm">
-<a href="#inicio">Inicio</a>
-<a href="#productos">Agentes / Programas</a>
-<a href="#productos">Descargas</a>
-<a href="#nosotros">Nosotros</a>
-<a href="#contacto">Contactanos</a>
 </div>
-
-<a href="#contacto" class="bg-black text-white px-6 py-2 rounded">Comenzar</a>
+<div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-tight font-medium">
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#inicio">Inicio</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Agentes / Programas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#productos">Descargas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#nosotros">Nosotros</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#contacto">Contactanos</a>
 </div>
+<a href="#contacto" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">Comenzar</a>
+</div>
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
 </nav>
-
 <main class="pt-32">
-
-<!-- HERO -->
-<section id="inicio" class="max-w-7xl mx-auto px-6 mb-16">
+<section id="inicio" class="max-w-7xl mx-auto px-6 mb-12 lg:mb-16">
 <div class="flex flex-col lg:flex-row gap-16 items-center">
-
-<div class="lg:w-3/5">
-<h1 class="text-5xl font-extrabold mb-6">
-Arquitectura Inteligente para la atención inmobiliaria
-</h1>
-
-<p class="text-lg text-gray-600 mb-8">
-Potenciá tu inmobiliaria con IA. Automatizá respuestas, gestioná leads y sincronizá propiedades.
-</p>
+<div class="w-full lg:w-3/5">
+<span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Mitis Agente Inmobiliario</span>
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
+                    Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para la atención inmobiliaria
+                </h1>
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-2xl font-light leading-relaxed mb-10">
+ Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95">Implementar ahora</button>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95">Ver funciones</button>
 </div>
-
-<div class="lg:w-2/5">
-<img src="mensajes_wa.jpg" class="rounded-xl shadow-xl"/>
 </div>
-
+<div class="w-full lg:w-2/5 relative">
+<div class="absolute -inset-4 bg-primary-container/10 blur-3xl rounded-full"></div>
+<img alt="Espacio de trabajo arquitectónico futurista" class="relative z-10 w-full aspect-[4/5] object-cover rounded-2xl shadow-2xl" src="mensajes_wa.jpg"/>
+</div>
 </div>
 </section>
-
-<!-- PRODUCTOS -->
-<section id="productos" class="bg-gray-100 py-16">
+<section id="productos" class="bg-surface-container-low py-12 lg:py-16">
 <div class="max-w-7xl mx-auto px-6">
-
-<h2 class="text-3xl font-bold mb-10">Módulos</h2>
-
-<div class="grid md:grid-cols-2 gap-6">
-
-<div class="bg-white p-8 rounded-xl shadow">
-<h3 class="text-xl font-bold mb-4">WhatsApp Inteligente</h3>
-<p>Respuestas automáticas 24/7.</p>
+<div class="mb-16">
+<h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Módulos de Inteligencia</h2>
+<div class="h-1 w-20 bg-primary"></div>
 </div>
-
-<div class="bg-white p-8 rounded-xl shadow">
-<h3 class="text-xl font-bold mb-4">Audio IA</h3>
-<p>Escucha y responde audios.</p>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between overflow-hidden relative group">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">chat_bubble</span>
 </div>
-
-<!-- CAMBIO AQUÍ -->
-<div class="bg-white p-8 rounded-xl shadow">
-<h3 class="text-xl font-bold mb-4">Plataformas</h3>
-<p>Indexación automática de propiedades.</p>
-
-<img src="todas_plataformas.jpg" class="mt-6 rounded-lg"/>
+<h3 class="text-2xl font-bold mb-4">WhatsApp Agente Inteligente</h3>
+<p class="text-on-surface-variant max-w-md">Respuestas inmediatas y atención 24/7. <br/>Tu agente inteligente nunca duerme, conoce tu<br/> base de datos de memoria y te asegura <br/>que ningún cliente (lead) se pierda.</p>
 </div>
-
+<img alt="Comunicación por WhatsApp" class="absolute right-0 bottom-0 w-1/2 translate-y-12 translate-x-12 group-hover:translate-y-6 group-hover:translate-x-6 transition-transform duration-500 rounded-tl-2xl shadow-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0ui8m6rjTL2xBZVUvmHDqv8pDXrzNp8KmbpnKYlGB2vkCzVB0rUKyoCwLBYtTSlRvV-T3iahZZtNxlD3SlE3CKj8ZxtILc9C5Q1S7teOE1I8c78WGJ_xXyDg-5v3e9VZDnk8BPGL8mMyibPuY9RJvM42S943KUZEpBA5jkXByEm_GT27pHsFwuKlcCh6qTIyfPIoVTSyxcaa4K0NO9OYNtTZ4oqw1L59MxWT2DQYimH1Zu2F86tST6g_jOHgfdbWJP2jG-OytxvBNCc"/>
 </div>
-
+<div class="md:col-span-4 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Síntesis de audios</h3>
+<p class="opacity-80">Escucha y responde con mensajes de audio naturales, brindando un toque humano a las interacciones de IA.</p>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
+<div class="h-full w-1/2 bg-white"></div>
+</div>
+<span class="text-xs font-mono">00:42</span>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">database</span>
+</div>
+<span class="text-xl font-bold text-primary">Plataformas</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Indexación avanzada</h3>
+<p class="text-on-surface-variant">Mitis navega automáticamente las plataformas donde publicás tus inmuebles y los guarda en su base de datos, entendiendo las altas y bajas.</p>
+<div class="mt-8 flex gap-2">
+<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Zillow</div>
+<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Realtor</div>
+<div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Idealista</div>
+</div>
+<!-- Imagen agregada: todas las plataformas en formato horizontal (apaisado) -->
+<div class="mt-6">
+<img alt="Todas las plataformas inmobiliarias" class="w-full h-auto object-contain rounded-lg" src="todas_plataformas.jpg"/>
+</div>
+</div>
+<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden">
+<div class="flex flex-col md:flex-row gap-10 h-full relative z-10">
+<div class="md:w-1/2">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl">account_tree</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Enrutamiento Inteligente</h3>
+<p class="text-on-surface-variant">Nuestro Agente Inteligente califica leads mediante análisis semántico y los deriva instantáneamente a los departamentos especializados.</p>
+<div class="mt-6 space-y-3">
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">sell</span>
+<span class="text-sm font-semibold">Departamento de Ventas</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary">key</span>
+<span class="text-sm font-semibold">Gestión de Alquileres</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 flex items-center justify-center">
+<img alt="Diagrama del embudo de gestión de leads" class="max-h-64 md:max-h-full w-auto object-contain rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida/ADBb0uhS0zonhHNc92ao8VWRUHnih2YbpJ9cBCWzmZoiJL5lNe9a8dqmjGRjZtugLKCgkfRLxoFZN183FAwDHUUTlKuWGAgEwMJkg-eqcU_VwrdbNJE1e9lpjtOLJEeHJzqhCxnd3-hNxR4rJWypD4WeTAdUETuCE25gslior17l0nA-naz5tGbOMbJ1DKu6eCQGWvp4674O19qFo8U5K60RV4F5WiKOq8OFdzIJtxKpFQEuRqAOV862c0JzTHSZcwdkrx-psSmDg1ONKvQ"/>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-
-<!-- NOSOTROS -->
-<section id="nosotros" class="py-16">
+<section id="nosotros" class="py-12 lg:py-16">
 <div class="max-w-7xl mx-auto px-6">
-
-<div class="grid md:grid-cols-2 gap-10 items-center">
-
+<div class="flex flex-col lg:flex-row-reverse gap-20 items-center">
+<div class="w-full lg:w-1/2">
+<span class="text-tertiary font-bold tracking-widest uppercase text-xs mb-4 block">Integración de Mercado</span>
+<h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-on-surface mb-8 leading-tight">Sincronizando los Datos Inmobiliarios del Mundo.</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">1</div>
 <div>
-<h2 class="text-3xl font-bold mb-6">Integración inteligente</h2>
-<p class="text-gray-600">
-Mitis sincroniza automáticamente tus propiedades.
-</p>
+<h4 class="text-xl font-bold mb-2">Descubrimiento Automatizado</h4>
+<p class="text-on-surface-variant leading-relaxed">Nuestro Agente Inteligente monitorea las principales plataformas de listados cada 5 minutos.</p>
 </div>
-
-<!-- CAMBIO VIDEO → IMAGEN -->
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">2</div>
 <div>
-<img src="mitis_escritorio_chat.jpg" class="rounded-xl shadow-xl"/>
+<h4 class="text-xl font-bold mb-2">Enriquecimiento Semántico</h4>
+<p class="text-on-surface-variant leading-relaxed">Comprende automáticamente las características de las propiedades.</p>
 </div>
-
 </div>
-
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">3</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Inyección Directa en CRM</h4>
+<p class="text-on-surface-variant leading-relaxed">Los datos limpios se inyectan directamente en tu infraestructura existente.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full aspect-square object-cover" src="mitis_escritorio_chat.jpg" alt="Mitis Escritorio Chat"/>
+</div>
+</div>
+</div>
 </div>
 </section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="max-w-7xl mx-auto px-6 mb-24">
-<div class="bg-black text-white p-16 rounded-2xl text-center">
-
-<h2 class="text-4xl font-bold mb-6">
-Listo para empezar
-</h2>
-
-<a href="#" class="bg-white text-black px-8 py-4 rounded-lg font-bold">
-Solicitar demo
-</a>
-
+<section id="contacto" class="max-w-7xl mx-auto px-6 mb-24 lg:mb-32">
+<div class="bg-primary-container rounded-[2rem] p-12 lg:p-24 relative overflow-hidden text-on-primary-container">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10 max-w-3xl">
+<h2 class="text-4xl lg:text-6xl font-extrabold tracking-tighter mb-8">¿Listo para diseñar el futuro de tu agencia?</h2>
+<p class="text-xl opacity-90 mb-12 font-medium">Únete a más de 200 desarrollos de primer nivel que ya utilizan Mitis Agente Inteligente.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-white text-primary px-10 py-5 rounded-lg font-bold text-lg shadow-xl shadow-black/5 hover:scale-105 transition-all">Agendar una Demo</button>
+<button class="border-2 border-white/30 text-white px-10 py-5 rounded-lg font-bold text-lg hover:bg-white/10 transition-all">Descargar Folleto</button>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 hidden lg:block">
+<img alt="Render abstracto" class="w-[500px] opacity-40 mix-blend-soft-light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRNTfTTBtX7AqZScI7yim9dgN4UC6JSkmsAnzUXKSjsyKmlyhLKvFmsMB1uqVvKH1tZyUzN9HatqCV9bYaeXFA8JZRE3f_HzjpVTMUh-OixxxUTQ6q2T75iZqxsuGxL3_MB7XmpJag1P0Uu-m_Ydmk_rgyY-gTQWGfs6hmI-i3p6e1EeM5uApdnUicsUO8SgGZGxS1lUAtHg52HinjYTP5TLZW9df-r_673GFeDfrDHqywB9bzuNl5Z5eqsH4lLPXwpRJeunpozgHw"/>
+</div>
 </div>
 </section>
-
 </main>
-
-<!-- FOOTER -->
-<footer class="w-full py-12 border-t bg-gray-50">
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-
-<div>
-<div class="font-bold text-xl">Mitis Desarrollos</div>
-<p class="text-xs">© 2024 Mitis Desarrollos</p>
+<div class="flex flex-col gap-4">
+<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
+<p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2024 Mitis Desarrollos. Arquitectura Inteligente.</p>
 </div>
-
-<div class="flex gap-6 text-sm">
-<a href="https://storage.googleapis.com/mitis-privacidad/privacidad.html" target="_blank">
-Política de privacidad
-</a>
+<div class="flex gap-8">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="https://storage.googleapis.com/mitis-privacidad/privacidad.html" target="_blank">Política de privacidad</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Términos del servicio</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Política de cookies</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Soporte</a>
 </div>
-
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">language</span>
+</div>
+</div>
 </div>
 </footer>
 
-</body>
-</html>
+<!-- Script para resaltar la pestaña activa según la sección visible (scroll spy) y al hacer clic -->
+<script>
+  (function() {
+    "use strict";
+
+    // Seleccionamos todos los enlaces del menú con la clase 'nav-link'
+    const navLinks = document.querySelectorAll('.nav-link');
+    // Seleccionamos todas las secciones objetivo (las que tienen ID)
+    const sections = document.querySelectorAll('section[id]');
+
+    // Función para remover la clase 'active' de todos los enlaces
+    function removeActiveClasses() {
+      navLinks.forEach(link => {
+        link.classList.remove(
+          'text-sky-600', 
+          'dark:text-sky-400', 
+          'font-semibold', 
+          'border-b-2', 
+          'border-sky-600', 
+          'dark:border-sky-400', 
+          'pb-1'
+        );
+        // Restauramos las clases base por si acaso
+        link.classList.add('text-slate-600', 'dark:text-slate-400');
+      });
+    }
+
+    // Función para añadir la clase 'active' al enlace correspondiente
+    function setActiveLink(link) {
+      removeActiveClasses();
+      link.classList.remove('text-slate-600', 'dark:text-slate-400');
+      link.classList.add(
+        'text-sky-600', 
+        'dark:text-sky-400', 
+        'font-semibold', 
+        'border-b-2', 
+        'border-sky-600', 
+        'dark:border-sky-400', 
+        'pb-1'
+      );
+    }
+
+    // Función para actualizar el enlace activo basado en el hash de la URL o la sección visible
+    function updateActiveLinkOnScroll() {
+      const scrollPosition = window.scrollY + 100; // Ajuste para compensar el navbar fijo
+
+      // Buscamos la sección actualmente visible
+      let currentSection = null;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSection = section;
+        }
+      });
+
+      // Si no se encontró ninguna (por ejemplo, al inicio antes de llegar a #inicio), usamos #inicio
+      if (!currentSection && sections.length > 0) {
+        currentSection = sections[0];
+      }
+
+      if (currentSection) {
+        const id = currentSection.getAttribute('id');
+        // Buscamos el enlace cuyo href coincida con ese id
+        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+        if (activeLink) {
+          setActiveLink(activeLink);
+        }
+      }
+    }
+
+    // Evento de clic en cada enlace: actualiza el resaltado inmediatamente
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Permitimos el comportamiento normal del enlace (navegación)
+        // pero actualizamos la clase activa de inmediato para mejor feedback
+        setActiveLink(this);
+      });
+    });
+
+    // Evento de scroll para actualizar según la sección visible
+    window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
+
+    // Al cargar la página, establecemos el estado inicial según el hash de la URL o la posición de scroll
+    window.addEventListener('DOMContentLoaded', function() {
+      // Pequeño retraso para asegurar que todo está renderizado
+      setTimeout(() => {
+        // Si hay un hash en la URL, resaltamos ese enlace; si no, usamos el scroll
+        if (window.location.hash) {
+          const hash = window.location.hash;
+          const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
+          if (targetLink) {
+            setActiveLink(targetLink);
+            // Hacemos scroll suave hacia la sección (opcional, pero respetamos la UX)
+            const targetSection = document.querySelector(hash);
+            if (targetSection) {
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            return;
+          }
+        }
+        // Si no hay hash, actualizamos según la posición del scroll
+        updateActiveLinkOnScroll();
+      }, 50);
+    });
+
+    // También escuchamos cambios en el hash (por si el usuario usa los botones del navegador)
+    window.addEventListener('hashchange', function() {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
+        if (targetLink) {
+          setActiveLink(targetLink);
+        }
+      } else {
+        // Si se quita el hash, resaltamos según la posición
+        updateActiveLinkOnScroll();
+      }
+    });
+
+  })();
+</script>
+
+</body></html>
