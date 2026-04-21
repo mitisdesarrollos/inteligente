@@ -85,6 +85,7 @@
         }
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        
         /* Estilos del modal popup */
         .modal-overlay {
             position: fixed;
@@ -151,7 +152,7 @@
         <button class="modal-close" id="closeModalBtn">&times;</button>
         <h3 class="text-2xl font-bold mb-2 text-primary">Solicitá tu prueba gratuita</h3>
         <p class="text-on-surface-variant mb-6 text-sm">Completá los datos y te contactaremos para coordinar el acceso.</p>
-        <form id="pruebaForm" action="mailto:mitisdesarrollos@gmail.com" method="get" enctype="text/plain">
+        <form id="pruebaForm" action="mailto:mitisdesarrollos@gmail.com" method="get" enctype="text/plain" target="_blank">
             <input type="hidden" name="subject" value="Pedir prueba gratuita">
             <div class="space-y-4">
                 <div>
@@ -272,6 +273,7 @@
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Realtor</div>
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Idealista</div>
 </div>
+<!-- Imagen agregada: todas las plataformas en formato horizontal (apaisado) -->
 <div class="mt-6">
 <img alt="Todas las plataformas inmobiliarias" class="w-full h-auto object-contain rounded-lg" src="todas_plataformas.jpg"/>
 </div>
@@ -396,11 +398,12 @@
 </div>
 </footer>
 
-<!-- Script para scroll spy y modales -->
+<!-- Scripts -->
 <script>
   (function() {
     "use strict";
 
+    // --- Scroll spy para navegación ---
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
@@ -468,25 +471,29 @@
       }
     });
 
-    // --- Lógica del modal popup ---
+    // --- Lógica del modal popup (prueba gratuita) ---
     const modal = document.getElementById('pruebaModal');
     const closeBtn = document.getElementById('closeModalBtn');
     const probarMitisBtn = document.getElementById('probarMitisBtn');
     const pruebaGratisBtn = document.getElementById('pruebaGratisBtn');
 
-    function openModal() { modal.classList.add('active'); }
-    function closeModal() { modal.classList.remove('active'); }
+    function openModal() { if (modal) modal.classList.add('active'); }
+    function closeModal() { if (modal) modal.classList.remove('active'); }
 
     if (probarMitisBtn) probarMitisBtn.addEventListener('click', openModal);
     if (pruebaGratisBtn) pruebaGratisBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
     
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) closeModal();
-    });
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+    }
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+      if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
     });
+
   })();
 </script>
+
 </body></html>
