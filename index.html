@@ -152,8 +152,7 @@
         <button class="modal-close" id="closeModalBtn">&times;</button>
         <h3 class="text-2xl font-bold mb-2 text-primary">Solicitá tu prueba gratuita</h3>
         <p class="text-on-surface-variant mb-6 text-sm">Completá los datos y te contactaremos para coordinar el acceso.</p>
-        <form id="pruebaForm" action="mailto:mitisdesarrollos@gmail.com" method="get" enctype="text/plain" target="_blank">
-            <input type="hidden" name="subject" value="Pedir prueba gratuita">
+        <form action="https://formspree.io/f/mqewdwpb" method="POST" target="_blank">
             <div class="space-y-4">
                 <div>
                     <label class="block text-sm font-medium mb-1">Nombre completo *</label>
@@ -165,7 +164,7 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Teléfono (opcional)</label>
-                    <input type="tel" name="Telefono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <input type="tel" name="Teléfono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
                 </div>
                 <div>
                     <label class="block text-sm font-medium mb-1">Inmobiliaria / Empresa</label>
@@ -176,12 +175,11 @@
                     <textarea name="Mensaje" rows="3" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">Hola, quiero solicitar la prueba gratuita de Mitis.</textarea>
                 </div>
                 <button type="submit" class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar solicitud</button>
-                <p class="text-xs text-on-surface-variant mt-2 text-center">Al enviar, se abrirá tu cliente de correo con los datos cargados.</p>
             </div>
         </form>
     </div>
 </div>
-
+      
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 <div class="flex items-center gap-3">
