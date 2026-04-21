@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -81,11 +81,15 @@
         }
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .form-status {
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-<!-- Header simple con logo que vuelve al index -->
 <header class="py-8 px-6 max-w-7xl mx-auto">
     <div class="flex justify-center">
         <a href="index.html" class="inline-block">
@@ -100,44 +104,44 @@
         <p class="text-lg text-on-surface-variant max-w-2xl mx-auto">Completá el formulario y te responderemos a la brevedad.</p>
     </div>
 
-   <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12">
-    <form action="https://formspree.io/f/mqewdwpb" method="POST">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <label class="block text-sm font-medium mb-2">Nombre completo *</label>
-                <input type="text" name="Nombre" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+    <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12">
+        <form id="contactoForm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2">Nombre completo *</label>
+                    <input type="text" name="Nombre" id="nombre" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Correo electrónico *</label>
+                    <input type="email" name="Email" id="email" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Teléfono</label>
+                    <input type="tel" name="Teléfono" id="telefono" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2">Inmobiliaria / Empresa</label>
+                    <input type="text" name="Empresa" id="empresa" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium mb-2">Mensaje *</label>
+                    <textarea name="Mensaje" id="mensaje" rows="5" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Contanos cómo podemos ayudarte..."></textarea>
+                </div>
             </div>
-            <div>
-                <label class="block text-sm font-medium mb-2">Correo electrónico *</label>
-                <input type="email" name="Email" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <button type="submit" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar mensaje</button>
+                <a href="index.html" class="border border-primary text-primary font-medium px-8 py-3 rounded-lg hover:bg-primary/5 transition-all text-center">Volver al inicio</a>
             </div>
-            <div>
-                <label class="block text-sm font-medium mb-2">Teléfono</label>
-                <input type="tel" name="Teléfono" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
-            </div>
-            <div>
-                <label class="block text-sm font-medium mb-2">Inmobiliaria / Empresa</label>
-                <input type="text" name="Empresa" class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent">
-            </div>
-            <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-2">Mensaje *</label>
-                <textarea name="Mensaje" rows="5" required class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Contanos cómo podemos ayudarte..."></textarea>
-            </div>
-        </div>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <button type="submit" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar mensaje</button>
-            <a href="index.html" class="border border-primary text-primary font-medium px-8 py-3 rounded-lg hover:bg-primary/5 transition-all text-center">Volver al inicio</a>
-        </div>
-    </form>
-</div>
-    <!-- Separador sutil -->
+            <div id="formStatus" class="form-status"></div>
+        </form>
+    </div>
+
     <div class="flex items-center justify-center my-16">
         <div class="h-px w-24 bg-primary/30"></div>
         <span class="mx-4 text-primary/60 material-symbols-outlined">database</span>
         <div class="h-px w-24 bg-primary/30"></div>
     </div>
 
-    <!-- Logo grande que linkea al index -->
     <div class="flex justify-center">
         <a href="index.html" class="block max-w-xs md:max-w-md transition-transform hover:scale-105">
             <img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png" alt="Mitis Logo" class="w-full h-auto object-contain"/>
@@ -151,5 +155,51 @@
         <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
     </div>
 </footer>
+
+<script>
+  (function() {
+    const form = document.getElementById('contactoForm');
+    const statusDiv = document.getElementById('formStatus');
+
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        statusDiv.textContent = 'Enviando mensaje...';
+        statusDiv.style.color = '#006591';
+
+        const formData = {
+          Nombre: document.getElementById('nombre').value,
+          Email: document.getElementById('email').value,
+          Teléfono: document.getElementById('telefono').value,
+          Empresa: document.getElementById('empresa').value,
+          Mensaje: document.getElementById('mensaje').value
+        };
+
+        try {
+          const response = await fetch('https://formspree.io/f/mqewdwpb', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+
+          if (response.ok) {
+            statusDiv.textContent = '¡Mensaje enviado con éxito! Te responderemos pronto.';
+            statusDiv.style.color = '#16a34a';
+            form.reset();
+          } else {
+            statusDiv.textContent = 'Hubo un error. Por favor, intentá de nuevo.';
+            statusDiv.style.color = '#ba1a1a';
+          }
+        } catch (error) {
+          statusDiv.textContent = 'Error de conexión. Revisá tu internet.';
+          statusDiv.style.color = '#ba1a1a';
+        }
+      });
+    }
+  })();
+</script>
 
 </body></html>
