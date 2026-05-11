@@ -1,176 +1,148 @@
+# politica_privacidad.html
+
+```html
 <!DOCTYPE html>
 <html class="light" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-
 <title>Políticas de Privacidad | Mitis Desarrollos</title>
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
+<!-- MISMO TAILWIND CONFIG DEL INDEX -->
 <script id="tailwind-config">
-tailwind.config = {
-darkMode: "class",
-theme: {
-extend: {
-colors: {
-"outline-variant": "#bec8d2",
-"tertiary": "#006399",
-"surface-container": "#eceef0",
-"on-secondary-fixed-variant": "#38485d",
-"on-primary-fixed": "#001e2f",
-"primary-fixed": "#c9e6ff",
-"surface-container-high": "#e6e8ea",
-"inverse-on-surface": "#eff1f3",
-"on-secondary-fixed": "#0b1c30",
-"on-background": "#191c1e",
-"tertiary-fixed": "#cde5ff",
-"on-tertiary-fixed-variant": "#004b74",
-"primary-container": "#0ea5e9",
-"surface": "#f7f9fb",
-"inverse-primary": "#89ceff",
-"surface-container-low": "#f2f4f6",
-"background": "#f7f9fb",
-"secondary-fixed": "#d3e4fe",
-"on-primary": "#ffffff",
-"on-primary-container": "#003751",
-"surface-bright": "#f7f9fb",
-"surface-container-highest": "#e0e3e5",
-"primary-fixed-dim": "#89ceff",
-"tertiary-container": "#58a1dc",
-"on-tertiary-container": "#003656",
-"error-container": "#ffdad6",
-"inverse-surface": "#2d3133",
-"on-surface": "#191c1e",
-"on-tertiary": "#ffffff",
-"secondary": "#505f76",
-"surface-dim": "#d8dadc",
-"error": "#ba1a1a",
-"surface-variant": "#e0e3e5",
-"on-primary-fixed-variant": "#004c6e",
-"secondary-container": "#d0e1fb",
-"primary": "#006591",
-"outline": "#6e7881",
-"on-secondary": "#ffffff",
-"surface-tint": "#006591",
-"secondary-fixed-dim": "#b7c8e1",
-"on-surface-variant": "#3e4850",
-"on-error": "#ffffff",
-"on-error-container": "#93000a",
-"on-secondary-container": "#54647a",
-"on-tertiary-fixed": "#001d32",
-"surface-container-lowest": "#ffffff",
-"tertiary-fixed-dim": "#94ccff"
-},
-borderRadius: {
-DEFAULT: "0.125rem",
-lg: "0.25rem",
-xl: "0.5rem",
-full: "0.75rem"
-},
-fontFamily: {
-headline: ["Manrope"],
-body: ["Inter"],
-label: ["Inter"]
-}
-}
-}
-}
+ tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bec8d2",
+                    "tertiary": "#006399",
+                    "surface-container": "#eceef0",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary-fixed": "#001e2f",
+                    "primary-fixed": "#c9e6ff",
+                    "surface-container-high": "#e6e8ea",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed": "#cde5ff",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "primary-container": "#0ea5e9",
+                    "surface": "#f7f9fb",
+                    "inverse-primary": "#89ceff",
+                    "surface-container-low": "#f2f4f6",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#003751",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#89ceff",
+                    "tertiary-container": "#58a1dc",
+                    "on-tertiary-container": "#003656",
+                    "error-container": "#ffdad6",
+                    "inverse-surface": "#2d3133",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#505f76",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed-variant": "#004c6e",
+                    "secondary-container": "#d0e1fb",
+                    "primary": "#006591",
+                    "outline": "#6e7881",
+                    "on-secondary": "#ffffff",
+                    "surface-tint": "#006591",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-surface-variant": "#3e4850",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#54647a",
+                    "on-tertiary-fixed": "#001d32",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#94ccff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
 </script>
 
 <style>
-.material-symbols-outlined{
-font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-body{
-font-family:'Inter',sans-serif;
+body {
+font-family: 'Inter', sans-serif;
 }
 
-h1,h2,h3,h4{
-font-family:'Manrope',sans-serif;
+h1,h2,h3,h4 {
+font-family: 'Manrope', sans-serif;
 }
 </style>
-
 </head>
 
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-<!-- NAVBAR -->
+<!-- HEADER COPIADO DEL INDEX -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
-
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
 <div class="flex items-center gap-3">
-
 <a href="https://mitisdesarrollos.github.io/inteligente/" class="flex items-center gap-3">
-
-<img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png"
-alt="Mitis Logo"
-class="h-10 w-auto object-contain"/>
-
-<span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">
-Mitis Desarrollos
-</span>
-
+<img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png" alt="Mitis Logo" class="h-10 w-auto object-contain"/>
+<span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Mitis Desarrollos</span>
 </a>
-
 </div>
 
+<!-- BOTONERA IDÉNTICA AL INDEX -->
 <div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-tight font-medium">
-
-<a class="text-slate-600 hover:text-slate-900 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/#inicio">
-Inicio
-</a>
-
-<a class="text-slate-600 hover:text-slate-900 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/#productos">
-Agentes / Programas
-</a>
-
-<a class="text-slate-600 hover:text-slate-900 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/#ventajas-mitis">
-Ventajas Mitis
-</a>
-
-<a class="text-slate-600 hover:text-slate-900 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/contacto.html">
-Contactanos
-</a>
-
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/#inicio">Inicio</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/#productos">Agentes / Programas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/#productos">Descargas</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/#ventajas-mitis">Ventajas Mitis</a>
+<a class="nav-link text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/contacto.html">Contactanos</a>
 </div>
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#contacto"
-class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">
+<a href="https://mitisdesarrollos.github.io/inteligente/#contacto" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">
 Solicitar información
 </a>
 
 </div>
-
 <div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
-
 </nav>
 
-<!-- HERO -->
-<section class="pt-36 pb-14">
+<!-- CONTENIDO -->
+<main class="pt-32 pb-24">
 
-<div class="max-w-5xl mx-auto px-6">
-
+<section class="max-w-5xl mx-auto px-6 mb-16">
 <div class="text-center mb-16">
 
 <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">
-Políticas institucionales MITIS
+Políticas oficiales MITIS
 </span>
 
-<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
-Privacidad, seguridad y
+<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
+Privacidad y
 <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">
-protección de datos
+seguridad operativa
 </span>
 </h1>
 
@@ -181,343 +153,96 @@ confidencialidad y estabilidad operativa orientados al sector inmobiliario.
 
 </div>
 
-<!-- INTRO -->
-<div class="bg-surface-container-lowest rounded-2xl shadow-xl border border-surface-container-high p-10 lg:p-14 mb-10">
-
-<div class="flex items-start gap-5">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center flex-shrink-0">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-shield_lock
-</span>
-
-</div>
-
-<div>
-
-<h2 class="text-3xl font-bold text-on-surface mb-5">
-Compromiso institucional
-</h2>
-
-<p class="text-on-surface-variant leading-relaxed text-lg">
-
-La implementación de <strong>MITIS</strong> tiene como objetivo potenciar
-la capacidad operativa de las inmobiliarias mediante automatización,
-procesamiento inteligente de consultas y atención digital asistida por IA.
-
-La información procesada por el sistema pertenece exclusivamente a cada firma
-inmobiliaria suscriptora y es tratada bajo protocolos de seguridad,
-confidencialidad y aislamiento de datos.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- BLOQUES -->
 <div class="space-y-8">
 
-<!-- 1 -->
-<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
-
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-encrypted
-</span>
-
-</div>
-
-<h2 class="text-3xl font-bold">
-1. Seguridad y encriptación
-</h2>
-
-</div>
-
-<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
-
-<p>
-MITIS utiliza protocolos modernos de seguridad para proteger la transmisión
-y procesamiento de información entre los canales de comunicación,
-las APIs externas y la infraestructura en la nube.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">Compromiso institucional</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+La implementación de <strong>MITIS</strong> tiene como objetivo potenciar la capacidad operativa de las inmobiliarias mediante automatización, procesamiento inteligente de consultas y atención digital asistida por IA.
+<br><br>
+La información procesada por el sistema pertenece exclusivamente a cada firma inmobiliaria suscriptora y es tratada bajo protocolos de seguridad, confidencialidad y aislamiento de datos.
 </p>
+</div>
 
-<p>
-Las conexiones entre servicios utilizan canales cifrados mediante HTTPS/TLS
-y autenticación privada para reducir riesgos de interceptación,
-manipulación o acceso no autorizado.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">1. Seguridad y encriptación</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+MITIS utiliza protocolos modernos de seguridad para proteger la transmisión y procesamiento de información entre los canales de comunicación, las APIs externas y la infraestructura en la nube.
+<br><br>
+Las conexiones entre servicios utilizan canales cifrados mediante HTTPS/TLS y autenticación privada para reducir riesgos de interceptación, manipulación o acceso no autorizado.
 </p>
+</div>
 
-<p>
-Los mensajes procesados por el sistema son utilizados exclusivamente
-para generar respuestas automatizadas, búsquedas internas y operaciones
-relacionadas con el funcionamiento del asistente inteligente.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">2. Propiedad de la información</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+Toda la información relacionada con clientes, leads, propiedades, consultas, conversaciones, números telefónicos y operaciones comerciales pertenece exclusivamente a la inmobiliaria suscriptora.
+<br><br>
+MITIS no vende, distribuye, comparte ni comercializa datos provenientes de las empresas que utilizan la plataforma.
 </p>
-
 </div>
 
-</div>
-
-<!-- 2 -->
-<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
-
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-apartment
-</span>
-
-</div>
-
-<h2 class="text-3xl font-bold">
-2. Propiedad de la información
-</h2>
-
-</div>
-
-<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
-
-<p>
-Toda la información relacionada con clientes, leads, propiedades,
-consultas, conversaciones, números telefónicos y operaciones comerciales
-pertenece exclusivamente a la inmobiliaria suscriptora.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">3. Infraestructura tecnológica</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+MITIS puede integrarse con servicios cloud, APIs de inteligencia artificial, plataformas de mensajería y sistemas automatizados necesarios para brindar funcionalidades operativas a la inmobiliaria.
+<br><br>
+La plataforma no accede a cámaras, micrófonos, archivos privados o contenido ajeno al funcionamiento autorizado del servicio.
 </p>
+</div>
 
-<p>
-MITIS no vende, distribuye, comparte ni comercializa datos provenientes
-de las empresas que utilizan la plataforma.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">4. Facturación y pagos</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+MITIS puede ofrecer distintas modalidades de contratación y pago, incluyendo transferencias bancarias, plataformas de pago online, suscripciones automáticas o enlaces de pago digitales.
+<br><br>
+La continuidad del servicio puede depender del cumplimiento de las obligaciones de pago correspondientes al plan contratado.
 </p>
+</div>
 
-<p>
-La infraestructura está diseñada para operar bajo separación lógica de datos
-entre inmobiliarias, evitando el cruce de información entre firmas.
+<div class="bg-surface-container-lowest p-10 rounded-2xl shadow-xl border border-surface-container-high">
+<h2 class="text-3xl font-bold mb-6">5. Compromiso de confidencialidad</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+MITIS mantiene un compromiso de confidencialidad respecto a la información operativa de las inmobiliarias suscriptoras.
+<br><br>
+No se utilizan conversaciones privadas, bases de datos, leads comerciales o información estratégica para fines publicitarios, reventa de datos o entrenamiento público de modelos externos.
 </p>
-
 </div>
 
 </div>
-
-<!-- 3 -->
-<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
-
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-hub
-</span>
-
-</div>
-
-<h2 class="text-3xl font-bold">
-3. Infraestructura tecnológica
-</h2>
-
-</div>
-
-<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
-
-<p>
-MITIS puede integrarse con servicios cloud, APIs de inteligencia artificial,
-plataformas de mensajería y sistemas automatizados necesarios
-para brindar funcionalidades operativas a la inmobiliaria.
-</p>
-
-<p>
-La plataforma puede utilizar proveedores tecnológicos externos
-para procesamiento de lenguaje, automatización, almacenamiento
-y conectividad, siempre bajo estándares de seguridad razonables
-y orientados a la continuidad operativa.
-</p>
-
-<p>
-El sistema no realiza modificaciones invasivas sobre dispositivos
-personales ni accede a cámaras, micrófonos, archivos privados
-o contenido ajeno al funcionamiento autorizado del servicio.
-</p>
-
-</div>
-
-</div>
-
-<!-- 4 -->
-<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
-
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-payments
-</span>
-
-</div>
-
-<h2 class="text-3xl font-bold">
-4. Facturación y pagos
-</h2>
-
-</div>
-
-<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
-
-<p>
-MITIS puede ofrecer distintas modalidades de contratación y pago,
-incluyendo transferencias bancarias, plataformas de pago online,
-suscripciones automáticas o enlaces de pago digitales.
-</p>
-
-<p>
-La continuidad del servicio puede depender del cumplimiento
-de las obligaciones de pago correspondientes al plan contratado.
-</p>
-
-<p>
-Los precios, límites operativos y características de cada plan
-pueden actualizarse según mejoras tecnológicas, ampliación
-de funcionalidades o cambios en costos de infraestructura.
-</p>
-
-</div>
-
-</div>
-
-<!-- 5 -->
-<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
-
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-primary text-3xl">
-policy
-</span>
-
-</div>
-
-<h2 class="text-3xl font-bold">
-5. Compromiso de confidencialidad
-</h2>
-
-</div>
-
-<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
-
-<p>
-MITIS mantiene un compromiso de confidencialidad respecto
-a la información operativa de las inmobiliarias suscriptoras.
-</p>
-
-<p>
-No se utilizan conversaciones privadas, bases de datos,
-leads comerciales o información estratégica para fines publicitarios,
-reventa de datos o entrenamiento público de modelos externos.
-</p>
-
-<p>
-La prioridad operativa de MITIS es asistir a la inmobiliaria
-en la automatización y atención de clientes,
-manteniendo la privacidad de su actividad comercial.
-</p>
-
-</div>
-
-</div>
-
-<!-- BLOQUE FINAL -->
-<div class="bg-primary-container rounded-[2rem] p-12 lg:p-16 relative overflow-hidden text-on-primary-container">
-
-<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-
-<div class="relative z-10">
-
-<h2 class="text-4xl lg:text-5xl font-extrabold tracking-tighter mb-8">
-Actualizaciones y vigencia
-</h2>
-
-<p class="text-lg opacity-90 max-w-3xl leading-relaxed">
-Estas políticas pueden actualizarse periódicamente para adaptarse
-a mejoras tecnológicas, cambios normativos o nuevas funcionalidades
-del sistema.
-
-El uso continuado de MITIS implica la aceptación de las políticas
-vigentes publicadas oficialmente por la plataforma.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
 </section>
+</main>
 
-<!-- FOOTER -->
+<!-- FOOTER IDÉNTICO AL INDEX -->
 <footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
-
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
 <div class="flex flex-col gap-4">
-
-<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">
-Mitis Desarrollos
-</div>
-
+<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
 <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">
 © 2026 Mitis Desarrollos. Arquitectura Inteligente.
 </p>
-
 </div>
 
-<div class="flex gap-8 flex-wrap justify-center">
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/politica_privacidad.html"
-target="_blank">
-Política de privacidad
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="#">
-Términos del servicio
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="#">
-Política de cookies
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="mailto:mitisdesarrollos@gmail.com">
-Soporte
-</a>
-
+<div class="flex gap-8">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/politica_privacidad.html" target="_blank">Política de privacidad</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Términos del servicio</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Política de cookies</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Soporte</a>
 </div>
 
 <div class="flex gap-4">
-
 <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
 <span class="material-symbols-outlined text-sm">share</span>
 </div>
-
 <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
 <span class="material-symbols-outlined text-sm">language</span>
 </div>
-
 </div>
 
 </div>
-
 </footer>
 
 </body>
 </html>
+```
