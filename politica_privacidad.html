@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>
+<html class="light" lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
 <title>Políticas de Privacidad | Mitis Desarrollos</title>
 
@@ -12,117 +12,183 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
+<script id="tailwind-config">
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+colors: {
+"outline-variant": "#bec8d2",
+"tertiary": "#006399",
+"surface-container": "#eceef0",
+"on-secondary-fixed-variant": "#38485d",
+"on-primary-fixed": "#001e2f",
+"primary-fixed": "#c9e6ff",
+"surface-container-high": "#e6e8ea",
+"inverse-on-surface": "#eff1f3",
+"on-secondary-fixed": "#0b1c30",
+"on-background": "#191c1e",
+"tertiary-fixed": "#cde5ff",
+"on-tertiary-fixed-variant": "#004b74",
+"primary-container": "#0ea5e9",
+"surface": "#f7f9fb",
+"inverse-primary": "#89ceff",
+"surface-container-low": "#f2f4f6",
+"background": "#f7f9fb",
+"secondary-fixed": "#d3e4fe",
+"on-primary": "#ffffff",
+"on-primary-container": "#003751",
+"surface-bright": "#f7f9fb",
+"surface-container-highest": "#e0e3e5",
+"primary-fixed-dim": "#89ceff",
+"tertiary-container": "#58a1dc",
+"on-tertiary-container": "#003656",
+"error-container": "#ffdad6",
+"inverse-surface": "#2d3133",
+"on-surface": "#191c1e",
+"on-tertiary": "#ffffff",
+"secondary": "#505f76",
+"surface-dim": "#d8dadc",
+"error": "#ba1a1a",
+"surface-variant": "#e0e3e5",
+"on-primary-fixed-variant": "#004c6e",
+"secondary-container": "#d0e1fb",
+"primary": "#006591",
+"outline": "#6e7881",
+"on-secondary": "#ffffff",
+"surface-tint": "#006591",
+"secondary-fixed-dim": "#b7c8e1",
+"on-surface-variant": "#3e4850",
+"on-error": "#ffffff",
+"on-error-container": "#93000a",
+"on-secondary-container": "#54647a",
+"on-tertiary-fixed": "#001d32",
+"surface-container-lowest": "#ffffff",
+"tertiary-fixed-dim": "#94ccff"
+},
+borderRadius: {
+DEFAULT: "0.125rem",
+lg: "0.25rem",
+xl: "0.5rem",
+full: "0.75rem"
+},
+fontFamily: {
+headline: ["Manrope"],
+body: ["Inter"],
+label: ["Inter"]
+}
+}
+}
+}
+</script>
+
 <style>
+.material-symbols-outlined{
+font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
 body{
-    font-family:'Inter',sans-serif;
+font-family:'Inter',sans-serif;
 }
 
 h1,h2,h3,h4{
-    font-family:'Manrope',sans-serif;
-}
-
-.material-symbols-outlined{
-    font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
-}
-
-html{
-    scroll-behavior:smooth;
+font-family:'Manrope',sans-serif;
 }
 </style>
 
 </head>
 
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
 <!-- NAVBAR -->
-<nav class="fixed top-0 w-full z-50 bg-white/85 backdrop-blur-xl border-b border-slate-200">
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
 
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#inicio" class="flex items-center gap-3">
+<div class="flex items-center gap-3">
 
-<img src="logo_mitis.png"
-alt="Logo Mitis"
-class="w-9 h-9 object-contain"/>
+<a href="https://mitisdesarrollos.github.io/inteligente/" class="flex items-center gap-3">
 
-<div class="text-2xl font-black tracking-tight text-slate-900">
+<img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png"
+alt="Mitis Logo"
+class="h-10 w-auto object-contain"/>
+
+<span class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">
 Mitis Desarrollos
-</div>
+</span>
 
 </a>
 
-<div class="hidden md:flex items-center gap-8 font-manrope text-sm font-medium">
+</div>
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#inicio"
-class="text-slate-600 hover:text-slate-900 transition-colors">
+<div class="hidden md:flex items-center gap-8 font-manrope text-sm tracking-tight font-medium">
+
+<a class="text-slate-600 hover:text-slate-900 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/#inicio">
 Inicio
 </a>
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#productos"
-class="text-slate-600 hover:text-slate-900 transition-colors">
-Soluciones
+<a class="text-slate-600 hover:text-slate-900 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/#productos">
+Agentes / Programas
 </a>
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#nosotros"
-class="text-slate-600 hover:text-slate-900 transition-colors">
-Nosotros
+<a class="text-slate-600 hover:text-slate-900 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/#ventajas-mitis">
+Ventajas Mitis
 </a>
 
-<a href="https://mitisdesarrollos.github.io/inteligente/#contacto"
-class="text-slate-600 hover:text-slate-900 transition-colors">
-Contacto
+<a class="text-slate-600 hover:text-slate-900 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/contacto.html">
+Contactanos
 </a>
 
 </div>
 
 <a href="https://mitisdesarrollos.github.io/inteligente/#contacto"
-class="bg-sky-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-sky-700 transition-all">
+class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-semibold active:scale-95 duration-200 ease-in-out">
 Solicitar información
 </a>
 
 </div>
+
+<div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
+
 </nav>
 
 <!-- HERO -->
-<section class="pt-40 pb-20">
+<section class="pt-36 pb-14">
 
 <div class="max-w-5xl mx-auto px-6">
 
 <div class="text-center mb-16">
 
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-xs font-bold uppercase tracking-[0.2em] mb-6">
+<span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">
+Políticas institucionales MITIS
+</span>
 
-<span class="material-symbols-outlined text-base">verified_user</span>
-
-Políticas oficiales de privacidad y seguridad
-
-</div>
-
-<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-
-Protección de datos,
-<br>
-privacidad y operación segura
-
+<h1 class="text-5xl lg:text-6xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
+Privacidad, seguridad y
+<span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">
+protección de datos
+</span>
 </h1>
 
-<p class="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-
+<p class="text-on-surface-variant text-lg lg:text-xl max-w-3xl mx-auto font-light leading-relaxed">
 MITIS fue diseñado para operar con estándares profesionales de seguridad,
 confidencialidad y estabilidad operativa orientados al sector inmobiliario.
-
 </p>
 
 </div>
 
 <!-- INTRO -->
-<div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-14 mb-10">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl border border-surface-container-high p-10 lg:p-14 mb-10">
 
 <div class="flex items-start gap-5">
 
-<div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center flex-shrink-0">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center flex-shrink-0">
 
-<span class="material-symbols-outlined text-sky-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 shield_lock
 </span>
 
@@ -130,11 +196,11 @@ shield_lock
 
 <div>
 
-<h2 class="text-3xl font-bold text-slate-900 mb-5">
+<h2 class="text-3xl font-bold text-on-surface mb-5">
 Compromiso institucional
 </h2>
 
-<p class="text-slate-600 leading-relaxed text-lg">
+<p class="text-on-surface-variant leading-relaxed text-lg">
 
 La implementación de <strong>MITIS</strong> tiene como objetivo potenciar
 la capacidad operativa de las inmobiliarias mediante automatización,
@@ -156,27 +222,25 @@ confidencialidad y aislamiento de datos.
 <div class="space-y-8">
 
 <!-- 1 -->
-<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
 
 <div class="flex items-center gap-4 mb-6">
 
-<div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
 
-<span class="material-symbols-outlined text-slate-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 encrypted
 </span>
 
 </div>
 
-<div>
-<h2 class="text-3xl font-bold text-slate-900">
+<h2 class="text-3xl font-bold">
 1. Seguridad y encriptación
 </h2>
-</div>
 
 </div>
 
-<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
 
 <p>
 MITIS utiliza protocolos modernos de seguridad para proteger la transmisión
@@ -201,27 +265,25 @@ relacionadas con el funcionamiento del asistente inteligente.
 </div>
 
 <!-- 2 -->
-<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
 
 <div class="flex items-center gap-4 mb-6">
 
-<div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
 
-<span class="material-symbols-outlined text-sky-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 apartment
 </span>
 
 </div>
 
-<div>
-<h2 class="text-3xl font-bold text-slate-900">
+<h2 class="text-3xl font-bold">
 2. Propiedad de la información
 </h2>
-</div>
 
 </div>
 
-<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
 
 <p>
 Toda la información relacionada con clientes, leads, propiedades,
@@ -244,27 +306,25 @@ entre inmobiliarias, evitando el cruce de información entre firmas.
 </div>
 
 <!-- 3 -->
-<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
 
 <div class="flex items-center gap-4 mb-6">
 
-<div class="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
 
-<span class="material-symbols-outlined text-emerald-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 hub
 </span>
 
 </div>
 
-<div>
-<h2 class="text-3xl font-bold text-slate-900">
+<h2 class="text-3xl font-bold">
 3. Infraestructura tecnológica
 </h2>
-</div>
 
 </div>
 
-<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
 
 <p>
 MITIS puede integrarse con servicios cloud, APIs de inteligencia artificial,
@@ -290,27 +350,25 @@ o contenido ajeno al funcionamiento autorizado del servicio.
 </div>
 
 <!-- 4 -->
-<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
 
 <div class="flex items-center gap-4 mb-6">
 
-<div class="w-14 h-14 rounded-2xl bg-amber-100 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
 
-<span class="material-symbols-outlined text-amber-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 payments
 </span>
 
 </div>
 
-<div>
-<h2 class="text-3xl font-bold text-slate-900">
+<h2 class="text-3xl font-bold">
 4. Facturación y pagos
 </h2>
-</div>
 
 </div>
 
-<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
 
 <p>
 MITIS puede ofrecer distintas modalidades de contratación y pago,
@@ -334,27 +392,25 @@ de funcionalidades o cambios en costos de infraestructura.
 </div>
 
 <!-- 5 -->
-<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-container-high shadow-lg p-10">
 
 <div class="flex items-center gap-4 mb-6">
 
-<div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center">
+<div class="w-14 h-14 rounded-2xl bg-primary-container/10 flex items-center justify-center">
 
-<span class="material-symbols-outlined text-rose-700 text-3xl">
+<span class="material-symbols-outlined text-primary text-3xl">
 policy
 </span>
 
 </div>
 
-<div>
-<h2 class="text-3xl font-bold text-slate-900">
+<h2 class="text-3xl font-bold">
 5. Compromiso de confidencialidad
 </h2>
-</div>
 
 </div>
 
-<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<div class="space-y-5 text-on-surface-variant leading-relaxed text-[17px]">
 
 <p>
 MITIS mantiene un compromiso de confidencialidad respecto
@@ -377,97 +433,25 @@ manteniendo la privacidad de su actividad comercial.
 
 </div>
 
-<!-- 6 -->
-<div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12 text-white shadow-2xl overflow-hidden relative">
+<!-- BLOQUE FINAL -->
+<div class="bg-primary-container rounded-[2rem] p-12 lg:p-16 relative overflow-hidden text-on-primary-container">
 
-<div class="absolute -right-24 -top-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl"></div>
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
 
 <div class="relative z-10">
 
-<div class="flex items-center gap-4 mb-6">
-
-<div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
-
-<span class="material-symbols-outlined text-white text-3xl">
-verified
-</span>
-
-</div>
-
-<div>
-<h2 class="text-3xl font-bold">
+<h2 class="text-4xl lg:text-5xl font-extrabold tracking-tighter mb-8">
 Actualizaciones y vigencia
 </h2>
-</div>
 
-</div>
-
-<p class="text-slate-300 text-lg leading-relaxed">
-
+<p class="text-lg opacity-90 max-w-3xl leading-relaxed">
 Estas políticas pueden actualizarse periódicamente para adaptarse
 a mejoras tecnológicas, cambios normativos o nuevas funcionalidades
 del sistema.
 
 El uso continuado de MITIS implica la aceptación de las políticas
 vigentes publicadas oficialmente por la plataforma.
-
 </p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-<section class="pb-24">
-
-<div class="max-w-5xl mx-auto px-6">
-
-<div class="bg-sky-600 rounded-[2rem] overflow-hidden relative p-14 text-white shadow-2xl">
-
-<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-
-<div class="relative z-10">
-
-<h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight mb-6">
-
-Tecnología diseñada
-<br>
-para inmobiliarias
-
-</h2>
-
-<p class="text-sky-100 text-lg max-w-2xl leading-relaxed mb-10">
-
-MITIS combina automatización, inteligencia artificial
-y gestión operativa en una infraestructura enfocada
-en velocidad, estabilidad y privacidad.
-
-</p>
-
-<div class="flex flex-wrap gap-4">
-
-<a href="https://mitisdesarrollos.github.io/inteligente/"
-target="_blank"
-class="bg-white text-sky-700 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-all">
-
-Ir al sitio oficial
-
-</a>
-
-<a href="mailto:mitisdesarrollos@gmail.com"
-class="border border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all">
-
-Contactar soporte
-
-</a>
-
-</div>
 
 </div>
 
@@ -478,47 +462,56 @@ Contactar soporte
 </section>
 
 <!-- FOOTER -->
-<footer class="w-full py-12 border-t border-slate-200 bg-white">
+<footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
 
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
 <div class="flex flex-col gap-4">
 
-<div class="flex items-center gap-3">
-
-<img src="logo_mitis.png"
-alt="Logo Mitis"
-class="w-8 h-8 object-contain"/>
-
-<div class="font-black text-slate-900 text-xl">
+<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">
 Mitis Desarrollos
 </div>
 
-</div>
-
-<p class="text-slate-500 text-xs uppercase tracking-widest">
+<p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">
 © 2026 Mitis Desarrollos. Arquitectura Inteligente.
 </p>
 
 </div>
 
-<div class="flex flex-wrap justify-center gap-8">
+<div class="flex gap-8 flex-wrap justify-center">
 
-<a href="https://storage.googleapis.com/mitis-privacidad/privacidad.html"
-target="_blank"
-class="text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/politica_privacidad.html"
+target="_blank">
 Política de privacidad
 </a>
 
-<a href="#"
-class="text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
+href="#">
 Términos del servicio
 </a>
 
-<a href="mailto:mitisdesarrollos@gmail.com"
-class="text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
+href="#">
+Política de cookies
+</a>
+
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
+href="mailto:mitisdesarrollos@gmail.com">
 Soporte
 </a>
+
+</div>
+
+<div class="flex gap-4">
+
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">language</span>
+</div>
 
 </div>
 
