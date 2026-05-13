@@ -461,6 +461,131 @@ Soporte
 
 </footer>
 
+<!-- ========================================= -->
+<!-- BANNER DE COOKIES -->
+<!-- ========================================= -->
+
+<div id="cookieBanner"
+     class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
+
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+
+    <div class="flex-1">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+        Política de cookies
+      </h3>
+
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Utilizamos cookies para mejorar la experiencia del usuario, analizar el tráfico del sitio y optimizar nuestros servicios.
+
+        Podés aceptar o rechazar las cookies.
+
+        Más información en nuestra
+        <a href="politica_cookies.html"
+           class="text-sky-600 hover:underline">
+           Política de Cookies
+        </a>.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-3 w-full lg:w-auto">
+
+      <button
+        id="acceptCookies"
+        class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+        Aceptar
+      </button>
+
+      <button
+        id="rejectCookies"
+        class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
+        Rechazar
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ========================================= -->
+<!-- SCRIPT COOKIES -->
+<!-- ========================================= -->
+
+<script>
+(function () {
+  "use strict";
+
+  const cookieBanner = document.getElementById("cookieBanner");
+  const acceptBtn = document.getElementById("acceptCookies");
+  const rejectBtn = document.getElementById("rejectCookies");
+
+  function setCookie(name, value, days) {
+    let expires = "";
+
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toUTCString();
+    }
+
+    document.cookie =
+      name + "=" + value + expires + "; path=/; SameSite=Lax";
+  }
+
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(";");
+
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+
+      while (c.charAt(0) === " ") {
+        c = c.substring(1, c.length);
+      }
+
+      if (c.indexOf(nameEQ) === 0) {
+        return c.substring(nameEQ.length, c.length);
+      }
+    }
+
+    return null;
+  }
+
+  function showBanner() {
+    if (cookieBanner) {
+      cookieBanner.classList.remove("hidden");
+    }
+  }
+
+  function hideBanner() {
+    if (cookieBanner) {
+      cookieBanner.classList.add("hidden");
+    }
+  }
+
+  const cookieConsent = getCookie("mitis_cookie_consent");
+
+  if (!cookieConsent) {
+    showBanner();
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", function () {
+      setCookie("mitis_cookie_consent", "accepted", 365);
+      hideBanner();
+    });
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", function () {
+      setCookie("mitis_cookie_consent", "rejected", 365);
+      hideBanner();
+    });
+  }
+
+})();
+</script>
+
 </body>
 </
 ```
