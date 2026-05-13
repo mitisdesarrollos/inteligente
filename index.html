@@ -580,48 +580,15 @@
   })();
 </script>
 <!-- Banner de Cookies -->
-<div id="cookieBanner" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xl rounded-2xl p-6 z-[9999] hidden">
-    
-    <div class="flex flex-col lg:flex-row gap-6 lg:items-center lg:justify-between">
-        
-        <div class="flex-1">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
-                Política de Cookies
-            </h3>
+<!-- ========================================= -->
+<!-- BANNER DE COOKIES -->
+<!-- ========================================= -->
 
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Utilizamos cookies para mejorar la experiencia del usuario, analizar tráfico y optimizar nuestros servicios. 
-                Podés aceptar todas las cookies o configurar tus preferencias.
-            </p>
+<div id="cookieBanner"
+     class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
 
-            <a href="politica_cookies.html"
-               class="inline-block mt-3 text-sm font-semibold text-sky-600 hover:text-sky-500 transition-colors">
-               Leer política de cookies
-            </a>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-3">
-            
-            <button id="rejectCookies"
-                class="px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
-                Rechazar
-            </button>
-
-            <button id="acceptCookies"
-                class="px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 shadow-lg shadow-sky-600/20 transition-all">
-                Aceptar
-            </button>
-
-        </div>
-    </div>
-</div>
-
-<script>
-<!-- Banner de Cookies -->
-<div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
-  
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-    
+
     <div class="flex-1">
       <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
         Política de cookies
@@ -629,32 +596,39 @@
 
       <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
         Utilizamos cookies para mejorar la experiencia del usuario, analizar el tráfico del sitio y optimizar nuestros servicios.
-        Podés aceptar todas las cookies o configurar tus preferencias.
+
+        Podés aceptar o rechazar las cookies.
+
         Más información en nuestra
-        <a href="politica_cookies.html" class="text-sky-600 hover:underline">
-          Política de Cookies
+        <a href="politica_cookies.html"
+           class="text-sky-600 hover:underline">
+           Política de Cookies
         </a>.
       </p>
     </div>
 
     <div class="flex flex-wrap gap-3 w-full lg:w-auto">
+
       <button
         id="acceptCookies"
-        class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
-      >
+        class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
         Aceptar
       </button>
 
       <button
         id="rejectCookies"
-        class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
-      >
+        class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
         Rechazar
       </button>
+
     </div>
 
   </div>
 </div>
+
+<!-- ========================================= -->
+<!-- SCRIPT COOKIES -->
+<!-- ========================================= -->
 
 <script>
 (function () {
@@ -673,7 +647,8 @@
       expires = "; expires=" + date.toUTCString();
     }
 
-    document.cookie = name + "=" + value + expires + "; path=/; SameSite=Lax";
+    document.cookie =
+      name + "=" + value + expires + "; path=/; SameSite=Lax";
   }
 
   function getCookie(name) {
@@ -695,15 +670,15 @@
     return null;
   }
 
-  function hideBanner() {
-    if (cookieBanner) {
-      cookieBanner.classList.add("hidden");
-    }
-  }
-
   function showBanner() {
     if (cookieBanner) {
       cookieBanner.classList.remove("hidden");
+    }
+  }
+
+  function hideBanner() {
+    if (cookieBanner) {
+      cookieBanner.classList.add("hidden");
     }
   }
 
@@ -729,4 +704,5 @@
 
 })();
 </script>
+
 </body></html>
