@@ -384,16 +384,34 @@
 <div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
 <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
 </div>
-<div class="flex gap-8">
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="https://mitisdesarrollos.github.io/inteligente/politica_privacidad.html" target="_blank">Política de privacidad</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Términos del servicio</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Política de cookies</a>
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="#">Soporte</a>
+
+<div class="flex flex-wrap justify-center gap-6 text-center">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+href="politica_privacidad.html">
+Política de privacidad
+</a>
+
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+href="terminos_servicio.html">
+Términos del servicio
+</a>
+
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+href="politica_cookies.html">
+Política de cookies
+</a>
+
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+href="https://mitisdesarrollos.github.io/inteligente/contacto.html">
+Soporte
+</a>
 </div>
+
 <div class="flex gap-4">
 <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
 <span class="material-symbols-outlined text-sm">share</span>
 </div>
+
 <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
 <span class="material-symbols-outlined text-sm">language</span>
 </div>
@@ -545,5 +563,66 @@
 
   })();
 </script>
+<!-- Banner de Cookies -->
+<div id="cookieBanner" class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xl rounded-2xl p-6 z-[9999] hidden">
+    
+    <div class="flex flex-col lg:flex-row gap-6 lg:items-center lg:justify-between">
+        
+        <div class="flex-1">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                Política de Cookies
+            </h3>
 
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Utilizamos cookies para mejorar la experiencia del usuario, analizar tráfico y optimizar nuestros servicios. 
+                Podés aceptar todas las cookies o configurar tus preferencias.
+            </p>
+
+            <a href="politica_cookies.html"
+               class="inline-block mt-3 text-sm font-semibold text-sky-600 hover:text-sky-500 transition-colors">
+               Leer política de cookies
+            </a>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            
+            <button id="rejectCookies"
+                class="px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                Rechazar
+            </button>
+
+            <button id="acceptCookies"
+                class="px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700 shadow-lg shadow-sky-600/20 transition-all">
+                Aceptar
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+
+    const cookieConsent = localStorage.getItem('mitis_cookie_consent');
+
+    if (!cookieConsent) {
+        cookieBanner.classList.remove('hidden');
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('mitis_cookie_consent', 'accepted');
+        cookieBanner.classList.add('hidden');
+    });
+
+    rejectBtn.addEventListener('click', () => {
+        localStorage.setItem('mitis_cookie_consent', 'rejected');
+        cookieBanner.classList.add('hidden');
+    });
+
+})();
+</script>
 </body></html>
