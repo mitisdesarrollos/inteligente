@@ -548,33 +548,52 @@ vigentes publicadas oficialmente por la plataforma.
 
   shareBtn.addEventListener("click", async function () {
 
-    const shareData = {
-      title: "Mitis Desarrollos",
-      text: "Conocé Mitis Desarrollos",
-      url: window.location.href
-    };
+    const shareUrl = window.location.href;
 
-    try {
+    // CELULARES
+    if (navigator.share) {
 
-      if (navigator.share) {
+      try {
 
-        await navigator.share(shareData);
+        await navigator.share({
+          title: "Mitis Desarrollos",
+          text: "Conocé Mitis Desarrollos",
+          url: shareUrl
+        });
 
-      } else {
-
-        await navigator.clipboard.writeText(window.location.href);
-
-        alert("Enlace copiado al portapapeles");
-
+      } catch (err) {
+        console.log("Compartir cancelado");
       }
 
+      return;
+    }
+
+    // COMPUTADORA
+    try {
+
+      await navigator.clipboard.writeText(shareUrl);
+
+      alert("Enlace copiado al portapapeles:\n\n" + shareUrl);
+
     } catch (err) {
-      console.log("Compartir cancelado");
+
+      // fallback antiguo
+      const tempInput = document.createElement("input");
+      tempInput.value = shareUrl;
+
+      document.body.appendChild(tempInput);
+
+      tempInput.select();
+      document.execCommand("copy");
+
+      document.body.removeChild(tempInput);
+
+      alert("Enlace copiado:\n\n" + shareUrl);
     }
 
   });
 
 })();
-</script> 
+</script>
 </body>
 </html>
