@@ -1,4 +1,4 @@
-﻿```html
+﻿
 <!DOCTYPE html>
 <html class="light" lang="es">
 
@@ -447,14 +447,17 @@ La utilización continuada de la plataforma implica
     </div>
 
     <div class="flex gap-4">
-      <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-        <span class="material-symbols-outlined text-sm">share</span>
-      </div>
 
-      <div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-        <span class="material-symbols-outlined text-sm">language</span>
-      </div>
-    </div>
+  <!-- BOTÓN COMPARTIR -->
+  <button
+    id="shareBtn"
+    class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer"
+    aria-label="Compartir sitio"
+  >
+    <span class="material-symbols-outlined text-sm">share</span>
+  </button>
+
+</div>
 
   </div>
 </footer>
@@ -587,6 +590,42 @@ La utilización continuada de la plataforma implica
 
 })();
 </script>
- 
+<script>
+(function () {
+
+  const shareBtn = document.getElementById("shareBtn");
+
+  if (!shareBtn) return;
+
+  shareBtn.addEventListener("click", async function () {
+
+    const shareData = {
+      title: "Mitis Desarrollos",
+      text: "Conocé Mitis Desarrollos",
+      url: window.location.href
+    };
+
+    try {
+
+      if (navigator.share) {
+
+        await navigator.share(shareData);
+
+      } else {
+
+        await navigator.clipboard.writeText(window.location.href);
+
+        alert("Enlace copiado al portapapeles");
+
+      }
+
+    } catch (err) {
+      console.log("Compartir cancelado");
+    }
+
+  });
+
+})();
+</script> 
 </body>
 </html>
