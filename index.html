@@ -263,6 +263,43 @@
 <span class="text-xs font-mono">00:42</span>
 </div>
 </div>
+
+<!-- BLOQUE DEMO ENTRE SÍNTESIS DE AUDIOS Y PLATAFORMAS -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12" id="consulta-mitis">
+  <div class="text-center mb-8">
+    <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-2 block">Demostración en vivo</span>
+    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Consultá a Mitis por propiedades</h2>
+    <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá y te hablará.</p>
+  </div>
+
+  <div class="max-w-2xl mx-auto">
+    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+      <input 
+        type="text" 
+        id="demoInput" 
+        placeholder="Ej: Busco un 3 ambientes en Palermo para alquilar" 
+        class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"
+      />
+      <button 
+        id="demoBtn" 
+        class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
+      >
+        <span class="material-symbols-outlined">send</span> Enviar
+      </button>
+    </div>
+
+    <div id="demoRespuesta" class="bg-surface-container p-6 rounded-xl min-h-[100px] flex items-center justify-center text-on-surface-variant">
+      <span id="demoPlaceholder">La respuesta de Mitis aparecerá aquí...</span>
+    </div>
+
+    <div class="text-center mt-4">
+      <button id="demoEscucharBtn" class="hidden items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium hover:shadow transition-all">
+        <span class="material-symbols-outlined">volume_up</span> Escuchar de nuevo
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
 <div class="flex items-center gap-3 mb-4">
 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -319,46 +356,6 @@
 </div>
 </div>
 </div>
-</section>
-
-<!-- NUEVA SECCIÓN: Consultá a Mitis -->
-<section id="consulta-mitis" class="mt-12 lg:mt-16 mb-12 lg:mb-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12">
-      <div class="text-center mb-8">
-        <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-2 block">Demostración en vivo</span>
-        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Consultá a Mitis por propiedades</h2>
-        <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá y te hablará.</p>
-      </div>
-
-      <div class="max-w-2xl mx-auto">
-        <div class="flex flex-col sm:flex-row gap-4 mb-6">
-          <input 
-            type="text" 
-            id="demoInput" 
-            placeholder="Ej: Busco un 3 ambientes en Palermo para alquilar" 
-            class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"
-          />
-          <button 
-            id="demoBtn" 
-            class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
-          >
-            <span class="material-symbols-outlined">send</span> Enviar
-          </button>
-        </div>
-
-        <div id="demoRespuesta" class="bg-surface-container p-6 rounded-xl min-h-[100px] flex items-center justify-center text-on-surface-variant">
-          <span id="demoPlaceholder">La respuesta de Mitis aparecerá aquí...</span>
-        </div>
-
-        <div class="text-center mt-4">
-          <button id="demoEscucharBtn" class="hidden items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium hover:shadow transition-all">
-            <span class="material-symbols-outlined">volume_up</span> Escuchar de nuevo
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section id="ventajas-mitis" class="mt-12 lg:mt-16 mb-12 lg:mb-16">
@@ -431,6 +428,11 @@
       <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">
         © 2026 Mitis Desarrollos. Arquitectura Inteligente.
       </p>
+
+      <p class="text-slate-500 dark:text-slate-400 text-xs">
+        Creado por <a href="https://www.linkedin.com/in/leonardo-otamendi-53171b10a/" target="_blank" class="text-sky-600 hover:underline">Leonardo Otamendi</a>
+      </p>
+      <p class="text-slate-500 dark:text-slate-400 text-xs">Mendoza-Argentina</p>
     </div>
 
     <div class="flex flex-wrap justify-center gap-6 text-center">
