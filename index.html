@@ -263,27 +263,6 @@
 <span class="text-xs font-mono">00:42</span>
 </div>
 </div>
-
-<!-- DEMO DE MITIS (CONECTADA AL INTERMEDIARIO SEGURO) -->
-<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12" id="consulta-mitis">
-  <div class="text-center mb-8">
-    <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-2 block">Demostración en vivo</span>
-    <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Consultá a Mitis por propiedades</h2>
-    <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá por escrito.</p>
-  </div>
-  <div class="max-w-2xl mx-auto">
-    <div class="flex flex-col sm:flex-row gap-4 mb-6">
-      <input type="text" id="demoInput" placeholder="Ej: Busco un 3 ambientes en Palermo para alquilar" class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent" />
-      <button id="demoBtn" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 flex items-center gap-2">
-        <span class="material-symbols-outlined">send</span> Enviar
-      </button>
-    </div>
-    <div id="demoRespuesta" class="bg-surface-container p-6 rounded-xl min-h-[100px] flex items-center justify-center text-on-surface-variant">
-      <span id="demoPlaceholder">La respuesta de Mitis aparecerá aquí...</span>
-    </div>
-  </div>
-</div>
-
 <div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
 <div class="flex items-center gap-3 mb-4">
 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -604,58 +583,6 @@
         } catch (error) {
           statusDiv.textContent = 'Error de conexión. Revisá tu internet.';
           statusDiv.style.color = '#ba1a1a';
-        }
-      });
-    }
-
-    // --- Lógica de la demo de Mitis (conectada al proxy seguro) ---
-    const demoInput = document.getElementById('demoInput');
-    const demoBtn = document.getElementById('demoBtn');
-    const demoRespuesta = document.getElementById('demoRespuesta');
-    const demoPlaceholder = document.getElementById('demoPlaceholder');
-
-    const MITIS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwlK0AT_XqXA8OtQowGkQoVxua2A-FzwtrUqjR4yv-qzuWP9-Tyk6QXdsVP_so1tTm-/exec';
-
-    if (demoBtn) {
-      demoBtn.addEventListener('click', async function() {
-        const mensaje = demoInput.value.trim();
-        if (!mensaje) return;
-
-        demoPlaceholder.textContent = 'Mitis está pensando...';
-        demoPlaceholder.style.display = 'block';
-        demoRespuesta.innerHTML = '';
-        demoBtn.disabled = true;
-        demoBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_top</span> Consultando...';
-
-        try {
-          const response = await fetch(MITIS_SCRIPT_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ mensaje: mensaje })
-          });
-
-          const data = await response.json();
-
-          if (response.ok && data.respuesta) {
-            demoPlaceholder.style.display = 'none';
-            demoRespuesta.innerHTML = '<p class="text-on-surface text-left whitespace-pre-wrap">' + data.respuesta + '</p>';
-          } else {
-            demoPlaceholder.style.display = 'none';
-            demoRespuesta.innerHTML = '<p class="text-error">Lo siento, hubo un problema. Intentá de nuevo más tarde.</p>';
-          }
-        } catch (error) {
-          console.error('Error en la demo:', error);
-          demoPlaceholder.style.display = 'none';
-          demoRespuesta.innerHTML = '<p class="text-error">Error de conexión. Revisá tu internet.</p>';
-        } finally {
-          demoBtn.disabled = false;
-          demoBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Enviar';
-        }
-      });
-
-      demoInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          demoBtn.click();
         }
       });
     }
