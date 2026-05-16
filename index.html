@@ -631,17 +631,52 @@
     const demoEscucharBtn = document.getElementById('demoEscucharBtn');
     let ultimaRespuestaTexto = '';
 
-    function hablar(texto) {
+       function hablar(texto) {
       if (!('speechSynthesis' in window)) {
         console.warn('La síntesis de voz no está soportada en este navegador.');
         return;
       }
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(texto);
-      utterance.lang = 'es-AR';
-      utterance.rate = 1.0;
-      utterance.pitch = 1.0;
-      window.speechSynthesis.speak(utterance);
+
+      const synth = window.speechSynthesis;
+
+      // Esperar a que las voces se carguen (especialmente en Chrome)
+      const cargarVoces = () => {
+        return new Promise((resolve) => {
+          let voces = synth.getVoices();
+          if (voces.length) {
+            resolve(voces);
+            return;
+          }
+          synth.addEventListener('voiceschanged', () => {
+            resolve(synth.getVoices());
+          }, { once: true });
+        });
+      };
+
+      cargarVoces().then((voces) => {
+        // 1. Buscar una voz argentina (es-AR)
+        let vozElegida = voces.find(v => v.lang.startsWith('es-AR'));
+        // 2. Si no hay, buscar una voz mexicana (es-MX) que suele ser más neutra
+        if (!vozElegida) {
+          vozElegida = voces.find(v => v.lang.startsWith('es-MX'));
+        }
+        // 3. Si todavía no hay, usar cualquier voz en español
+        if (!vozElegida) {
+          vozElegida = voces.find(v => v.lang.startsWith('es'));
+        }
+
+        const utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'es-AR'; // Mantenemos el locale argentino
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+
+        if (vozElegida) {
+          utterance.voice = vozElegida; // Asignar la voz encontrada
+        }
+
+        synth.cancel(); // Detener cualquier voz previa
+        synth.speak(utterance);
+      });
     }
 
     function mostrarYHablar(texto) {
