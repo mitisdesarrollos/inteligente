@@ -4,8 +4,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Mitis Desarrollos</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -86,7 +86,6 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
         
-        /* Estilos del modal popup */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -264,8 +263,47 @@
 </div>
 </div>
 
-<!-- BLOQUE BLANCO DE SEPARACIÓN (donde antes estaba la demo) -->
-<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl p-4 md:p-6 min-h-[2rem]" aria-hidden="true"></div>
+<!-- CHATBOT DEMO MITIS -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl p-6 md:p-10">
+  <div class="flex items-center gap-3 mb-6">
+    <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+      <span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
+    </div>
+    <div>
+      <h3 class="text-lg font-bold text-on-surface">Probá el Agente Mitis</h3>
+      <p class="text-xs text-on-surface-variant">Demo en vivo · Respondé preguntas sobre tu inmobiliaria</p>
+    </div>
+    <div class="ml-auto flex items-center gap-1.5">
+      <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+      <span class="text-xs text-on-surface-variant">En línea</span>
+    </div>
+  </div>
+  <div id="chat-messages" class="space-y-4 mb-6 max-h-72 overflow-y-auto pr-1">
+    <div class="flex gap-3">
+      <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-white text-base">smart_toy</span>
+      </div>
+      <div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
+        <p class="text-sm text-on-surface">¡Hola! Soy el agente Mitis. Podés preguntarme sobre propiedades, alquileres, tasaciones o cualquier consulta inmobiliaria.</p>
+      </div>
+    </div>
+  </div>
+  <div class="flex gap-3 items-center">
+    <input 
+      id="chat-input" 
+      type="text" 
+      placeholder="Escribí tu consulta..." 
+      class="flex-1 px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-lowest text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+    />
+    <button 
+      id="chat-send" 
+      class="w-11 h-11 bg-primary text-on-primary rounded-xl flex items-center justify-center hover:opacity-90 active:scale-95 transition-all flex-shrink-0"
+    >
+      <span class="material-symbols-outlined text-xl">send</span>
+    </button>
+  </div>
+  <p class="text-xs text-on-surface-variant mt-3 text-center">Demo con IA real · Las respuestas son generadas por Gemini</p>
+</div>
 
 <div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
 <div class="flex items-center gap-3 mb-4">
@@ -386,115 +424,59 @@
 
 <footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
   <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-
     <div class="flex flex-col gap-4">
-      <div class="font-manrope font-black text-slate-900 dark:text-white text-xl">
-        Mitis Desarrollos
-      </div>
-
-      <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">
-        © 2026 Mitis Desarrollos. Arquitectura Inteligente.
-      </p>
-
-      <p class="text-slate-500 dark:text-slate-400 text-xs">
-        Creado por <a href="https://www.linkedin.com/in/leonardo-otamendi-53171b10a/" target="_blank" class="text-sky-600 hover:underline">Leonardo Otamendi</a>
-      </p>
+      <div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
+      <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
+      <p class="text-slate-500 dark:text-slate-400 text-xs">Creado por <a href="https://www.linkedin.com/in/leonardo-otamendi-53171b10a/" target="_blank" class="text-sky-600 hover:underline">Leonardo Otamendi</a></p>
       <p class="text-slate-500 dark:text-slate-400 text-xs">Mendoza-Argentina</p>
     </div>
-
     <div class="flex flex-wrap justify-center gap-6 text-center">
-      <a
-        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-        href="politica_privacidad.html"
-      >
-        Política de privacidad
-      </a>
-
-      <a
-        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-        href="terminos_servicio.html"
-      >
-        Términos del servicio
-      </a>
-
-      <a
-        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-        href="politica_cookies.html"
-      >
-        Política de cookies
-      </a>
-
-      <a
-        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
-        href="contacto.html"
-      >
-        Soporte
-      </a>
+      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="politica_privacidad.html">Política de privacidad</a>
+      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="terminos_servicio.html">Términos del servicio</a>
+      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="politica_cookies.html">Política de cookies</a>
+      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="contacto.html">Soporte</a>
     </div>
-
-   <div class="flex gap-4">
-
-  <!-- BOTÓN COMPARTIR CORREGIDO -->
-  <button
-    id="shareBtn"
-    type="button"
-    class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer"
-    aria-label="Compartir sitio"
-  >
-    <span class="material-symbols-outlined text-sm">share</span>
-  </button>
-
-</div>
-
+    <div class="flex gap-4">
+      <button id="shareBtn" type="button" class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer" aria-label="Compartir sitio">
+        <span class="material-symbols-outlined text-sm">share</span>
+      </button>
+    </div>
   </div>
 </footer>
-      
-<!-- Scripts -->
+
 <script>
   (function() {
     "use strict";
 
-    // --- Scroll spy para navegación ---
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
 
     function removeActiveClasses() {
       navLinks.forEach(link => {
-        link.classList.remove(
-          'text-sky-600', 'dark:text-sky-400', 'font-semibold', 
-          'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1'
-        );
+        link.classList.remove('text-sky-600', 'dark:text-sky-400', 'font-semibold', 'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1');
         link.classList.add('text-slate-600', 'dark:text-slate-400');
       });
     }
-
     function setActiveLink(link) {
       removeActiveClasses();
       link.classList.remove('text-slate-600', 'dark:text-slate-400');
-      link.classList.add(
-        'text-sky-600', 'dark:text-sky-400', 'font-semibold', 
-        'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1'
-      );
+      link.classList.add('text-sky-600', 'dark:text-sky-400', 'font-semibold', 'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1');
     }
-
     function updateActiveLinkOnScroll() {
       const scrollPosition = window.scrollY + 100;
       let currentSection = null;
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionBottom = sectionTop + section.offsetHeight;
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          currentSection = section;
-        }
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) currentSection = section;
       });
       if (!currentSection && sections.length > 0) currentSection = sections[0];
       if (currentSection) {
         const id = currentSection.getAttribute('id');
-        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === `#${id}`);
+        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === '#' + id);
         if (activeLink) setActiveLink(activeLink);
       }
     }
-
     navLinks.forEach(link => link.addEventListener('click', function(e) { setActiveLink(this); }));
     window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
     window.addEventListener('DOMContentLoaded', function() {
@@ -502,27 +484,16 @@
         if (window.location.hash) {
           const hash = window.location.hash;
           const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
-          if (targetLink) {
-            setActiveLink(targetLink);
-            const targetSection = document.querySelector(hash);
-            if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' });
-            return;
-          }
+          if (targetLink) { setActiveLink(targetLink); const targetSection = document.querySelector(hash); if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' }); return; }
         }
         updateActiveLinkOnScroll();
       }, 50);
     });
     window.addEventListener('hashchange', function() {
       const hash = window.location.hash;
-      if (hash) {
-        const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
-        if (targetLink) setActiveLink(targetLink);
-      } else {
-        updateActiveLinkOnScroll();
-      }
+      if (hash) { const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash); if (targetLink) setActiveLink(targetLink); } else { updateActiveLinkOnScroll(); }
     });
 
-    // --- Lógica del modal popup ---
     const modal = document.getElementById('pruebaModal');
     const closeBtn = document.getElementById('closeModalBtn');
     const probarMitisBtn = document.getElementById('probarMitisBtn');
@@ -532,245 +503,117 @@
 
     function openModal() { if (modal) modal.classList.add('active'); }
     function closeModal() { if (modal) modal.classList.remove('active'); }
-
     if (probarMitisBtn) probarMitisBtn.addEventListener('click', openModal);
     if (pruebaGratisBtn) pruebaGratisBtn.addEventListener('click', openModal);
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    
-    if (modal) {
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal();
-      });
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal();
-    });
+    if (modal) modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal(); });
 
-    // Envío AJAX del formulario del popup
     if (form) {
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
         statusDiv.textContent = 'Enviando...';
         statusDiv.style.color = '#006591';
-
-        const formData = {
-          Nombre: document.getElementById('modal-nombre').value,
-          Email: document.getElementById('modal-email').value,
-          Teléfono: document.getElementById('modal-telefono').value,
-          Empresa: document.getElementById('modal-empresa').value,
-          Mensaje: document.getElementById('modal-mensaje').value
-        };
-
+        const formData = { Nombre: document.getElementById('modal-nombre').value, Email: document.getElementById('modal-email').value, Teléfono: document.getElementById('modal-telefono').value, Empresa: document.getElementById('modal-empresa').value, Mensaje: document.getElementById('modal-mensaje').value };
         try {
-          const response = await fetch('https://formspree.io/f/mqewdwpb', {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          });
-
-          if (response.ok) {
-            statusDiv.textContent = '¡Solicitud enviada con éxito! Te contactaremos pronto.';
-            statusDiv.style.color = '#16a34a';
-            form.reset();
-            document.getElementById('modal-mensaje').value = 'Hola, quiero solicitar la prueba gratuita de Mitis.';
-            setTimeout(() => {
-              closeModal();
-              statusDiv.textContent = '';
-            }, 2000);
-          } else {
-            statusDiv.textContent = 'Hubo un error. Por favor, intentá de nuevo.';
-            statusDiv.style.color = '#ba1a1a';
-          }
-        } catch (error) {
-          statusDiv.textContent = 'Error de conexión. Revisá tu internet.';
-          statusDiv.style.color = '#ba1a1a';
-        }
+          const response = await fetch('https://formspree.io/f/mqewdwpb', { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
+          if (response.ok) { statusDiv.textContent = '¡Solicitud enviada con éxito! Te contactaremos pronto.'; statusDiv.style.color = '#16a34a'; form.reset(); document.getElementById('modal-mensaje').value = 'Hola, quiero solicitar la prueba gratuita de Mitis.'; setTimeout(() => { closeModal(); statusDiv.textContent = ''; }, 2000); }
+          else { statusDiv.textContent = 'Hubo un error. Por favor, intentá de nuevo.'; statusDiv.style.color = '#ba1a1a'; }
+        } catch (error) { statusDiv.textContent = 'Error de conexión. Revisá tu internet.'; statusDiv.style.color = '#ba1a1a'; }
       });
     }
 
+    // CHATBOT
+    const PROXY_URL = 'https://gemini-proxy-287336245644.southamerica-west1.run.app';
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.getElementById('chat-messages');
+
+    function addMessage(text, isUser) {
+      const div = document.createElement('div');
+      div.className = 'flex gap-3' + (isUser ? ' flex-row-reverse' : '');
+      div.innerHTML = isUser
+        ? '<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-secondary-container text-base">person</span></div><div class="bg-secondary-container rounded-2xl rounded-tr-none px-4 py-3 max-w-md"><p class="text-sm text-on-surface">' + text + '</p></div>'
+        : '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-white text-base">smart_toy</span></div><div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3 max-w-md"><p class="text-sm text-on-surface">' + text + '</p></div>';
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function addTyping() {
+      const div = document.createElement('div');
+      div.id = 'typing-indicator';
+      div.className = 'flex gap-3';
+      div.innerHTML = '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-white text-base">smart_toy</span></div><div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3"><p class="text-sm text-on-surface-variant">Escribiendo...</p></div>';
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function sendChatMessage() {
+      if (!chatInput) return;
+      const text = chatInput.value.trim();
+      if (!text) return;
+      chatInput.value = '';
+      chatSend.disabled = true;
+      addMessage(text, true);
+      addTyping();
+      try {
+        const res = await fetch(PROXY_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: text }) });
+        const data = await res.json();
+        document.getElementById('typing-indicator')?.remove();
+        addMessage(data.reply || 'No pude procesar la respuesta.', false);
+      } catch(e) {
+        document.getElementById('typing-indicator')?.remove();
+        addMessage('Hubo un error al conectar. Intentá de nuevo.', false);
+      }
+      chatSend.disabled = false;
+      chatInput.focus();
+    }
+
+    if (chatSend) chatSend.addEventListener('click', sendChatMessage);
+    if (chatInput) chatInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') sendChatMessage(); });
+
   })();
 </script>
-<!-- Banner de Cookies -->
-<!-- ========================================= -->
-<!-- BANNER DE COOKIES -->
-<!-- ========================================= -->
 
-<div id="cookieBanner"
-     class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
-
+<div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-
     <div class="flex-1">
-      <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">
-        Política de cookies
-      </h3>
-
-      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-        Utilizamos cookies para mejorar la experiencia del usuario, analizar el tráfico del sitio y optimizar nuestros servicios.
-
-        Podés aceptar o rechazar las cookies.
-
-        Más información en nuestra
-        <a href="politica_cookies.html"
-           class="text-sky-600 hover:underline">
-           Política de Cookies
-        </a>.
-      </p>
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Política de cookies</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Utilizamos cookies para mejorar la experiencia del usuario, analizar el tráfico del sitio y optimizar nuestros servicios. Podés aceptar o rechazar las cookies. Más información en nuestra <a href="politica_cookies.html" class="text-sky-600 hover:underline">Política de Cookies</a>.</p>
     </div>
-
     <div class="flex flex-wrap gap-3 w-full lg:w-auto">
-
-      <button
-        id="acceptCookies"
-        class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
-        Aceptar
-      </button>
-
-      <button
-        id="rejectCookies"
-        class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">
-        Rechazar
-      </button>
-
+      <button id="acceptCookies" class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Aceptar</button>
+      <button id="rejectCookies" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Rechazar</button>
     </div>
-
   </div>
 </div>
-
-<!-- ========================================= -->
-<!-- SCRIPT COOKIES -->
-<!-- ========================================= -->
 
 <script>
 (function () {
   "use strict";
-
   const cookieBanner = document.getElementById("cookieBanner");
   const acceptBtn = document.getElementById("acceptCookies");
   const rejectBtn = document.getElementById("rejectCookies");
-
-  function setCookie(name, value, days) {
-    let expires = "";
-
-    if (days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-
-    document.cookie =
-      name + "=" + value + expires + "; path=/; SameSite=Lax";
-  }
-
-  function getCookie(name) {
-    const nameEQ = name + "=";
-    const ca = document.cookie.split(";");
-
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i];
-
-      while (c.charAt(0) === " ") {
-        c = c.substring(1, c.length);
-      }
-
-      if (c.indexOf(nameEQ) === 0) {
-        return c.substring(nameEQ.length, c.length);
-      }
-    }
-
-    return null;
-  }
-
-  function showBanner() {
-    if (cookieBanner) {
-      cookieBanner.classList.remove("hidden");
-    }
-  }
-
-  function hideBanner() {
-    if (cookieBanner) {
-      cookieBanner.classList.add("hidden");
-    }
-  }
-
-  const cookieConsent = getCookie("mitis_cookie_consent");
-
-  if (!cookieConsent) {
-    showBanner();
-  }
-
-  if (acceptBtn) {
-    acceptBtn.addEventListener("click", function () {
-      setCookie("mitis_cookie_consent", "accepted", 365);
-      hideBanner();
-    });
-  }
-
-  if (rejectBtn) {
-    rejectBtn.addEventListener("click", function () {
-      setCookie("mitis_cookie_consent", "rejected", 365);
-      hideBanner();
-    });
-  }
-
+  function setCookie(name, value, days) { let expires = ""; if (days) { const date = new Date(); date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); expires = "; expires=" + date.toUTCString(); } document.cookie = name + "=" + value + expires + "; path=/; SameSite=Lax"; }
+  function getCookie(name) { const nameEQ = name + "="; const ca = document.cookie.split(";"); for (let i = 0; i < ca.length; i++) { let c = ca[i]; while (c.charAt(0) === " ") c = c.substring(1, c.length); if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length); } return null; }
+  function showBanner() { if (cookieBanner) cookieBanner.classList.remove("hidden"); }
+  function hideBanner() { if (cookieBanner) cookieBanner.classList.add("hidden"); }
+  if (!getCookie("mitis_cookie_consent")) showBanner();
+  if (acceptBtn) acceptBtn.addEventListener("click", function () { setCookie("mitis_cookie_consent", "accepted", 365); hideBanner(); });
+  if (rejectBtn) rejectBtn.addEventListener("click", function () { setCookie("mitis_cookie_consent", "rejected", 365); hideBanner(); });
 })();
 </script>
 
 <script>
 (function () {
-
   const shareBtn = document.getElementById("shareBtn");
-
   if (!shareBtn) return;
-
   shareBtn.addEventListener("click", function () {
-
     const shareUrl = window.location.href;
-
-    // Celulares: usar Web Share API
-    if (navigator.share) {
-      navigator.share({
-        title: "Mitis Desarrollos",
-        text: "Conocé Mitis Desarrollos",
-        url: shareUrl
-      }).catch(err => console.log("Compartir cancelado"));
-      return;
-    }
-
-    // Escritorio: copiar al portapapeles
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(shareUrl).then(() => {
-        alert("¡Enlace copiado al portapapeles!");
-      }).catch(() => {
-        fallbackCopy(shareUrl);
-      });
-    } else {
-      fallbackCopy(shareUrl);
-    }
-
-    function fallbackCopy(text) {
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      textarea.style.position = "fixed";
-      textarea.style.top = "-9999px";
-      textarea.style.left = "-9999px";
-      document.body.appendChild(textarea);
-      textarea.focus();
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        alert("¡Enlace copiado al portapapeles!");
-      } catch (err) {
-        prompt("Copiá manualmente el enlace:", text);
-      }
-      document.body.removeChild(textarea);
-    }
-
+    if (navigator.share) { navigator.share({ title: "Mitis Desarrollos", text: "Conocé Mitis Desarrollos", url: shareUrl }).catch(err => console.log("Compartir cancelado")); return; }
+    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(shareUrl).then(() => { alert("¡Enlace copiado al portapapeles!"); }).catch(() => { fallbackCopy(shareUrl); }); } else { fallbackCopy(shareUrl); }
+    function fallbackCopy(text) { const textarea = document.createElement("textarea"); textarea.value = text; textarea.style.position = "fixed"; textarea.style.top = "-9999px"; textarea.style.left = "-9999px"; document.body.appendChild(textarea); textarea.focus(); textarea.select(); try { document.execCommand('copy'); alert("¡Enlace copiado al portapapeles!"); } catch (err) { prompt("Copiá manualmente el enlace:", text); } document.body.removeChild(textarea); }
   });
-
 })();
 </script>
 
