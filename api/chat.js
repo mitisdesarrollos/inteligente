@@ -1,11 +1,28 @@
 // api/chat.js
-// Estructura compatible con Netlify Functions
+// Estructura compatible con Netlify Functions (con CORS)
 
 exports.handler = async (event, context) => {
+  // Headers CORS para permitir llamadas desde el navegador
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS'
+  };
+
+  // Responder a la petición preflight (OPTIONS)
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 200,
+      headers,
+      body: ''
+    };
+  }
+
   // Solo aceptar peticiones POST
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers,
       body: JSON.stringify({ error: 'Método no permitido' })
     };
   }
@@ -18,6 +35,7 @@ exports.handler = async (event, context) => {
   } catch (e) {
     return {
       statusCode: 400,
+      headers,
       body: JSON.stringify({ error: 'Cuerpo de la petición inválido' })
     };
   }
@@ -25,13 +43,14 @@ exports.handler = async (event, context) => {
   if (!mensaje) {
     return {
       statusCode: 400,
+      headers,
       body: JSON.stringify({ error: 'Falta el mensaje del usuario' })
     };
   }
 
   try {
     // La personalidad de Mitis (instrucción secreta)
-        const systemInstruction = `Sos Mitis, un asistente inmobiliario experto en demostración. NO saludes con "Hola" ni frases de bienvenida; respondé directamente la consulta. No repitas siempre la misma despedida o coletilla. Variá tus respuestas.
+    const systemInstruction = `Sos Mitis, un asistente inmobiliario experto en demostración. NO saludes con "Hola" ni frases de bienvenida; respondé directamente la consulta. No repitas siempre la misma despedida o coletilla. Variá tus respuestas.
 Si te piden una propiedad específica, actuá como si tuvieras acceso a la base de datos (es una simulación) y hacé preguntas para definir mejor la búsqueda (zona, operación, características). Usá conocimientos geográficos.
 No digas literalmente "en el sistema real verías las fotos aquí" más de una vez; en su lugar, podés decir que "en la versión completa tendrías todos los detalles multimedia". Sé breve (máximo 3 líneas) y amable.`;
 
@@ -62,6 +81,7 @@ No digas literalmente "en el sistema real verías las fotos aquí" más de una v
       console.error('Error de Gemini:', data);
       return {
         statusCode: 500,
+        headers,
         body: JSON.stringify({ error: 'Error al comunicarse con la IA' })
       };
     }
@@ -70,6 +90,7 @@ No digas literalmente "en el sistema real verías las fotos aquí" más de una v
     const respuestaIA = data.candidates[0].content.parts[0].text;
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({ respuesta: respuestaIA })
     };
 
@@ -77,6 +98,7 @@ No digas literalmente "en el sistema real verías las fotos aquí" más de una v
     console.error('Error en la función:', error);
     return {
       statusCode: 500,
+      headers,
       body: JSON.stringify({ error: 'Error interno del servidor' })
     };
   }
