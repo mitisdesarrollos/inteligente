@@ -217,7 +217,7 @@
  Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
 <div class="flex flex-wrap gap-4">
 <button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95">Implementar ahora</button>
-<button class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95">Ver funciones</button>
+<a href="#consulta-mitis" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95 inline-block">Ver funciones</a>
 </div>
 </div>
 <div class="w-full lg:w-2/5 relative">
@@ -320,6 +320,47 @@
 </div>
 </div>
 </section>
+
+<!-- NUEVA SECCIÓN: Consultá a Mitis -->
+<section id="consulta-mitis" class="mt-12 lg:mt-16 mb-12 lg:mb-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="bg-surface-container-lowest rounded-2xl shadow-xl p-8 md:p-12">
+      <div class="text-center mb-8">
+        <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-2 block">Demostración en vivo</span>
+        <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Consultá a Mitis por propiedades</h2>
+        <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá y te hablará.</p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 mb-6">
+          <input 
+            type="text" 
+            id="demoInput" 
+            placeholder="Ej: Busco un 3 ambientes en Palermo para alquilar" 
+            class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <button 
+            id="demoBtn" 
+            class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all active:scale-95 flex items-center gap-2"
+          >
+            <span class="material-symbols-outlined">send</span> Enviar
+          </button>
+        </div>
+
+        <div id="demoRespuesta" class="bg-surface-container p-6 rounded-xl min-h-[100px] flex items-center justify-center text-on-surface-variant">
+          <span id="demoPlaceholder">La respuesta de Mitis aparecerá aquí...</span>
+        </div>
+
+        <div class="text-center mt-4">
+          <button id="demoEscucharBtn" class="hidden items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium hover:shadow transition-all">
+            <span class="material-symbols-outlined">volume_up</span> Escuchar de nuevo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="ventajas-mitis" class="mt-12 lg:mt-16 mb-12 lg:mb-16">
 <div class="max-w-7xl mx-auto px-6">
 <div class="flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center">
@@ -576,6 +617,88 @@
         } catch (error) {
           statusDiv.textContent = 'Error de conexión. Revisá tu internet.';
           statusDiv.style.color = '#ba1a1a';
+        }
+      });
+    }
+
+    // --- Lógica de la demo de Mitis (texto + voz) ---
+    const demoInput = document.getElementById('demoInput');
+    const demoBtn = document.getElementById('demoBtn');
+    const demoRespuesta = document.getElementById('demoRespuesta');
+    const demoPlaceholder = document.getElementById('demoPlaceholder');
+    const demoEscucharBtn = document.getElementById('demoEscucharBtn');
+    let ultimaRespuestaTexto = '';
+
+    function hablar(texto) {
+      if (!('speechSynthesis' in window)) {
+        console.warn('La síntesis de voz no está soportada en este navegador.');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(texto);
+      utterance.lang = 'es-AR';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.0;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function mostrarYHablar(texto) {
+      ultimaRespuestaTexto = texto;
+      demoPlaceholder.style.display = 'none';
+      demoRespuesta.innerHTML = '<p class="text-on-surface text-left">' + texto.replace(/\n/g, '<br>') + '</p>';
+      demoEscucharBtn.classList.remove('hidden');
+      demoEscucharBtn.classList.add('flex');
+      hablar(texto);
+    }
+
+    if (demoBtn) {
+      demoBtn.addEventListener('click', async function() {
+        const mensaje = demoInput.value.trim();
+        if (!mensaje) return;
+
+        demoPlaceholder.textContent = 'Mitis está pensando...';
+        demoPlaceholder.style.display = 'block';
+        demoRespuesta.innerHTML = '';
+        demoEscucharBtn.classList.add('hidden');
+        demoEscucharBtn.classList.remove('flex');
+        demoBtn.disabled = true;
+        demoBtn.textContent = 'Enviando...';
+
+        try {
+          const response = await fetch('https://statuesque-gumption-f3bba7.netlify.app/.netlify/functions/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mensaje: mensaje })
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            mostrarYHablar(data.respuesta);
+          } else {
+            mostrarYHablar('Lo siento, hubo un problema al procesar tu mensaje. ¿Podés intentar de nuevo?');
+            console.error('Error de la API:', data.error);
+          }
+        } catch (error) {
+          console.error('Error de red:', error);
+          mostrarYHablar('Error de conexión. Por favor, revisá tu internet e intentá nuevamente.');
+        } finally {
+          demoBtn.disabled = false;
+          demoBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Enviar';
+        }
+      });
+
+      demoInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          demoBtn.click();
+        }
+      });
+    }
+
+    if (demoEscucharBtn) {
+      demoEscucharBtn.addEventListener('click', function() {
+        if (ultimaRespuestaTexto) {
+          hablar(ultimaRespuestaTexto);
         }
       });
     }
