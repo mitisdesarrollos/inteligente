@@ -216,7 +216,7 @@
 <p class="text-on-surface-variant text-lg lg:text-xl max-w-2xl font-light leading-relaxed mb-10">
  Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
 <div class="flex flex-wrap gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95">Implementar ahora</button>
+<a href="contacto.html" target="_blank" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95 inline-block">Implementar ahora</a>
 <a href="#consulta-mitis" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95 inline-block">Ver funciones</a>
 </div>
 </div>
@@ -269,7 +269,7 @@
   <div class="text-center mb-8">
     <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-2 block">Demostración en vivo</span>
     <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Consultá a Mitis por propiedades</h2>
-    <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá y te hablará.</p>
+    <p class="text-on-surface-variant max-w-xl mx-auto">Escribile un mensaje como si fueras un cliente interesado en una propiedad. Mitis te responderá por escrito.</p>
   </div>
 
   <div class="max-w-2xl mx-auto">
@@ -290,12 +290,6 @@
 
     <div id="demoRespuesta" class="bg-surface-container p-6 rounded-xl min-h-[100px] flex items-center justify-center text-on-surface-variant">
       <span id="demoPlaceholder">La respuesta de Mitis aparecerá aquí...</span>
-    </div>
-
-    <div class="text-center mt-4">
-      <button id="demoEscucharBtn" class="hidden items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium hover:shadow transition-all">
-        <span class="material-symbols-outlined">volume_up</span> Escuchar de nuevo
-      </button>
     </div>
   </div>
 </div>
@@ -467,9 +461,10 @@
 
    <div class="flex gap-4">
 
-  <!-- BOTÓN COMPARTIR -->
+  <!-- BOTÓN COMPARTIR CORREGIDO -->
   <button
     id="shareBtn"
+    type="button"
     class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer"
     aria-label="Compartir sitio"
   >
@@ -623,70 +618,11 @@
       });
     }
 
-    // --- Lógica de la demo de Mitis (texto + voz) ---
+    // --- Lógica de la demo de Mitis (solo texto, sin voz) ---
     const demoInput = document.getElementById('demoInput');
     const demoBtn = document.getElementById('demoBtn');
     const demoRespuesta = document.getElementById('demoRespuesta');
     const demoPlaceholder = document.getElementById('demoPlaceholder');
-    const demoEscucharBtn = document.getElementById('demoEscucharBtn');
-    let ultimaRespuestaTexto = '';
-
-       function hablar(texto) {
-      if (!('speechSynthesis' in window)) {
-        console.warn('La síntesis de voz no está soportada en este navegador.');
-        return;
-      }
-
-      const synth = window.speechSynthesis;
-
-      // Esperar a que las voces se carguen (especialmente en Chrome)
-      const cargarVoces = () => {
-        return new Promise((resolve) => {
-          let voces = synth.getVoices();
-          if (voces.length) {
-            resolve(voces);
-            return;
-          }
-          synth.addEventListener('voiceschanged', () => {
-            resolve(synth.getVoices());
-          }, { once: true });
-        });
-      };
-
-      cargarVoces().then((voces) => {
-        // 1. Buscar una voz argentina (es-AR)
-        let vozElegida = voces.find(v => v.lang.startsWith('es-AR'));
-        // 2. Si no hay, buscar una voz mexicana (es-MX) que suele ser más neutra
-        if (!vozElegida) {
-          vozElegida = voces.find(v => v.lang.startsWith('es-MX'));
-        }
-        // 3. Si todavía no hay, usar cualquier voz en español
-        if (!vozElegida) {
-          vozElegida = voces.find(v => v.lang.startsWith('es'));
-        }
-
-        const utterance = new SpeechSynthesisUtterance(texto);
-        utterance.lang = 'es-AR'; // Mantenemos el locale argentino
-        utterance.rate = 1.0;
-        utterance.pitch = 1.0;
-
-        if (vozElegida) {
-          utterance.voice = vozElegida; // Asignar la voz encontrada
-        }
-
-        synth.cancel(); // Detener cualquier voz previa
-        synth.speak(utterance);
-      });
-    }
-
-    function mostrarYHablar(texto) {
-      ultimaRespuestaTexto = texto;
-      demoPlaceholder.style.display = 'none';
-      demoRespuesta.innerHTML = '<p class="text-on-surface text-left">' + texto.replace(/\n/g, '<br>') + '</p>';
-      demoEscucharBtn.classList.remove('hidden');
-      demoEscucharBtn.classList.add('flex');
-      hablar(texto);
-    }
 
     if (demoBtn) {
       demoBtn.addEventListener('click', async function() {
@@ -696,10 +632,8 @@
         demoPlaceholder.textContent = 'Mitis está pensando...';
         demoPlaceholder.style.display = 'block';
         demoRespuesta.innerHTML = '';
-        demoEscucharBtn.classList.add('hidden');
-        demoEscucharBtn.classList.remove('flex');
         demoBtn.disabled = true;
-        demoBtn.textContent = 'Enviando...';
+        demoBtn.innerHTML = '<span class="material-symbols-outlined">hourglass_top</span> Consultando...';
 
         try {
           const response = await fetch('https://statuesque-gumption-f3bba7.netlify.app/.netlify/functions/chat', {
@@ -711,14 +645,17 @@
           const data = await response.json();
 
           if (response.ok) {
-            mostrarYHablar(data.respuesta);
+            demoPlaceholder.style.display = 'none';
+            demoRespuesta.innerHTML = '<p class="text-on-surface text-left whitespace-pre-wrap">' + data.respuesta + '</p>';
           } else {
-            mostrarYHablar('Lo siento, hubo un problema al procesar tu mensaje. ¿Podés intentar de nuevo?');
+            demoPlaceholder.style.display = 'none';
+            demoRespuesta.innerHTML = '<p class="text-error">Lo siento, hubo un problema. Intentá de nuevo.</p>';
             console.error('Error de la API:', data.error);
           }
         } catch (error) {
           console.error('Error de red:', error);
-          mostrarYHablar('Error de conexión. Por favor, revisá tu internet e intentá nuevamente.');
+          demoPlaceholder.style.display = 'none';
+          demoRespuesta.innerHTML = '<p class="text-error">Error de conexión. Revisá tu internet.</p>';
         } finally {
           demoBtn.disabled = false;
           demoBtn.innerHTML = '<span class="material-symbols-outlined">send</span> Enviar';
@@ -728,14 +665,6 @@
       demoInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
           demoBtn.click();
-        }
-      });
-    }
-
-    if (demoEscucharBtn) {
-      demoEscucharBtn.addEventListener('click', function() {
-        if (ultimaRespuestaTexto) {
-          hablar(ultimaRespuestaTexto);
         }
       });
     }
@@ -875,49 +804,47 @@
 
   if (!shareBtn) return;
 
-  shareBtn.addEventListener("click", async function () {
+  shareBtn.addEventListener("click", function () {
 
     const shareUrl = window.location.href;
 
-    // CELULARES
+    // Celulares: usar Web Share API
     if (navigator.share) {
-
-      try {
-
-        await navigator.share({
-          title: "Mitis Desarrollos",
-          text: "Conocé Mitis Desarrollos",
-          url: shareUrl
-        });
-
-      } catch (err) {
-        console.log("Compartir cancelado");
-      }
-
+      navigator.share({
+        title: "Mitis Desarrollos",
+        text: "Conocé Mitis Desarrollos",
+        url: shareUrl
+      }).catch(err => console.log("Compartir cancelado"));
       return;
     }
 
-    // COMPUTADORA
-    try {
+    // Escritorio: copiar al portapapeles
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        alert("¡Enlace copiado al portapapeles!");
+      }).catch(() => {
+        fallbackCopy(shareUrl);
+      });
+    } else {
+      fallbackCopy(shareUrl);
+    }
 
-      await navigator.clipboard.writeText(shareUrl);
-
-      alert("Enlace copiado al portapapeles:\n\n" + shareUrl);
-
-    } catch (err) {
-
-      // fallback antiguo
-      const tempInput = document.createElement("input");
-      tempInput.value = shareUrl;
-
-      document.body.appendChild(tempInput);
-
-      tempInput.select();
-      document.execCommand("copy");
-
-      document.body.removeChild(tempInput);
-
-      alert("Enlace copiado:\n\n" + shareUrl);
+    function fallbackCopy(text) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.top = "-9999px";
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        alert("¡Enlace copiado al portapapeles!");
+      } catch (err) {
+        prompt("Copiá manualmente el enlace:", text);
+      }
+      document.body.removeChild(textarea);
     }
 
   });
