@@ -7,182 +7,117 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "outline-variant": "#bec8d2",
-                    "tertiary": "#006399",
-                    "surface-container": "#eceef0",
-                    "on-secondary-fixed-variant": "#38485d",
-                    "on-primary-fixed": "#001e2f",
-                    "primary-fixed": "#c9e6ff",
-                    "surface-container-high": "#e6e8ea",
-                    "inverse-on-surface": "#eff1f3",
-                    "on-secondary-fixed": "#0b1c30",
-                    "on-background": "#191c1e",
-                    "tertiary-fixed": "#cde5ff",
-                    "on-tertiary-fixed-variant": "#004b74",
-                    "primary-container": "#0ea5e9",
-                    "surface": "#f7f9fb",
-                    "inverse-primary": "#89ceff",
-                    "surface-container-low": "#f2f4f6",
-                    "background": "#f7f9fb",
-                    "secondary-fixed": "#d3e4fe",
-                    "on-primary": "#ffffff",
-                    "on-primary-container": "#003751",
-                    "surface-bright": "#f7f9fb",
-                    "surface-container-highest": "#e0e3e5",
-                    "primary-fixed-dim": "#89ceff",
-                    "tertiary-container": "#58a1dc",
-                    "on-tertiary-container": "#003656",
-                    "error-container": "#ffdad6",
-                    "inverse-surface": "#2d3133",
-                    "on-surface": "#191c1e",
-                    "on-tertiary": "#ffffff",
-                    "secondary": "#505f76",
-                    "surface-dim": "#d8dadc",
-                    "error": "#ba1a1a",
-                    "surface-variant": "#e0e3e5",
-                    "on-primary-fixed-variant": "#004c6e",
-                    "secondary-container": "#d0e1fb",
-                    "primary": "#006591",
-                    "outline": "#6e7881",
-                    "on-secondary": "#ffffff",
-                    "surface-tint": "#006591",
-                    "secondary-fixed-dim": "#b7c8e1",
-                    "on-surface-variant": "#3e4850",
-                    "on-error": "#ffffff",
-                    "on-error-container": "#93000a",
-                    "on-secondary-container": "#54647a",
-                    "on-tertiary-fixed": "#001d32",
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-fixed-dim": "#94ccff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "outline-variant": "#bec8d2","tertiary": "#006399","surface-container": "#eceef0",
+        "on-secondary-fixed-variant": "#38485d","on-primary-fixed": "#001e2f","primary-fixed": "#c9e6ff",
+        "surface-container-high": "#e6e8ea","inverse-on-surface": "#eff1f3","on-secondary-fixed": "#0b1c30",
+        "on-background": "#191c1e","tertiary-fixed": "#cde5ff","on-tertiary-fixed-variant": "#004b74",
+        "primary-container": "#0ea5e9","surface": "#f7f9fb","inverse-primary": "#89ceff",
+        "surface-container-low": "#f2f4f6","background": "#f7f9fb","secondary-fixed": "#d3e4fe",
+        "on-primary": "#ffffff","on-primary-container": "#003751","surface-bright": "#f7f9fb",
+        "surface-container-highest": "#e0e3e5","primary-fixed-dim": "#89ceff","tertiary-container": "#58a1dc",
+        "on-tertiary-container": "#003656","error-container": "#ffdad6","inverse-surface": "#2d3133",
+        "on-surface": "#191c1e","on-tertiary": "#ffffff","secondary": "#505f76","surface-dim": "#d8dadc",
+        "error": "#ba1a1a","surface-variant": "#e0e3e5","on-primary-fixed-variant": "#004c6e",
+        "secondary-container": "#d0e1fb","primary": "#006591","outline": "#6e7881","on-secondary": "#ffffff",
+        "surface-tint": "#006591","secondary-fixed-dim": "#b7c8e1","on-surface-variant": "#3e4850",
+        "on-error": "#ffffff","on-error-container": "#93000a","on-secondary-container": "#54647a",
+        "on-tertiary-fixed": "#001d32","surface-container-lowest": "#ffffff","tertiary-fixed-dim": "#94ccff"
+      },
+      "borderRadius": {"DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "0.75rem"},
+      "fontFamily": {"headline": ["Manrope"],"body": ["Inter"],"label": ["Inter"]}
+    },
+  },
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
-        
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.2s ease, visibility 0.2s;
-        }
-        .modal-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .modal-content {
-            background: white;
-            max-width: 500px;
-            width: 90%;
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-            padding: 2rem;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        @media (prefers-color-scheme: dark) {
-            .modal-content {
-                background: #1e293b;
-                color: #f1f5f9;
-            }
-        }
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: transparent;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #64748b;
-            transition: color 0.2s;
-        }
-        .modal-close:hover {
-            color: #0f172a;
-        }
-        .dark .modal-close:hover {
-            color: #e2e8f0;
-        }
-        .form-status {
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-            text-align: center;
-        }
-    </style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; }
+  h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+  .modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 100; visibility: hidden; opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s;
+  }
+  .modal-overlay.active { visibility: visible; opacity: 1; }
+  .modal-content {
+    background: white; max-width: 500px; width: 90%; border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    padding: 2rem; position: relative; max-height: 90vh; overflow-y: auto;
+  }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: #64748b; }
+  .form-status { font-size: 0.875rem; margin-top: 0.5rem; text-align: center; }
+
+  /* CHATBOT */
+  #chat-wrapper {
+    display: flex; height: 480px;
+    border: 1px solid #bec8d2; border-radius: 1rem; overflow: hidden;
+  }
+  #chat-left {
+    width: 40%; display: flex; flex-direction: column;
+    background: #f2f4f6; border-right: 1px solid #bec8d2;
+  }
+  #chat-right { width: 60%; display: flex; flex-direction: column; background: #ffffff; }
+  #chat-messages {
+    flex: 1; overflow-y: auto; padding: 1rem;
+    display: flex; flex-direction: column; gap: 0.75rem; scroll-behavior: smooth;
+  }
+  #chat-messages::-webkit-scrollbar { width: 4px; }
+  #chat-messages::-webkit-scrollbar-thumb { background: #bec8d2; border-radius: 4px; }
+  #chat-input-area {
+    padding: 0.75rem; border-top: 1px solid #bec8d2;
+    display: flex; gap: 0.5rem; align-items: center; background: #f2f4f6;
+  }
+  .chat-bubble-bot {
+    background: #e6f2fa; border-radius: 0 1rem 1rem 1rem;
+    padding: 0.65rem 0.9rem; font-size: 0.8rem; color: #191c1e;
+    line-height: 1.6; max-width: 100%; word-break: break-word;
+  }
+  .chat-bubble-user {
+    background: #006591; color: #fff; border-radius: 1rem 0 1rem 1rem;
+    padding: 0.65rem 0.9rem; font-size: 0.8rem; line-height: 1.6;
+    max-width: 85%; align-self: flex-end; word-break: break-word;
+  }
+  .typing-dot {
+    display: inline-block; width: 6px; height: 6px; background: #006591;
+    border-radius: 50%; margin: 0 2px; animation: blink 1.2s infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink { 0%,80%,100%{opacity:0} 40%{opacity:1} }
+  @media (max-width: 640px) {
+    #chat-wrapper { flex-direction: column; height: auto; }
+    #chat-left { width: 100%; border-right: none; border-bottom: 1px solid #bec8d2; }
+    #chat-right { width: 100%; min-height: 300px; }
+  }
+</style>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-<!-- MODAL POPUP para Pedir Prueba Gratuita -->
+<!-- MODAL -->
 <div class="modal-overlay" id="pruebaModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeModalBtn">&times;</button>
-        <h3 class="text-2xl font-bold mb-2 text-primary">Solicitá tu prueba gratuita</h3>
-        <p class="text-on-surface-variant mb-6 text-sm">Completá los datos y te contactaremos para coordinar el acceso.</p>
-        <form id="pruebaForm">
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-1">Nombre completo *</label>
-                    <input type="text" name="Nombre" id="modal-nombre" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1">Correo electrónico *</label>
-                    <input type="email" name="Email" id="modal-email" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1">Teléfono (opcional)</label>
-                    <input type="tel" name="Teléfono" id="modal-telefono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1">Inmobiliaria / Empresa</label>
-                    <input type="text" name="Empresa" id="modal-empresa" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium mb-1">Mensaje</label>
-                    <textarea name="Mensaje" id="modal-mensaje" rows="3" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">Hola, quiero solicitar la prueba gratuita de Mitis.</textarea>
-                </div>
-                <button type="submit" class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar solicitud</button>
-                <div id="modalFormStatus" class="form-status"></div>
-            </div>
-        </form>
-    </div>
+  <div class="modal-content">
+    <button class="modal-close" id="closeModalBtn">&times;</button>
+    <h3 class="text-2xl font-bold mb-2 text-primary">Solicitá tu prueba gratuita</h3>
+    <p class="text-on-surface-variant mb-6 text-sm">Completá los datos y te contactaremos para coordinar el acceso.</p>
+    <form id="pruebaForm">
+      <div class="space-y-4">
+        <div><label class="block text-sm font-medium mb-1">Nombre completo *</label><input type="text" name="Nombre" id="modal-nombre" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"></div>
+        <div><label class="block text-sm font-medium mb-1">Correo electrónico *</label><input type="email" name="Email" id="modal-email" required class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"></div>
+        <div><label class="block text-sm font-medium mb-1">Teléfono (opcional)</label><input type="tel" name="Teléfono" id="modal-telefono" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"></div>
+        <div><label class="block text-sm font-medium mb-1">Inmobiliaria / Empresa</label><input type="text" name="Empresa" id="modal-empresa" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent"></div>
+        <div><label class="block text-sm font-medium mb-1">Mensaje</label><textarea name="Mensaje" id="modal-mensaje" rows="3" class="w-full px-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-transparent">Hola, quiero solicitar la prueba gratuita de Mitis.</textarea></div>
+        <button type="submit" class="w-full bg-primary text-on-primary font-bold py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">Enviar solicitud</button>
+        <div id="modalFormStatus" class="form-status"></div>
+      </div>
+    </form>
+  </div>
 </div>
 
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
@@ -204,16 +139,17 @@
 </div>
 <div class="bg-slate-100/50 dark:bg-slate-800/50 h-[1px] w-full absolute bottom-0"></div>
 </nav>
+
 <main class="pt-32">
 <section id="inicio" class="max-w-7xl mx-auto px-6 mb-12 lg:mb-16">
 <div class="flex flex-col lg:flex-row gap-16 items-center">
 <div class="w-full lg:w-3/5">
 <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Mitis Agente Inmobiliario</span>
 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-8 leading-[1.1]">
-                    Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para atención inmobiliaria
-                </h1>
+  Arquitectura <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Inteligente </span> para atención inmobiliaria
+</h1>
 <p class="text-on-surface-variant text-lg lg:text-xl max-w-2xl font-light leading-relaxed mb-10">
- Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.                </p>
+Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma eficiente y al instante, sincronizá propiedades automáticamente y dale a tus clientes una mejor experiencia.</p>
 <div class="flex flex-wrap gap-4">
 <a href="contacto.html" target="_blank" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-95 inline-block">Implementar ahora</a>
 <a href="#productos" class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary-fixed transition-all active:scale-95 inline-block">Ver funciones</a>
@@ -225,6 +161,7 @@
 </div>
 </div>
 </section>
+
 <section id="productos" class="bg-surface-container-low py-16 lg:py-20">
 <div class="max-w-7xl mx-auto px-6">
 <div class="mb-16">
@@ -232,84 +169,85 @@
 <div class="h-1 w-20 bg-primary"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
 <div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl flex flex-col justify-between overflow-hidden relative group">
 <div class="relative z-10">
-<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary text-3xl">chat_bubble</span>
-</div>
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-primary text-3xl">chat_bubble</span></div>
 <h3 class="text-2xl font-bold mb-4">WhatsApp Agente Inteligente</h3>
-<p class="text-on-surface-variant max-w-md">
-  Respuestas inmediatas y atención permanente.<br/>
-  Tu agente inteligente conoce tu cartera de<br/>
-  propiedades al detalle y te asegura que<br/>
-  ningún lead quede sin responder.
-</p>
+<p class="text-on-surface-variant max-w-md">Respuestas inmediatas y atención permanente.<br/>Tu agente inteligente conoce tu cartera de<br/>propiedades al detalle y te asegura que<br/>ningún lead quede sin responder.</p>
 </div>
 <img alt="Comunicación por WhatsApp" class="absolute right-0 bottom-0 w-1/2 translate-y-12 translate-x-12 group-hover:translate-y-6 group-hover:translate-x-6 transition-transform duration-500 rounded-tl-2xl shadow-2xl" src="mensajes_whatsapp.jpg"/>
 </div>
+
 <div class="md:col-span-4 bg-primary text-on-primary p-10 rounded-xl flex flex-col justify-between">
 <div>
-<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">mic</span>
-</div>
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">mic</span></div>
 <h3 class="text-2xl font-bold mb-4">Síntesis de audios</h3>
 <p class="opacity-80">Escucha y responde con mensajes de audio naturales, brindando un toque humano a las interacciones de IA.</p>
 </div>
 <div class="mt-8 flex items-center gap-4">
-<div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden">
-<div class="h-full w-1/2 bg-white"></div>
-</div>
+<div class="h-1 flex-1 bg-white/30 rounded-full overflow-hidden"><div class="h-full w-1/2 bg-white"></div></div>
 <span class="text-xs font-mono">00:42</span>
 </div>
 </div>
 
 <!-- CHATBOT DEMO MITIS -->
-<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl p-6 md:p-10">
-  <div class="flex items-center gap-3 mb-6">
+<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl p-6 md:p-8">
+  <div class="flex items-center gap-3 mb-5">
     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
       <span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
     </div>
     <div>
       <h3 class="text-lg font-bold text-on-surface">Probá el Agente Mitis</h3>
-      <p class="text-xs text-on-surface-variant">Demo en vivo · Respondé preguntas sobre tu inmobiliaria</p>
+      <p class="text-xs text-on-surface-variant">Demo en vivo · IA real respondiendo como un agente inmobiliario</p>
     </div>
     <div class="ml-auto flex items-center gap-1.5">
       <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
       <span class="text-xs text-on-surface-variant">En línea</span>
     </div>
   </div>
-  <div id="chat-messages" class="space-y-4 mb-6 max-h-72 overflow-y-auto pr-1">
-    <div class="flex gap-3">
-      <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
-        <span class="material-symbols-outlined text-white text-base">smart_toy</span>
+
+  <div id="chat-wrapper">
+    <!-- IZQUIERDA -->
+    <div id="chat-left">
+      <div style="padding:0.75rem 1rem;border-bottom:1px solid #bec8d2;font-size:0.7rem;color:#3e4850;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Tu consulta</div>
+      <div style="flex:1;padding:1rem;font-size:0.8rem;color:#6e7881;line-height:1.7;">
+        <p>Escribí tu mensaje y el agente te responde al instante.</p>
+        <p style="margin-top:0.75rem;">Podés preguntar sobre:</p>
+        <ul style="margin-top:0.5rem;padding-left:1.2rem;list-style:disc;">
+          <li>Propiedades disponibles</li>
+          <li>Zonas y precios</li>
+          <li>Alquileres y ventas</li>
+          <li>Coordinar visitas</li>
+          <li>Tasaciones</li>
+        </ul>
       </div>
-      <div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3 max-w-md">
-        <p class="text-sm text-on-surface">¡Hola! Soy el agente Mitis. Podés preguntarme sobre propiedades, alquileres, tasaciones o cualquier consulta inmobiliaria.</p>
+      <div id="chat-input-area">
+        <input id="chat-input" type="text" placeholder="Escribí tu consulta..."
+          style="flex:1;padding:0.5rem 0.75rem;border-radius:0.5rem;border:1px solid #bec8d2;font-size:0.8rem;background:#fff;outline:none;font-family:'Inter',sans-serif;"/>
+        <button id="chat-send"
+          style="width:36px;height:36px;background:#006591;color:#fff;border:none;border-radius:0.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity 0.2s;">
+          <span class="material-symbols-outlined" style="font-size:18px;">send</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- DERECHA -->
+    <div id="chat-right">
+      <div style="padding:0.75rem 1rem;border-bottom:1px solid #e0e3e5;font-size:0.75rem;color:#3e4850;font-weight:500;background:#f7f9fb;display:flex;align-items:center;gap:0.4rem;">
+        <span class="material-symbols-outlined" style="font-size:14px;color:#006591;">smart_toy</span> Agente Mitis
+      </div>
+      <div id="chat-messages">
+        <div class="chat-bubble-bot">¡Hola! Soy Mitis, tu agente inmobiliario virtual. ¿En qué te puedo ayudar hoy? 😊</div>
       </div>
     </div>
   </div>
-  <div class="flex gap-3 items-center">
-    <input 
-      id="chat-input" 
-      type="text" 
-      placeholder="Escribí tu consulta..." 
-      class="flex-1 px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-lowest text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
-    />
-    <button 
-      id="chat-send" 
-      class="w-11 h-11 bg-primary text-on-primary rounded-xl flex items-center justify-center hover:opacity-90 active:scale-95 transition-all flex-shrink-0"
-    >
-      <span class="material-symbols-outlined text-xl">send</span>
-    </button>
-  </div>
-  <p class="text-xs text-on-surface-variant mt-3 text-center">Demo con IA real · Las respuestas son generadas por Gemini</p>
+  <p class="text-xs text-on-surface-variant mt-3 text-center">Demo con IA real · Las respuestas son generadas por Gemini · Las propiedades mostradas son ilustrativas</p>
 </div>
 
 <div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
 <div class="flex items-center gap-3 mb-4">
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-3xl">database</span>
-</div>
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-primary text-3xl">database</span></div>
 <span class="text-xl font-bold text-primary">Plataformas</span>
 </div>
 <h3 class="text-2xl font-bold mb-4">Indexación avanzada</h3>
@@ -319,39 +257,21 @@
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Realtor</div>
 <div class="px-3 py-1 bg-white rounded-full text-xs font-medium text-on-surface-variant shadow-sm border border-outline-variant/10">Idealista</div>
 </div>
-<div class="mt-6">
-<img alt="Todas las plataformas inmobiliarias" class="w-full h-auto object-contain rounded-lg" src="todas_plataformas.jpg"/>
+<div class="mt-6"><img alt="Todas las plataformas inmobiliarias" class="w-full h-auto object-contain rounded-lg" src="todas_plataformas.jpg"/></div>
 </div>
-</div>
+
 <div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl relative overflow-hidden">
 <div class="flex flex-col md:flex-row gap-10 h-full relative z-10">
 <div class="md:w-1/2">
-<div class="w-12 h-12 bg-tertiary-container/20 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-tertiary text-3xl">account_tree</span>
-</div>
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-lg flex items-center justify-center mb-6"><span class="material-symbols-outlined text-tertiary text-3xl">account_tree</span></div>
 <h3 class="text-2xl font-bold mb-4">Gestión Inteligente de Leads</h3>
 <p class="text-on-surface-variant">Mitis califica leads mediante análisis semántico y los deriva instantáneamente a los departamentos especializados.</p>
 <div class="mt-6 space-y-3">
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">sell</span>
-<span class="text-sm font-semibold">Departamento de Ventas</span>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-tertiary">key</span>
-<span class="text-sm font-semibold">Gestión de Alquileres</span>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">monitoring</span>
-<span class="text-sm font-semibold">Genera reportes</span>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-tertiary">calculate</span>
-<span class="text-sm font-semibold">Gestiona tasaciones</span>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4">
-<span class="material-symbols-outlined text-primary">chat</span>
-<span class="text-sm font-semibold">Guarda los chats</span>
-</div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4"><span class="material-symbols-outlined text-primary">sell</span><span class="text-sm font-semibold">Departamento de Ventas</span></div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">key</span><span class="text-sm font-semibold">Gestión de Alquileres</span></div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4"><span class="material-symbols-outlined text-primary">monitoring</span><span class="text-sm font-semibold">Genera reportes</span></div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">calculate</span><span class="text-sm font-semibold">Gestiona tasaciones</span></div>
+<div class="bg-surface-container-low p-4 rounded-lg flex items-center gap-4"><span class="material-symbols-outlined text-primary">chat</span><span class="text-sm font-semibold">Guarda los chats</span></div>
 </div>
 </div>
 <div class="md:w-1/2 flex items-center justify-center">
@@ -359,6 +279,7 @@
 </div>
 </div>
 </div>
+
 </div>
 </div>
 </section>
@@ -370,40 +291,17 @@
 <span class="text-tertiary font-bold tracking-widest uppercase text-xs mb-4 block">Tu secretario permanente</span>
 <h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-on-surface mb-8 leading-tight">Nunca se cansa, no pide aumentos y es muy veloz</h2>
 <div class="space-y-8">
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">1</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Atención simultánea sin límites</h4>
-<p class="text-on-surface-variant leading-relaxed">Mitis responde al instante a múltiples consultas de WhatsApp al mismo tiempo. Mientras un humano atiende de a un lead, Mitis gestiona decenas en paralelo sin perder el hilo.</p>
+<div class="flex gap-6"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">1</div><div><h4 class="text-xl font-bold mb-2">Atención simultánea sin límites</h4><p class="text-on-surface-variant leading-relaxed">Mitis responde al instante a múltiples consultas de WhatsApp al mismo tiempo. Mientras un humano atiende de a un lead, Mitis gestiona decenas en paralelo sin perder el hilo.</p></div></div>
+<div class="flex gap-6"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">2</div><div><h4 class="text-xl font-bold mb-2">Memoria perfecta del inventario</h4><p class="text-on-surface-variant leading-relaxed">Conoce cada propiedad publicada, sus características, ubicación y estado. Entrega la información precisa en menos de un segundo, sin titubeos ni búsquedas manuales.</p></div></div>
+<div class="flex gap-6"><div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">3</div><div><h4 class="text-xl font-bold mb-2">Eficiencia que multiplica tu tiempo</h4><p class="text-on-surface-variant leading-relaxed">Un minuto de interacción con Mitis equivale a ocho minutos de trabajo humano. Responde, califica y deriva leads automáticamente, liberando a tu equipo para tareas de mayor valor.</p></div></div>
+<div class="mt-8 border-l-4 border-primary pl-5 italic text-on-surface-variant/80">Nunca más un cliente sin respuesta inmediata. Mitis retiene al lead, lo asesora y lo guía hasta la reserva.</div>
 </div>
 </div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">2</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Memoria perfecta del inventario</h4>
-<p class="text-on-surface-variant leading-relaxed">Conoce cada propiedad publicada, sus características, ubicación y estado. Entrega la información precisa en menos de un segundo, sin titubeos ni búsquedas manuales.</p>
-</div>
-</div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">3</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Eficiencia que multiplica tu tiempo</h4>
-<p class="text-on-surface-variant leading-relaxed">Un minuto de interacción con Mitis equivale a ocho minutos de trabajo humano. Responde, califica y deriva leads automáticamente, liberando a tu equipo para tareas de mayor valor.</p>
-</div>
-</div>
-<div class="mt-8 border-l-4 border-primary pl-5 italic text-on-surface-variant/80">
-    Nunca más un cliente sin respuesta inmediata. Mitis retiene al lead, lo asesora y lo guía hasta la reserva.
-</div>
-</div>
-</div>
-<div class="w-full lg:w-1/2">
-<div class="relative rounded-2xl overflow-hidden shadow-2xl">
-<img class="w-full aspect-square object-cover" src="mitis_escritorio_chat.jpg" alt="Mitis Escritorio Chat"/>
-</div>
-</div>
+<div class="w-full lg:w-1/2"><div class="relative rounded-2xl overflow-hidden shadow-2xl"><img class="w-full aspect-square object-cover" src="mitis_escritorio_chat.jpg" alt="Mitis Escritorio Chat"/></div></div>
 </div>
 </div>
 </section>
+
 <section id="contacto" class="max-w-7xl mx-auto px-6 mb-24 lg:mb-32">
 <div class="bg-primary-container rounded-[2rem] p-12 lg:p-24 relative overflow-hidden text-on-primary-container">
 <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
@@ -423,198 +321,194 @@
 </main>
 
 <footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-    <div class="flex flex-col gap-4">
-      <div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
-      <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
-      <p class="text-slate-500 dark:text-slate-400 text-xs">Creado por <a href="https://www.linkedin.com/in/leonardo-otamendi-53171b10a/" target="_blank" class="text-sky-600 hover:underline">Leonardo Otamendi</a></p>
-      <p class="text-slate-500 dark:text-slate-400 text-xs">Mendoza-Argentina</p>
-    </div>
-    <div class="flex flex-wrap justify-center gap-6 text-center">
-      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="politica_privacidad.html">Política de privacidad</a>
-      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="terminos_servicio.html">Términos del servicio</a>
-      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="politica_cookies.html">Política de cookies</a>
-      <a class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors" href="contacto.html">Soporte</a>
-    </div>
-    <div class="flex gap-4">
-      <button id="shareBtn" type="button" class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer" aria-label="Compartir sitio">
-        <span class="material-symbols-outlined text-sm">share</span>
-      </button>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-4">
+<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">Mitis Desarrollos</div>
+<p class="text-slate-500 text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
+<p class="text-slate-500 text-xs">Creado por <a href="https://www.linkedin.com/in/leonardo-otamendi-53171b10a/" target="_blank" class="text-sky-600 hover:underline">Leonardo Otamendi</a></p>
+<p class="text-slate-500 text-xs">Mendoza-Argentina</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6 text-center">
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors" href="politica_privacidad.html">Política de privacidad</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors" href="terminos_servicio.html">Términos del servicio</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors" href="politica_cookies.html">Política de cookies</a>
+<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors" href="contacto.html">Soporte</a>
+</div>
+<div class="flex gap-4">
+<button id="shareBtn" type="button" class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer" aria-label="Compartir sitio">
+<span class="material-symbols-outlined text-sm">share</span>
+</button>
+</div>
+</div>
 </footer>
 
 <script>
-  (function() {
-    "use strict";
-
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
-
-    function removeActiveClasses() {
-      navLinks.forEach(link => {
-        link.classList.remove('text-sky-600', 'dark:text-sky-400', 'font-semibold', 'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1');
-        link.classList.add('text-slate-600', 'dark:text-slate-400');
-      });
-    }
-    function setActiveLink(link) {
-      removeActiveClasses();
-      link.classList.remove('text-slate-600', 'dark:text-slate-400');
-      link.classList.add('text-sky-600', 'dark:text-sky-400', 'font-semibold', 'border-b-2', 'border-sky-600', 'dark:border-sky-400', 'pb-1');
-    }
-    function updateActiveLinkOnScroll() {
-      const scrollPosition = window.scrollY + 100;
-      let currentSection = null;
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) currentSection = section;
-      });
-      if (!currentSection && sections.length > 0) currentSection = sections[0];
-      if (currentSection) {
-        const id = currentSection.getAttribute('id');
-        const activeLink = Array.from(navLinks).find(link => link.getAttribute('href') === '#' + id);
-        if (activeLink) setActiveLink(activeLink);
-      }
-    }
-    navLinks.forEach(link => link.addEventListener('click', function(e) { setActiveLink(this); }));
-    window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
-    window.addEventListener('DOMContentLoaded', function() {
-      setTimeout(() => {
-        if (window.location.hash) {
-          const hash = window.location.hash;
-          const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash);
-          if (targetLink) { setActiveLink(targetLink); const targetSection = document.querySelector(hash); if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' }); return; }
-        }
-        updateActiveLinkOnScroll();
-      }, 50);
-    });
-    window.addEventListener('hashchange', function() {
-      const hash = window.location.hash;
-      if (hash) { const targetLink = Array.from(navLinks).find(link => link.getAttribute('href') === hash); if (targetLink) setActiveLink(targetLink); } else { updateActiveLinkOnScroll(); }
-    });
-
-    const modal = document.getElementById('pruebaModal');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const probarMitisBtn = document.getElementById('probarMitisBtn');
-    const pruebaGratisBtn = document.getElementById('pruebaGratisBtn');
-    const form = document.getElementById('pruebaForm');
-    const statusDiv = document.getElementById('modalFormStatus');
-
-    function openModal() { if (modal) modal.classList.add('active'); }
-    function closeModal() { if (modal) modal.classList.remove('active'); }
-    if (probarMitisBtn) probarMitisBtn.addEventListener('click', openModal);
-    if (pruebaGratisBtn) pruebaGratisBtn.addEventListener('click', openModal);
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (modal) modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && modal && modal.classList.contains('active')) closeModal(); });
-
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        statusDiv.textContent = 'Enviando...';
-        statusDiv.style.color = '#006591';
-        const formData = { Nombre: document.getElementById('modal-nombre').value, Email: document.getElementById('modal-email').value, Teléfono: document.getElementById('modal-telefono').value, Empresa: document.getElementById('modal-empresa').value, Mensaje: document.getElementById('modal-mensaje').value };
-        try {
-          const response = await fetch('https://formspree.io/f/mqewdwpb', { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(formData) });
-          if (response.ok) { statusDiv.textContent = '¡Solicitud enviada con éxito! Te contactaremos pronto.'; statusDiv.style.color = '#16a34a'; form.reset(); document.getElementById('modal-mensaje').value = 'Hola, quiero solicitar la prueba gratuita de Mitis.'; setTimeout(() => { closeModal(); statusDiv.textContent = ''; }, 2000); }
-          else { statusDiv.textContent = 'Hubo un error. Por favor, intentá de nuevo.'; statusDiv.style.color = '#ba1a1a'; }
-        } catch (error) { statusDiv.textContent = 'Error de conexión. Revisá tu internet.'; statusDiv.style.color = '#ba1a1a'; }
-      });
-    }
-
-    // CHATBOT
-    const PROXY_URL = 'https://gemini-proxy-287336245644.southamerica-west1.run.app';
-    const chatInput = document.getElementById('chat-input');
-    const chatSend = document.getElementById('chat-send');
-    const chatMessages = document.getElementById('chat-messages');
-
-    function addMessage(text, isUser) {
-      const div = document.createElement('div');
-      div.className = 'flex gap-3' + (isUser ? ' flex-row-reverse' : '');
-      div.innerHTML = isUser
-        ? '<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-on-secondary-container text-base">person</span></div><div class="bg-secondary-container rounded-2xl rounded-tr-none px-4 py-3 max-w-md"><p class="text-sm text-on-surface">' + text + '</p></div>'
-        : '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-white text-base">smart_toy</span></div><div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3 max-w-md"><p class="text-sm text-on-surface">' + text + '</p></div>';
-      chatMessages.appendChild(div);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    function addTyping() {
-      const div = document.createElement('div');
-      div.id = 'typing-indicator';
-      div.className = 'flex gap-3';
-      div.innerHTML = '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-white text-base">smart_toy</span></div><div class="bg-primary/10 rounded-2xl rounded-tl-none px-4 py-3"><p class="text-sm text-on-surface-variant">Escribiendo...</p></div>';
-      chatMessages.appendChild(div);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }
-
-    async function sendChatMessage() {
-      if (!chatInput) return;
-      const text = chatInput.value.trim();
-      if (!text) return;
-      chatInput.value = '';
-      chatSend.disabled = true;
-      addMessage(text, true);
-      addTyping();
-      try {
-        const res = await fetch(PROXY_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: text }) });
-        const data = await res.json();
-        document.getElementById('typing-indicator')?.remove();
-        addMessage(data.reply || 'No pude procesar la respuesta.', false);
-      } catch(e) {
-        document.getElementById('typing-indicator')?.remove();
-        addMessage('Hubo un error al conectar. Intentá de nuevo.', false);
-      }
-      chatSend.disabled = false;
-      chatInput.focus();
-    }
-
-    if (chatSend) chatSend.addEventListener('click', sendChatMessage);
-    if (chatInput) chatInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') sendChatMessage(); });
-
-  })();
-</script>
-
-<div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 dark:bg-slate-900/95 border-t border-slate-200 dark:border-slate-700 shadow-2xl backdrop-blur-xl p-5 hidden">
-  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-    <div class="flex-1">
-      <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Política de cookies</h3>
-      <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">Utilizamos cookies para mejorar la experiencia del usuario, analizar el tráfico del sitio y optimizar nuestros servicios. Podés aceptar o rechazar las cookies. Más información en nuestra <a href="politica_cookies.html" class="text-sky-600 hover:underline">Política de Cookies</a>.</p>
-    </div>
-    <div class="flex flex-wrap gap-3 w-full lg:w-auto">
-      <button id="acceptCookies" class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Aceptar</button>
-      <button id="rejectCookies" class="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Rechazar</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function () {
+(function() {
   "use strict";
-  const cookieBanner = document.getElementById("cookieBanner");
-  const acceptBtn = document.getElementById("acceptCookies");
-  const rejectBtn = document.getElementById("rejectCookies");
-  function setCookie(name, value, days) { let expires = ""; if (days) { const date = new Date(); date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); expires = "; expires=" + date.toUTCString(); } document.cookie = name + "=" + value + expires + "; path=/; SameSite=Lax"; }
-  function getCookie(name) { const nameEQ = name + "="; const ca = document.cookie.split(";"); for (let i = 0; i < ca.length; i++) { let c = ca[i]; while (c.charAt(0) === " ") c = c.substring(1, c.length); if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length); } return null; }
-  function showBanner() { if (cookieBanner) cookieBanner.classList.remove("hidden"); }
-  function hideBanner() { if (cookieBanner) cookieBanner.classList.add("hidden"); }
-  if (!getCookie("mitis_cookie_consent")) showBanner();
-  if (acceptBtn) acceptBtn.addEventListener("click", function () { setCookie("mitis_cookie_consent", "accepted", 365); hideBanner(); });
-  if (rejectBtn) rejectBtn.addEventListener("click", function () { setCookie("mitis_cookie_consent", "rejected", 365); hideBanner(); });
+
+  // NAV
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+  function removeActiveClasses() { navLinks.forEach(l => { l.classList.remove('text-sky-600','font-semibold','border-b-2','border-sky-600','pb-1'); l.classList.add('text-slate-600'); }); }
+  function setActiveLink(link) { removeActiveClasses(); link.classList.remove('text-slate-600'); link.classList.add('text-sky-600','font-semibold','border-b-2','border-sky-600','pb-1'); }
+  function updateActiveLinkOnScroll() {
+    const sp = window.scrollY + 100; let cur = null;
+    sections.forEach(s => { if (sp >= s.offsetTop && sp < s.offsetTop + s.offsetHeight) cur = s; });
+    if (!cur && sections.length) cur = sections[0];
+    if (cur) { const al = Array.from(navLinks).find(l => l.getAttribute('href') === '#' + cur.getAttribute('id')); if (al) setActiveLink(al); }
+  }
+  navLinks.forEach(l => l.addEventListener('click', function() { setActiveLink(this); }));
+  window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
+  window.addEventListener('DOMContentLoaded', () => setTimeout(() => {
+    if (window.location.hash) { const tl = Array.from(navLinks).find(l => l.getAttribute('href') === window.location.hash); if (tl) { setActiveLink(tl); document.querySelector(window.location.hash)?.scrollIntoView({ behavior: 'smooth' }); return; } }
+    updateActiveLinkOnScroll();
+  }, 50));
+  window.addEventListener('hashchange', () => { const tl = Array.from(navLinks).find(l => l.getAttribute('href') === window.location.hash); if (tl) setActiveLink(tl); else updateActiveLinkOnScroll(); });
+
+  // MODAL
+  const modal = document.getElementById('pruebaModal');
+  const closeBtn = document.getElementById('closeModalBtn');
+  const probarMitisBtn = document.getElementById('probarMitisBtn');
+  const pruebaGratisBtn = document.getElementById('pruebaGratisBtn');
+  const form = document.getElementById('pruebaForm');
+  const statusDiv = document.getElementById('modalFormStatus');
+  function openModal() { modal?.classList.add('active'); }
+  function closeModal() { modal?.classList.remove('active'); }
+  probarMitisBtn?.addEventListener('click', openModal);
+  pruebaGratisBtn?.addEventListener('click', openModal);
+  closeBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal?.classList.contains('active')) closeModal(); });
+  form?.addEventListener('submit', async function(e) {
+    e.preventDefault(); statusDiv.textContent = 'Enviando...'; statusDiv.style.color = '#006591';
+    const fd = { Nombre: document.getElementById('modal-nombre').value, Email: document.getElementById('modal-email').value, Teléfono: document.getElementById('modal-telefono').value, Empresa: document.getElementById('modal-empresa').value, Mensaje: document.getElementById('modal-mensaje').value };
+    try {
+      const r = await fetch('https://formspree.io/f/mqewdwpb', { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(fd) });
+      if (r.ok) { statusDiv.textContent = '¡Solicitud enviada con éxito!'; statusDiv.style.color = '#16a34a'; form.reset(); document.getElementById('modal-mensaje').value = 'Hola, quiero solicitar la prueba gratuita de Mitis.'; setTimeout(() => { closeModal(); statusDiv.textContent = ''; }, 2000); }
+      else { statusDiv.textContent = 'Hubo un error. Intentá de nuevo.'; statusDiv.style.color = '#ba1a1a'; }
+    } catch { statusDiv.textContent = 'Error de conexión.'; statusDiv.style.color = '#ba1a1a'; }
+  });
+
+  // CHATBOT
+  const PROXY_URL = 'https://gemini-proxy-287336245644.southamerica-west1.run.app';
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  const chatMessages = document.getElementById('chat-messages');
+  // El historial incluye TODOS los turnos: usuario y modelo
+  let chatHistory = [];
+
+  function renderBotMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'chat-bubble-bot';
+    // Convertir saltos de línea en <br> para que se vean correctamente
+    div.innerHTML = text.replace(/\n/g, '<br>');
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function renderUserMessage(text) {
+    const div = document.createElement('div');
+    div.className = 'chat-bubble-user';
+    div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.id = 'typing-indicator';
+    div.className = 'chat-bubble-bot';
+    div.style.cssText = 'display:flex;align-items:center;gap:2px;padding:0.65rem 0.9rem;';
+    div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  async function sendChatMessage() {
+    if (!chatInput) return;
+    const text = chatInput.value.trim();
+    if (!text) return;
+    chatInput.value = '';
+    chatSend.disabled = true;
+    chatSend.style.opacity = '0.5';
+
+    // Mostrar mensaje del usuario
+    renderUserMessage(text);
+
+    // Agregar al historial ANTES de mandarlo
+    chatHistory.push({ role: 'user', parts: [{ text: text }] });
+
+    showTyping();
+
+    try {
+      // Mandar TODO el historial incluyendo el mensaje actual
+      const res = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: text,
+          history: chatHistory.slice(0, -1) // historial previo sin el último (el proxy lo agrega)
+        })
+      });
+      const data = await res.json();
+      document.getElementById('typing-indicator')?.remove();
+      const reply = data.reply || 'No pude procesar la respuesta.';
+      renderBotMessage(reply);
+      // Guardar respuesta del bot en historial
+      chatHistory.push({ role: 'model', parts: [{ text: reply }] });
+      // Mantener historial acotado para no sobrepasar límites
+      if (chatHistory.length > 30) chatHistory = chatHistory.slice(-30);
+    } catch(e) {
+      document.getElementById('typing-indicator')?.remove();
+      renderBotMessage('Hubo un error al conectar. Intentá de nuevo.');
+    }
+
+    chatSend.disabled = false;
+    chatSend.style.opacity = '1';
+    chatInput.focus();
+  }
+
+  chatSend?.addEventListener('click', sendChatMessage);
+  chatInput?.addEventListener('keydown', e => { if (e.key === 'Enter') sendChatMessage(); });
+
 })();
 </script>
 
+<!-- COOKIES -->
+<div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[9999] bg-white/95 border-t border-slate-200 shadow-2xl backdrop-blur-xl p-5 hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+<div class="flex-1">
+<h3 class="text-lg font-bold text-slate-900 mb-2">Política de cookies</h3>
+<p class="text-sm text-slate-600 leading-relaxed">Utilizamos cookies para mejorar la experiencia del usuario. Más info en nuestra <a href="politica_cookies.html" class="text-sky-600 hover:underline">Política de Cookies</a>.</p>
+</div>
+<div class="flex flex-wrap gap-3 w-full lg:w-auto">
+<button id="acceptCookies" class="bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Aceptar</button>
+<button id="rejectCookies" class="bg-slate-200 text-slate-800 px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition-all">Rechazar</button>
+</div>
+</div>
+</div>
 <script>
-(function () {
-  const shareBtn = document.getElementById("shareBtn");
-  if (!shareBtn) return;
-  shareBtn.addEventListener("click", function () {
-    const shareUrl = window.location.href;
-    if (navigator.share) { navigator.share({ title: "Mitis Desarrollos", text: "Conocé Mitis Desarrollos", url: shareUrl }).catch(err => console.log("Compartir cancelado")); return; }
-    if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(shareUrl).then(() => { alert("¡Enlace copiado al portapapeles!"); }).catch(() => { fallbackCopy(shareUrl); }); } else { fallbackCopy(shareUrl); }
-    function fallbackCopy(text) { const textarea = document.createElement("textarea"); textarea.value = text; textarea.style.position = "fixed"; textarea.style.top = "-9999px"; textarea.style.left = "-9999px"; document.body.appendChild(textarea); textarea.focus(); textarea.select(); try { document.execCommand('copy'); alert("¡Enlace copiado al portapapeles!"); } catch (err) { prompt("Copiá manualmente el enlace:", text); } document.body.removeChild(textarea); }
+(function(){
+  const banner = document.getElementById('cookieBanner');
+  const accept = document.getElementById('acceptCookies');
+  const reject = document.getElementById('rejectCookies');
+  function setCookie(n,v,d){let e='';if(d){const dt=new Date();dt.setTime(dt.getTime()+(d*864e5));e='; expires='+dt.toUTCString();}document.cookie=n+'='+v+e+'; path=/; SameSite=Lax';}
+  function getCookie(n){const eq=n+'=',ca=document.cookie.split(';');for(let c of ca){c=c.trim();if(c.indexOf(eq)===0)return c.substring(eq.length);}return null;}
+  if(!getCookie('mitis_cookie_consent'))banner?.classList.remove('hidden');
+  accept?.addEventListener('click',()=>{setCookie('mitis_cookie_consent','accepted',365);banner?.classList.add('hidden');});
+  reject?.addEventListener('click',()=>{setCookie('mitis_cookie_consent','rejected',365);banner?.classList.add('hidden');});
+})();
+</script>
+<script>
+(function(){
+  const btn=document.getElementById('shareBtn');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    const url=window.location.href;
+    if(navigator.share){navigator.share({title:'Mitis Desarrollos',text:'Conocé Mitis Desarrollos',url}).catch(()=>{});return;}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(url).then(()=>alert('¡Enlace copiado!')).catch(()=>fallback(url));}else{fallback(url);}
+    function fallback(t){const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;top:-9999px;left:-9999px;';document.body.appendChild(ta);ta.focus();ta.select();try{document.execCommand('copy');alert('¡Enlace copiado!');}catch{prompt('Copiá el enlace:',t);}document.body.removeChild(ta);}
   });
 })();
 </script>
-
 </body></html>
