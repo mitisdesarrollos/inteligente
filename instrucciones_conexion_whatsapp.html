@@ -3,185 +3,229 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Mitis - Documentación de Agente Inteligente 24/7</title>
+    <title>Conectá tu WhatsApp – Mitis</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "surface-container-high": "#e1e8fd",
-                    "surface-variant": "#dce2f7",
-                    "on-primary": "#ffffff",
-                    "inverse-primary": "#b4c5ff",
-                    "on-secondary-fixed-variant": "#0053cf",
-                    "on-surface": "#1a1b20",
-                    "primary": "#2563EB",
-                    "primary-container": "#dbeafe",
-                    "on-primary-container": "#1e40af",
-                    "surface": "#f8fafc",
-                    "outline": "#94a3b8",
-                    "outline-variant": "#cbd5e1",
-                    "on-surface-variant": "#475569",
-                    "error": "#ef4444",
-                    "error-container": "#fee2e2",
-                    "on-error-container": "#991b1b"
-            }
+            colors: {
+              "outline-variant": "#bec8d2","tertiary": "#006399","surface-container": "#eceef0",
+              "on-secondary-fixed-variant": "#38485d","on-primary-fixed": "#001e2f","primary-fixed": "#c9e6ff",
+              "surface-container-high": "#e6e8ea","inverse-on-surface": "#eff1f3","on-secondary-fixed": "#0b1c30",
+              "on-background": "#191c1e","tertiary-fixed": "#cde5ff","on-tertiary-fixed-variant": "#004b74",
+              "primary-container": "#0ea5e9","surface": "#f7f9fb","inverse-primary": "#89ceff",
+              "surface-container-low": "#f2f4f6","background": "#f7f9fb","secondary-fixed": "#d3e4fe",
+              "on-primary": "#ffffff","on-primary-container": "#003751","surface-bright": "#f7f9fb",
+              "surface-container-highest": "#e0e3e5","primary-fixed-dim": "#89ceff","tertiary-container": "#58a1dc",
+              "on-tertiary-container": "#003656","error-container": "#ffdad6","inverse-surface": "#2d3133",
+              "on-surface": "#191c1e","on-tertiary": "#ffffff","secondary": "#505f76","surface-dim": "#d8dadc",
+              "error": "#ba1a1a","surface-variant": "#e0e3e5","on-primary-fixed-variant": "#004c6e",
+              "secondary-container": "#d0e1fb","primary": "#006591","outline": "#6e7881","on-secondary": "#ffffff",
+              "surface-tint": "#006591","secondary-fixed-dim": "#b7c8e1","on-surface-variant": "#3e4850",
+              "on-error": "#ffffff","on-error-container": "#93000a","on-secondary-container": "#54647a",
+              "on-tertiary-fixed": "#001d32","surface-container-lowest": "#ffffff","tertiary-fixed-dim": "#94ccff"
+            },
+            borderRadius: { DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem" },
+            fontFamily: { headline: ["Manrope"], body: ["Inter"], label: ["Inter"] }
           }
         }
       }
     </script>
+    <style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
 </head>
-<body class="bg-surface text-on-surface font-sans antialiased min-h-screen flex items-center justify-center p-4 md:p-8">
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
 
-    <main class="w-full max-w-4xl bg-white rounded-2xl shadow-md border border-outline-variant p-6 md:p-10">
-        
-        <div class="border-b border-outline-variant pb-6 mb-8">
-            <h1 class="text-2xl md:text-3xl font-black text-primary tracking-tight">
-                Conectá tu WhatsApp a Mitis: Agente Inteligente 24/7
-            </h1>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="https://mitisdesarrollos.github.io/inteligente/" class="flex items-center gap-3">
+                    <img src="https://raw.githubusercontent.com/mitisdesarrollos/inteligente/main/logo_mitis.png" alt="Mitis Logo" class="h-10 w-auto object-contain"/>
+                    <span class="text-2xl font-bold tracking-tighter text-slate-900">Mitis</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://mitisdesarrollos.github.io/inteligente/" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Volver al inicio</a>
+                <a href="contacto.html" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-all">Soporte</a>
+            </div>
         </div>
+        <div class="bg-slate-100/50 h-[1px] w-full absolute bottom-0"></div>
+    </nav>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            
-            <section class="bg-surface border border-outline-variant rounded-xl p-6 flex flex-col gap-md">
+    <main class="pt-32 pb-20">
+        <div class="max-w-5xl mx-auto px-6">
+
+            <div class="mb-12">
+                <span class="text-primary font-semibold tracking-widest uppercase text-xs mb-4 block">Documentación para conexión</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4 leading-[1.1]">
+                    Conectá tu WhatsApp a
+                    <span class="bg-gradient-to-r from-primary to-primary-container bg-clip-text text-transparent">Mitis</span>
+                </h1>
+                <p class="text-on-surface-variant text-lg max-w-2xl font-light leading-relaxed">
+                    Elegí la opción que mejor se adapte a tu inmobiliaria y empezá a recibir leads calificados automáticamente.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                
+                <section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-md shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-outline-variant pb-3 mb-4">
+                        <h2 class="font-bold text-md text-primary tracking-wide">
+                            🔹 OPCIÓN 1: Usar un número NUEVO
+                            <span class="text-xs font-medium text-on-surface-variant"> (La opción recomendada y más rápida)</span>
+                        </h2>
+                    </div>
+                    <ul class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                            <span>Ideal para no tocar tu teléfono actual y empezar de cero sin riesgos.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                            <span><strong>¿Qué necesitás?</strong> Comprar un chip nuevo (un número que nunca haya tenido WhatsApp).</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                            <span><strong>¿Cómo se hace?</strong> Colocás el chip en cualquier teléfono para recibir el SMS de activación, desde el CRM hacés clic en "Conectar Número" y seguís los pasos de Facebook.</span>
+                        </li>
+                        <li class="flex gap-3 font-semibold text-on-surface">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs">✓</span>
+                            <span>Ventaja: No perdés ningún dato de tu negocio y tu WhatsApp actual sigue funcionando normalmente.</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-md shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-outline-variant pb-3 mb-4">
+                        <h2 class="font-bold text-md text-primary tracking-wide">
+                            🔸 OPCIÓN 2: Usar tu número ACTUAL de la inmobiliaria
+                        </h2>
+                    </div>
+                    <ul class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-700 font-bold text-xs">⚠</span>
+                            <span><strong>¡Atención! Lee esto antes de avanzar para no perder tus chats:</strong> Meta (la empresa dueña de WhatsApp) exige que para conectar un sistema inteligente oficial, el número no debe estar activo en la aplicación de tu celular.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs">!</span>
+                            <span><strong>Paso 1 (Obligatorio):</strong> Entrá a tu aplicación de WhatsApp en el celular, ve a Ajustes &gt; Cuenta y seleccioná <em>Eliminar mi cuenta</em>.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs">🚨</span>
+                            <span><strong>Alerta:</strong> Esto borrará los grupos y chats actuales de tu teléfono. Te recomendamos exportar los chats importantes antes de hacerlo.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                            <span><strong>Paso 2:</strong> Una vez eliminada la cuenta de la aplicación, desde el CRM hacés clic en "Conectar Número" y seguís los tres pasos de Facebook para dárselo al sistema inteligente.</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                            <span><strong>Paso 3 (Volver al celular):</strong> Una vez que el sistema te confirme que la conexión fue exitosa, ya podés volver a descargar la aplicación WhatsApp Business (gratuita) en tu celular y registrar el número de nuevo. Los mensajes nuevos te van a empezar a llegar ahí normalmente, pero ahora <strong>Mitis</strong> va a estar trabajando en segundo plano respondiendo de forma automática.</span>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <section class="mt-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col gap-md shadow-sm">
                 <div class="flex items-center gap-3 border-b border-outline-variant pb-3 mb-4">
                     <h2 class="font-bold text-md text-primary tracking-wide">
-                        🔹 OPCIÓN 1: Usar un número NUEVO
-                        <span class="text-xs font-medium text-on-surface-variant"> (La opción recomendada y más rápida)</span>
+                        OPCIÓN B – YA TENGO API CONTRATADA (META O TWILIO)
                     </h2>
                 </div>
                 <ul class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
                     <li class="flex gap-3">
                         <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                        <span>Ideal para no tocar tu teléfono actual y empezar de cero sin riesgos.</span>
+                        <span>En el CRM, seleccioná "api_meta_oficial" o "proveedor_twilio".</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                        <span><strong>¿Qué necesitás?</strong> Comprar un chip nuevo (un número que nunca haya tenido WhatsApp).</span>
+                        <span>Completá los campos con los datos de tu cuenta (Token, SID, etc.).</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                        <span><strong>¿Cómo se hace?</strong> Colocás el chip en cualquier teléfono para recibir el SMS de activación, desde el CRM hacés clic en "Conectar Número" y seguís los pasos de Facebook.</span>
+                        <span>Guardá la configuración. El CRM te mostrará una URL del Webhook (un enlace que copiar).</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                        <span>Copiá esa URL.</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
+                        <span>Entrá a la consola de Meta o Twilio, buscá la sección "Webhooks" o "Configurar webhook" y pegá la URL.</span>
                     </li>
                     <li class="flex gap-3 font-semibold text-on-surface">
                         <span class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs">✓</span>
-                        <span>Ventaja: No perdés ningún dato de tu negocio y tu WhatsApp actual sigue funcionando normalmente.</span>
+                        <span>Guardá los cambios y Mitis queda activo.</span>
                     </li>
                 </ul>
             </section>
 
-            <section class="bg-surface border border-outline-variant rounded-xl p-6 flex flex-col gap-md">
-                <div class="flex items-center gap-3 border-b border-outline-variant pb-3 mb-4">
-                    <h2 class="font-bold text-md text-primary tracking-wide">
-                        🔸 OPCIÓN 2: Usar tu número ACTUAL de la inmobiliaria
-                    </h2>
-                </div>
-                <ul class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-                    <li class="flex gap-3">
-                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-700 font-bold text-xs">⚠</span>
-                        <span><strong>¡Atención! Lee esto antes de avanzar para no perder tus chats:</strong> Meta (la empresa dueña de WhatsApp) exige que para conectar un sistema inteligente oficial, el número no debe estar activo en la aplicación de tu celular.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs">!</span>
-                        <span><strong>Paso 1 (Obligatorio):</strong> Entrá a tu aplicación de WhatsApp en el celular, ve a Ajustes &gt; Cuenta y seleccioná <em>Eliminar mi cuenta</em>.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs">🚨</span>
-                        <span><strong>Alerta:</strong> Esto borrará los grupos y chats actuales de tu teléfono. Te recomendamos exportar los chats importantes antes de hacerlo.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                        <span><strong>Paso 2:</strong> Una vez eliminada la cuenta de la aplicación, desde el CRM hacés clic en "Conectar Número" y seguís los tres pasos de Facebook para dárselo al sistema inteligente.</span>
-                    </li>
-                    <li class="flex gap-3">
-                        <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                        <span><strong>Paso 3 (Volver al celular):</strong> Una vez que el sistema te confirme que la conexión fue exitosa, ya podés volver a descargar la aplicación WhatsApp Business (gratuita) en tu celular y registrar el número de nuevo. Los mensajes nuevos te van a empezar a llegar ahí normalmente, pero ahora <strong>Mitis</strong> va a estar trabajando en segundo plano respondiendo de forma automática.</span>
-                    </li>
-                </ul>
-            </section>
-
-        </div>
-
-        <section class="mt-8 bg-surface border border-outline-variant rounded-xl p-6 flex flex-col gap-md">
-            <div class="flex items-center gap-3 border-b border-outline-variant pb-3 mb-4">
-                <h2 class="font-bold text-md text-primary tracking-wide">
-                    OPCIÓN B – YA TENGO API CONTRATADA (META O TWILIO)
-                </h2>
+            <div class="mt-8 bg-gradient-to-r from-blue-50 to-blue-100/50 border-l-4 border-primary rounded-r-xl p-6">
+                <h3 class="font-black text-primary text-sm tracking-wider uppercase mb-2">
+                    💡 El último paso clave para que el sistema trabaje solo
+                </h3>
+                <p class="text-on-surface text-sm leading-relaxed">
+                    Una vez que elijas la Opción 1 o la Opción 2 y <strong>Mitis</strong> esté activo, recordá entrar a las plataformas donde publicás tus propiedades (Zonaprop, Mercado Libre, Inmuebles24, etc.) y actualizar tu teléfono de contacto poniendo el número que acabás de conectar a <strong>Mitis</strong>. A partir de ese momento, cada lead que te escriba desde los portales va a ser recibido, calificado y guardado en tu CRM de forma 100% automática por <strong>el agente Mitis</strong>.
+                </p>
             </div>
-            <ul class="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                    <span>En el CRM, seleccioná "api_meta_oficial" o "proveedor_twilio".</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                    <span>Completá los campos con los datos de tu cuenta (Token, SID, etc.).</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                    <span>Guardá la configuración. El CRM te mostrará una URL del Webhook (un enlace que copiar).</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                    <span>Copiá esa URL.</span>
-                </li>
-                <li class="flex gap-3">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-xs">✓</span>
-                    <span>Entrá a la consola de Meta o Twilio, buscá la sección "Webhooks" o "Configurar webhook" y pegá la URL.</span>
-                </li>
-                <li class="flex gap-3 font-semibold text-on-surface">
-                    <span class="flex-shrink-0 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs">✓</span>
-                    <span>Guardá los cambios y Mitis queda activo.</span>
-                </li>
-            </ul>
-        </section>
 
-        <div class="mt-8 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-5">
-            <h3 class="font-black text-blue-800 text-sm tracking-wider uppercase mb-2">
-                💡 El último paso clave para que el sistema trabaje solo
-            </h3>
-            <p class="text-on-surface text-sm leading-relaxed">
-                Una vez que elijas la Opción 1 o la Opción 2 y <strong>Mitis</strong> esté activo, recordá entrar a las plataformas donde publicás tus propiedades (Zonaprop, Mercado Libre, Inmuebles24, etc.) y actualizar tu teléfono de contacto poniendo el número que acabás de conectar a <strong>Mitis</strong>. A partir de ese momento, cada lead que te escriba desde los portales va a ser recibido, calificado y guardado en tu CRM de forma 100% automática por <strong>el agente Mitis</strong>.
-            </p>
-        </div>
-
-        <div class="mt-8 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-5">
-            <h3 class="font-black text-amber-800 text-sm tracking-wider uppercase mb-2">
-                IMPORTANTE – CÓMO ESCRIBIR EL NÚMERO DE TELÉFONO
-            </h3>
-            <p class="text-on-surface text-sm leading-relaxed mb-4">
-                Ponelo siempre así: <span class="font-mono bg-amber-100 px-1 rounded font-bold text-amber-900">+54 (código de área) (número)</span>, sin espacios, sin el 15.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-on-surface-variant">
-                <div class="bg-white/60 p-3 rounded border border-amber-200/60">
-                    <span class="block text-amber-800 font-bold mb-1">Ejemplo para Mendoza:</span>
-                    <span class="font-mono text-sm text-on-surface font-semibold">+5492613456789</span>
-                </div>
-                <div class="bg-white/60 p-3 rounded border border-amber-200/60">
-                    <span class="block text-amber-800 font-bold mb-1">Ejemplo para Buenos Aires:</span>
-                    <span class="font-mono text-sm text-on-surface font-semibold">+5491134567890</span>
-                </div>
-                <div class="bg-white/60 p-3 rounded border border-amber-200/60">
-                    <span class="block text-amber-800 font-bold mb-1">Ejemplo para Córdoba:</span>
-                    <span class="font-mono text-sm text-on-surface font-semibold">+5493512345678</span>
+            <div class="mt-8 bg-amber-50/80 border-l-4 border-amber-500 rounded-r-xl p-6">
+                <h3 class="font-black text-amber-800 text-sm tracking-wider uppercase mb-2">
+                    IMPORTANTE – CÓMO ESCRIBIR EL NÚMERO DE TELÉFONO
+                </h3>
+                <p class="text-on-surface text-sm leading-relaxed mb-4">
+                    Ponelo siempre así: <span class="font-mono bg-amber-100 px-1 rounded font-bold text-amber-900">+54 (código de área) (número)</span>, sin espacios, sin el 15.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-on-surface-variant">
+                    <div class="bg-white/80 p-3 rounded border border-amber-200/60">
+                        <span class="block text-amber-800 font-bold mb-1">Ejemplo para Mendoza:</span>
+                        <span class="font-mono text-sm text-on-surface font-semibold">+5492613456789</span>
+                    </div>
+                    <div class="bg-white/80 p-3 rounded border border-amber-200/60">
+                        <span class="block text-amber-800 font-bold mb-1">Ejemplo para Buenos Aires:</span>
+                        <span class="font-mono text-sm text-on-surface font-semibold">+5491134567890</span>
+                    </div>
+                    <div class="bg-white/80 p-3 rounded border border-amber-200/60">
+                        <span class="block text-amber-800 font-bold mb-1">Ejemplo para Córdoba:</span>
+                        <span class="font-mono text-sm text-on-surface font-semibold">+5493512345678</span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-8 pt-6 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p class="text-sm font-semibold text-on-surface-variant italic">
-                Si algo no funciona, escribinos y te ayudamos.
-            </p>
-           <a href="https://mitisdesarrollos.github.io/inteligente/contacto.html" target="_blank" rel="noopener noreferrer" class="bg-primary text-white hover:bg-blue-700 px-6 py-2.5 rounded-lg font-medium transition-all shadow-sm text-center inline-block">
-    Contactar Soporte
-</a>
-        </div>
+            <div class="mt-8 pt-6 border-t border-outline-variant flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm font-semibold text-on-surface-variant italic">
+                    Si algo no funciona, escribinos y te ayudamos.
+                </p>
+                <a href="https://mitisdesarrollos.github.io/inteligente/contacto.html" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-medium transition-all shadow-sm hover:opacity-90 text-center inline-block">
+                    Contactar Soporte
+                </a>
+            </div>
 
+        </div>
     </main>
+
+    <footer class="w-full py-12 border-t border-slate-200 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-4">
+                <div class="font-headline font-black text-slate-900 text-xl">Mitis Desarrollos</div>
+                <p class="text-slate-500 text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-center">
+                <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="politica_privacidad.html">Política de privacidad</a>
+                <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="terminos_servicio.html">Términos del servicio</a>
+                <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="politica_cookies.html">Política de cookies</a>
+                <a class="font-body text-xs uppercase tracking-widest text-slate-500 hover:text-primary transition-colors" href="contacto.html">Soporte</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
