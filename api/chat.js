@@ -1,4 +1,4 @@
-// api/chat.js
+﻿// api/chat.js
 // Estructura compatible con Netlify Functions (con CORS)
 
 exports.handler = async (event, context) => {
@@ -55,7 +55,7 @@ Si te piden una propiedad específica, actuá como si tuvieras acceso a la base 
 No digas literalmente "en el sistema real verías las fotos aquí" más de una vez; en su lugar, podés decir que "en la versión completa tendrías todos los detalles multimedia". Sé breve (máximo 3 líneas) y amable.`;
 
     // Preparar la llamada a Gemini
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
     
     const payload = {
       system_instruction: {
