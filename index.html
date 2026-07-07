@@ -96,6 +96,10 @@ tailwind.config = {
     #chat-left { width: 100%; border-right: none; border-bottom: 1px solid #bec8d2; }
     #chat-right { width: 100%; min-height: 300px; }
   }
+  .productos-row { margin-bottom: 7rem; }
+  @media (min-width: 1024px) {
+    .productos-row { margin-bottom: 9rem; }
+  }
 </style>
 </head>
 <body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
@@ -168,7 +172,7 @@ Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma ef
 <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Módulos de Inteligencia</h2>
 <div class="h-1 w-20 bg-primary"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="productos-row grid grid-cols-1 md:grid-cols-12 gap-8">
 
 <div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-xl flex flex-col md:flex-row gap-8 items-center">
 <div class="flex-1">
@@ -193,8 +197,11 @@ Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma ef
 </div>
 </div>
 
+</div>
+<div class="productos-row">
+
 <!-- CHATBOT DEMO MITIS -->
-<div class="md:col-span-12 bg-surface-container-lowest rounded-2xl p-6 md:p-8">
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8">
   <div class="flex items-center gap-3 mb-5">
     <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
       <span class="material-symbols-outlined text-primary text-2xl">smart_toy</span>
@@ -246,6 +253,8 @@ Potenciá tu inmobiliaria con nuestro sistema de IA. Gestioná leads de forma ef
   </div>
   <p class="text-xs text-on-surface-variant mt-3 text-center">Demo con IA real · Las respuestas son generadas por Gemini · Las propiedades mostradas son ilustrativas</p>
 </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
 <div class="md:col-span-4 bg-surface-container-highest p-10 rounded-xl border-l-4 border-primary">
 <div class="flex items-center gap-3 mb-4">
