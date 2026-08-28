@@ -1,4 +1,4 @@
-﻿```html
+﻿
 <!DOCTYPE html>
 <html class="light" lang="es">
 
@@ -146,12 +146,12 @@ operación y acceso a MITIS
 </h1>
 
 <p class="max-w-3xl mx-auto text-lg text-slate-600 leading-relaxed">
-
-Estos términos regulan el acceso, utilización y funcionamiento
-operativo de las soluciones tecnológicas ofrecidas por MITIS
-para automatización, inteligencia artificial y atención digital.
-
+Estos términos regulan el acceso y funcionamiento de MITIS para Argentina bajo Ley 25.326. Titular: Leonardo Otamendi CUIL 20-20544605-3 — Av. España 2350 3° dpto 13, Ciudad, Mendoza — mitisdesarrollos@gmail.com
 </p>
+<div class="mt-4 inline-flex flex-wrap justify-center gap-2 text-xs">
+<span class="px-3 py-1.5 rounded-full bg-slate-900 text-white font-semibold">Vigencia: 01 de noviembre de 2026</span>
+<span class="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600">Jurisdicción: Mendoza, Argentina</span>
+</div>
 
 </div>
 
@@ -343,34 +343,32 @@ que puedan afectar integraciones, conectividad o funcionalidades.
 
 <!-- BLOQUE 6 -->
 <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
-
-<h2 class="text-3xl font-bold text-slate-900 mb-6">
-6. Limitación de responsabilidad
-</h2>
-
+<h2 class="text-3xl font-bold text-slate-900 mb-6">6. Limitación de responsabilidad</h2>
 <div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
-
-<p>
-MITIS ofrece herramientas tecnológicas de asistencia y automatización,
-pero las decisiones comerciales y operativas finales corresponden
-exclusivamente a cada empresa usuaria.
-</p>
-
-<p>
-La plataforma no garantiza resultados comerciales específicos,
-aumento de ventas, conversión de leads ni disponibilidad absoluta
- de servicios externos.
-</p>
-
-<p>
-Cada empresa es responsable de verificar la información,
-configuraciones y procesos utilizados dentro de su operación.
-</p>
-
+<p>MITIS ofrece herramientas de asistencia y automatización, pero las decisiones comerciales finales corresponden exclusivamente a cada empresa usuaria.</p>
+<p>La plataforma no garantiza resultados comerciales específicos, aumento de ventas ni disponibilidad absoluta de servicios externos.</p>
+<p>Cada empresa es responsable de verificar la información, configuraciones y procesos utilizados.</p>
 </div>
-
 </div>
-
+<!-- BLOQUE 7 -->
+<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<h2 class="text-3xl font-bold text-slate-900 mb-6">7. Protección de datos y encargo del tratamiento</h2>
+<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<p>La inmobiliaria es <strong>Responsable</strong> de los datos de sus clientes/leads conforme Ley 25.326. <strong>Mitis Desarrollos</strong> (Leonardo Otamendi, CUIL 20-20544605-3) actúa como <strong>Encargado</strong> y solo trata esos datos por instrucción de la inmobiliaria, para prestar el servicio contratado.</p>
+<p>Mitis aplica separación lógica entre clientes, confidencialidad, HTTPS/TLS y no vende ni usa los datos para fines ajenos ni para entrenamiento público de IA.</p>
+<p>Sub-encargados: Google Gemini, Netlify, Formspree, WhatsApp/Meta (ver Política de Privacidad). Implica transferencia internacional a EE.UU. con consentimiento del titular. Conservación: chats 12 meses, datos de inmobiliaria inactiva 12 meses en resguardo, luego borrado/devolución. Derechos ARCO: mitisdesarrollos@gmail.com (10 días hábiles) y reclamo ante AAIP.</p>
+<p class="text-sm bg-sky-50 border border-sky-100 rounded-xl p-4">Detalle completo en <a href="politica_privacidad.html" class="text-sky-700 font-semibold hover:underline">Política de Privacidad</a> vigente 01/11/2026, parte integrante de estos Términos.</p>
+</div>
+</div>
+<!-- BLOQUE 8 -->
+<div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-10">
+<h2 class="text-3xl font-bold text-slate-900 mb-6">8. Legislación y jurisdicción</h2>
+<div class="space-y-5 text-slate-600 leading-relaxed text-[17px]">
+<p>Estos Términos se rigen por las leyes de la República Argentina, en especial Ley 25.326 y normas complementarias de la AAIP.</p>
+<p>Para cualquier controversia, las partes se someten a los tribunales ordinarios de la <strong>Ciudad de Mendoza, Provincia de Mendoza</strong>, con renuncia a otro fuero.</p>
+<p>Consultas legales/privacidad: <a href="mailto:mitisdesarrollos@gmail.com" class="text-sky-700 font-semibold hover:underline">mitisdesarrollos@gmail.com</a> — Av. España 2350 3° dpto 13, Ciudad, Mendoza.</p>
+</div>
+</div>
 <!-- BLOQUE FINAL -->
 <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-12 text-white shadow-2xl overflow-hidden relative">
 
@@ -384,11 +382,9 @@ Actualizaciones de términos
 
 <p class="text-slate-300 text-lg leading-relaxed">
 
-MITIS podrá actualizar estos términos para adaptarse
- a cambios tecnológicos, operativos, legales o funcionales.
+Vigencia desde 01 de noviembre de 2026. MITIS podrá actualizar estos términos por cambios tecnológicos, operativos o legales.
 
-La utilización continuada de la plataforma implica
- la aceptación de las versiones vigentes publicadas oficialmente.
+La utilización continuada implica aceptación de la versión vigente. Domicilio y razón social se actualizarán al constituirse la sociedad.
 
 </p>
 
@@ -404,62 +400,66 @@ La utilización continuada de la plataforma implica
 
 <!-- FOOTER -->
 <footer class="w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
 
-<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+    <div class="flex flex-col gap-4">
+      <div class="font-manrope font-black text-slate-900 dark:text-white text-xl">
+        Mitis Desarrollos
+      </div>
 
-<div class="flex flex-col gap-4">
+        <p class="text-slate-500 dark:text-slate-500 font-inter text-xs uppercase tracking-widest">© 2026 Mitis Desarrollos. Arquitectura Inteligente. — Actualizado 01/11/2026</p>
+       <p class="text-slate-500 dark:text-slate-400 text-xs">Leonardo Otamendi — CUIL 20-20544605-3 — Av. España 2350 3° dpto 13, Ciudad, Mendoza — <a href="mailto:mitisdesarrollos@gmail.com" class="text-sky-600 hover:underline">mitisdesarrollos@gmail.com</a></p>
+    </div>
 
-<div class="font-manrope font-black text-slate-900 dark:text-white text-xl">
-Mitis Desarrollos
+    <div class="flex flex-wrap justify-center gap-6 text-center">
+      <a
+        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+        href="politica_privacidad.html"
+      >
+        Política de privacidad
+      </a>
+
+      <a
+        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+        href="terminos_servicio.html"
+      >
+        Términos del servicio
+      </a>
+
+      <a
+        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+        href="politica_cookies.html"
+      >
+        Política de cookies
+      </a>
+
+      <a
+        class="font-inter text-xs uppercase tracking-widest text-slate-500 dark:text-slate-500 hover:text-sky-600 dark:hover:text-sky-400 transition-colors"
+        href="contacto.html"
+      >
+        Soporte
+      </a>
+    </div>
+
+    <div class="flex gap-4">
+
+  <!-- BOTÓN COMPARTIR -->
+  <button
+    id="shareBtn"
+    class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer"
+    aria-label="Compartir sitio"
+  >
+    <span class="material-symbols-outlined text-sm">share</span>
+  </button>
+
 </div>
 
-<p class="text-slate-500 font-inter text-xs uppercase tracking-widest">
-© 2026 Mitis Desarrollos. Arquitectura Inteligente.
-</p>
-
-</div>
-
-<div class="flex gap-8 flex-wrap justify-center">
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/politica_privacidad.html"
-target="_blank">
-Política de privacidad
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="https://mitisdesarrollos.github.io/inteligente/terminos_servicio.html"
-target="_blank">
-Términos del servicio
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="#">
-Política de cookies
-</a>
-
-<a class="font-inter text-xs uppercase tracking-widest text-slate-500 hover:text-sky-600 transition-colors"
-href="#">
-Soporte
-</a>
-
-</div>
-
-<div class="flex gap-4">
-
-<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">share</span>
-</div>
-
-<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:text-sky-600 transition-colors cursor-pointer">
-<span class="material-symbols-outlined text-sm">language</span>
-</div>
-
-</div>
-
-</div>
+  </div>
+</footer>
 
 </footer>
+
+ <!-- Banner de Cookies -->
 
 <!-- ========================================= -->
 <!-- BANNER DE COOKIES -->
@@ -586,6 +586,62 @@ Soporte
 })();
 </script>
 
+<script>
+(function () {
+
+  const shareBtn = document.getElementById("shareBtn");
+
+  if (!shareBtn) return;
+
+  shareBtn.addEventListener("click", async function () {
+
+    const shareUrl = window.location.href;
+
+    // CELULARES
+    if (navigator.share) {
+
+      try {
+
+        await navigator.share({
+          title: "Mitis Desarrollos",
+          text: "Conocé Mitis Desarrollos",
+          url: shareUrl
+        });
+
+      } catch (err) {
+        console.log("Compartir cancelado");
+      }
+
+      return;
+    }
+
+    // COMPUTADORA
+    try {
+
+      await navigator.clipboard.writeText(shareUrl);
+
+      alert("Enlace copiado al portapapeles:\n\n" + shareUrl);
+
+    } catch (err) {
+
+      // fallback antiguo
+      const tempInput = document.createElement("input");
+      tempInput.value = shareUrl;
+
+      document.body.appendChild(tempInput);
+
+      tempInput.select();
+      document.execCommand("copy");
+
+      document.body.removeChild(tempInput);
+
+      alert("Enlace copiado:\n\n" + shareUrl);
+    }
+
+  });
+
+})();
+</script>
+ 
 </body>
-</
-```
+</html>
